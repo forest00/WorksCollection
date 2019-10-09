@@ -1,0 +1,28 @@
+stage6
+world
+2000,720
+
+1p
+1000,400
+
+2p
+1200,400
+
+object
+1700,700
+
+block
+0,660,1280,720,1
+-1,-1,-1,-1,-1
+
+enemy,500,-500,sea_snake
+
+while,enemy_exist,1
+	wait_time,500
+	item,230,100
+
+
+wait_enemy,0
+
+end
+ÅŒã‚É‰üs‚ª•K—v

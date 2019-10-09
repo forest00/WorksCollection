@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\angle\private\angle.cpp" />
+    <ClCompile Include="src\anim_models\private\anim_data_loader.cpp" />
+    <ClCompile Include="src\anim_models\private\anim_model_base.cpp" />
+    <ClCompile Include="src\anim_models\private\anim_model_test.cpp" />
+    <ClCompile Include="src\anim_models\private\things\block_man.cpp" />
+    <ClCompile Include="src\anim_models\private\things\golem.cpp" />
+    <ClCompile Include="src\anim_models\private\things\josh.cpp" />
+    <ClCompile Include="src\anim_models\private\things\robot.cpp" />
+    <ClCompile Include="src\anim_models\private\things\ken.cpp" />
+    <ClCompile Include="src\anim_models\private\things\usagi.cpp" />
+    <ClCompile Include="src\back\private\back.cpp" />
+    <ClCompile Include="src\calc\private\calc.cpp" />
+    <ClCompile Include="src\camera\private\camera.cpp" />
+    <ClCompile Include="src\collision\private\collision.cpp" />
+    <ClCompile Include="src\d3d_device\private\d3d_device.cpp" />
+    <ClCompile Include="src\enemy\private\enemy.cpp" />
+    <ClCompile Include="src\enemy\private\test_enemy\test_enemy_brain.cpp" />
+    <ClCompile Include="src\enemy\private\test_enemy\test_enemy_database.cpp" />
+    <ClCompile Include="src\enemy\private\test_enemy\test_enemy_manager.cpp" />
+    <ClCompile Include="src\enemy\private\test_enemy\test_enemy_object.cpp" />
+    <ClCompile Include="src\entry_point.cpp" />
+    <ClCompile Include="src\file_path_provider\private\file_path_proviter.cpp" />
+    <ClCompile Include="src\flatpo\private\flatpo_drawer.cpp" />
+    <ClCompile Include="src\flatpo\private\flatpo_manager.cpp" />
+    <ClCompile Include="src\flatpo\private\flatpo_test.cpp" />
+    <ClCompile Include="src\flatpo\private\flatpo_texture_loader.cpp" />
+    <ClCompile Include="src\font\private\font.cpp" />
+    <ClCompile Include="src\font\private\font_base.cpp" />
+    <ClCompile Include="src\game\private\game.cpp" />
+    <ClCompile Include="src\game\private\game_base.cpp" />
+    <ClCompile Include="src\game\private\game_system.cpp" />
+    <ClCompile Include="src\game_debug\private\game_debug.cpp" />
+    <ClCompile Include="src\game_debug\private\message_box.cpp" />
+    <ClCompile Include="src\input\private\input.cpp" />
+    <ClCompile Include="src\input\private\input_button.cpp" />
+    <ClCompile Include="src\input\private\input_controller.cpp" />
+    <ClCompile Include="src\input\private\input_keyboard.cpp" />
+    <ClCompile Include="src\input\private\input_mouse.cpp" />
+    <ClCompile Include="src\light\private\light.cpp" />
+    <ClCompile Include="src\loop\private\loop.cpp" />
+    <ClCompile Include="src\loop\private\loop_timer.cpp" />
+    <ClCompile Include="src\makabe_mesh\private\makabe_mesh.cpp" />
+    <ClCompile Include="src\makabe_mesh\private\makabe_mesh_creator.cpp" />
+    <ClCompile Include="src\my_3d_lib\private\my_3d_lib.cpp" />
+    <ClCompile Include="src\player\private\player.cpp" />
+    <ClCompile Include="src\player\private\test_player\test_player_brain.cpp" />
+    <ClCompile Include="src\player\private\test_player\test_player_database.cpp" />
+    <ClCompile Include="src\player\private\test_player\test_player_manager.cpp" />
+    <ClCompile Include="src\player\private\test_player\test_player_object.cpp" />
+    <ClCompile Include="src\sound\private\dslib.cpp" />
+    <ClCompile Include="src\sound\private\sound.cpp" />
+    <ClCompile Include="src\world_transformation\private\world_transformation.cpp" />
+    <ClCompile Include="src\x_file\private\x_file.cpp" />
+    <ClCompile Include="src\x_file\private\x_file_database.cpp" />
+    <ClCompile Include="src\x_file\private\x_file_drawer.cpp" />
+    <ClCompile Include="src\x_file\private\x_file_loader.cpp" />
+    <ClCompile Include="src\x_file\private\x_file_name.cpp" />
+    <ClCompile Include="src\x_file\public\x_file_type.h" />
+    <ClCompile Include="src\x_object\private\x_object.cpp" />
+    <ClCompile Include="src\x_object_base\private\x_object_base.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\angle\public\angle.h" />
+    <ClInclude Include="src\anim_models\private\things\block_man.h" />
+    <ClInclude Include="src\anim_models\private\things\golem.h" />
+    <ClInclude Include="src\anim_models\private\things\josh.h" />
+    <ClInclude Include="src\anim_models\private\things\robot.h" />
+    <ClInclude Include="src\anim_models\private\things\ken.h" />
+    <ClInclude Include="src\anim_models\private\things\usagi.h" />
+    <ClInclude Include="src\anim_models\public\anim_data_loader.h" />
+    <ClInclude Include="src\anim_models\public\anim_model_base.h" />
+    <ClInclude Include="src\anim_models\public\anim_model_test.h" />
+    <ClInclude Include="src\back\public\back.h" />
+    <ClInclude Include="src\calc\public\calc.h" />
+    <ClInclude Include="src\camera\public\camera.h" />
+    <ClInclude Include="src\collision\public\collision.h" />
+    <ClInclude Include="src\common_def\public\common_def.h" />
+    <ClInclude Include="src\d3d_device\public\d3d_device.h" />
+    <ClInclude Include="src\enemy\private\test_enemy\test_enemy_brain.h" />
+    <ClInclude Include="src\enemy\private\test_enemy\test_enemy_database.h" />
+    <ClInclude Include="src\enemy\private\test_enemy\test_enemy_object.h" />
+    <ClInclude Include="src\enemy\public\enemy.h" />
+    <ClInclude Include="src\enemy\public\test_enemy\test_enemy_initializer.h" />
+    <ClInclude Include="src\enemy\public\test_enemy\test_enemy_manager.h" />
+    <ClInclude Include="src\enemy\public\test_enemy\test_enemy_object_declaration.h" />
+    <ClInclude Include="src\file_path_provider\public\file_path_provider.h" />
+    <ClInclude Include="src\flatpo\private\flatpo_drawer.h" />
+    <ClInclude Include="src\flatpo\private\flatpo_test.h" />
+    <ClInclude Include="src\flatpo\public\flatpo_manager.h" />
+    <ClInclude Include="src\flatpo\public\flatpo_texture_loader.h" />
+    <ClInclude Include="src\font\private\font_base.h" />
+    <ClInclude Include="src\font\public\font.h" />
+    <ClInclude Include="src\game\private\game_base.h" />
+    <ClInclude Include="src\game\private\game_system.h" />
+    <ClInclude Include="src\game\public\game.h" />
+    <ClInclude Include="src\game_debug\public\game_debug.h" />
+    <ClInclude Include="src\game_debug\public\message_box.h" />
+    <ClInclude Include="src\input\private\input_button.h" />
+    <ClInclude Include="src\input\private\input_controller.h" />
+    <ClInclude Include="src\input\private\input_keyboard.h" />
+    <ClInclude Include="src\input\private\input_mouse.h" />
+    <ClInclude Include="src\input\public\input.h" />
+    <ClInclude Include="src\input\public\input_controller_code.h" />
+    <ClInclude Include="src\input\public\input_mouse_code.h" />
+    <ClInclude Include="src\light\public\light.h" />
+    <ClInclude Include="src\loop\public\loop.h" />
+    <ClInclude Include="src\loop\public\loop_timer.h" />
+    <ClInclude Include="src\makabe_mesh\public\makabe_mesh.h" />
+    <ClInclude Include="src\makabe_mesh\public\makabe_mesh_creator.h" />
+    <ClInclude Include="src\math_with_defines\math_with_defines.h" />
+    <ClInclude Include="src\my_3d_lib\public\my_3d_lib.h" />
+    <ClInclude Include="src\player\private\test_player\test_player_brain.h" />
+    <ClInclude Include="src\player\private\test_player\test_player_database.h" />
+    <ClInclude Include="src\player\private\test_player\test_player_object.h" />
+    <ClInclude Include="src\player\public\player.h" />
+    <ClInclude Include="src\player\public\test_player\test_player_initializer.h" />
+    <ClInclude Include="src\player\public\test_player\test_player_manager.h" />
+    <ClInclude Include="src\player\public\test_player\test_player_object_declaration.h" />
+    <ClInclude Include="src\sound\private\dslib.h" />
+    <ClInclude Include="src\sound\public\sound.h" />
+    <ClInclude Include="src\sound\public\sound_index.h" />
+    <ClInclude Include="src\world_transformation\public\world_transformation.h" />
+    <ClInclude Include="src\x_file\private\x_file_database.h" />
+    <ClInclude Include="src\x_file\private\x_file_drawer.h" />
+    <ClInclude Include="src\x_file\private\x_file_loader.h" />
+    <ClInclude Include="src\x_file\private\x_file_name.h" />
+    <ClInclude Include="src\x_file\public\x_file.h" />
+    <ClInclude Include="src\x_file\public\x_file_structure.h" />
+    <ClInclude Include="src\x_object\public\x_object.h" />
+    <ClInclude Include="src\x_object_base\public\x_object_base.h" />
+    <ClInclude Include="src\x_object_base\public\x_object_base_structure.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{05CD809A-FC6F-4AB4-8E5C-5ED54F0BC0FF}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>mainproject</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX 9.0 SDK %28December 2004%29\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX 9.0 SDK %28December 2004%29\Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX 9.0 SDK %28December 2004%29\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX 9.0 SDK %28December 2004%29\Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX 9.0 SDK %28December 2004%29\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX 9.0 SDK %28December 2004%29\Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>libcp.lib</IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <AdditionalDependencies>dxguid.lib;d3dx9.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <IgnoreSpecificDefaultLibraries>libcp.lib</IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>false</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <IgnoreSpecificDefaultLibraries>libcp.lib</IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -1,0 +1,4 @@
+//プレーヤーが飛ばす手のFBXファイルパス
+"res/fbx/magnetic/magnetic.fbx",
+//自機とビームの先端の間に配置するビリビリ線
+"res/fbx/magnetic/magarm2.fbx",

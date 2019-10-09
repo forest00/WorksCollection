@@ -1,0 +1,5 @@
+titlecall.wav ： タイトル描画時
+starwt.wav ： ステージ開始時
+magjump.wav magjump2.wav ： 磁力命中時　どちらかをランダムに再生
+miss.wav ： ステージ外落下時
+goal.wav ： ゴール時

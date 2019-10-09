@@ -1,0 +1,4758 @@
+-------------------------------------------------------------------------------
+
+               アミューズメントメディア総合学院　ゲームライブラリ
+
+                               ”ＡＭＧＡＭＥ”
+
+                                  Ver. 3.20f
+
+          Programmed 1996-2016 by K.Katoh, Amusement Media Academy
+
+-------------------------------------------------------------------------------
+
+
+
+[特長]
+
+ AMGAMEライブラリは、以下のような特長を持つゲーム用ライブラリです。
+
+●使い方が簡単
+    このライブラリは、元々初心者の教育を目的として作成されたものなので、
+  使い方はできる限り簡単にしてあります。
+
+●DirectXの学習ができる
+    本ライブラリは、ソースレベルの、DirectX上のレイヤとして提供されるた
+  め、DirectXの学習に使うことができます。
+
+●環境への依存が少ない
+    本ライブラリは、Windowsというイベント駆動の環境にありながら、そのこ
+  とをほとんど意識せずにプログラムを組むことができます。また、DirectX
+  環境が持つ特有の制限などもできる限り隠蔽し、環境を意識することなくプ
+  ログラムが組めるよう配慮されています。
+
+●３Ｄ図形描画をサポート
+　　光源や各種変換行列などの初期設定をすることなく、２Ｄからの自然な拡張
+　で３Ｄ図形・モデルデータなどを描画することが可能です。
+
+
+
+[動作条件]
+  本ライブラリの動作条件は、以下の通りです。
+
+●Windows2000あるいはWindowsXP
+
+●DirectX(９以降) SDKがインストールされていること
+
+●カレントディレクトリに、実行時にＡＭＧＡＭＥＷ．ＳＹＳが存在すること
+
+●３Ｄのハードウェアサポートがあること
+
+　なお、本ライブラリは、Ｖｉｓｕａｌ　Ｃ＋＋.ＮＥＴでしか動作確
+認していないため、その他のＣ言語で使用できるかどうかは不明です。
+
+
+[使用法]
+　本ライブラリを使用するには、次の手順で作業を行ってください。
+
+１．Ｖｉｓｕａｌ　Ｃ＋＋（．ＮＥＴ）を立ち上げる。
+
+２．"ファイル(F)"メニューから"新規作成(N)"を選択し、"プロジェクト"を
+　　選択する。
+
+３．テンプレートをWin32 プロジェクトとし、適当な場所（位置）と
+　　プロジェクト名を決めて"ＯＫ"ボタンを押す。
+
+４．"アプリケーションの設定"をクリックし”空のプロジェクト”にチェック
+　　を入れ、"完了"ボタンを押す。
+
+５．すると、指定した位置に、プロジェクト名と同じ名前のディレクトリが
+　　作成される。.NET2002、2003の場合はそのディレクトリに、
+　　2005、2008の場合はさらにその中にできた同名のディレクトリに、以下の
+　　４つのファイルをコピーする。
+
+　　amgame.h                  AMGAME 統合ヘッダ
+　　amgamew.sys               AMGAME システムファイル
+　　AmDirectX.cpp             AMGAME DirectXモジュール
+　　AmBridge.cpp              AMGAME ブリッジモジュール
+
+５．上の４つのファイルのうち、AmDirectX.cpp、AmBridge.cppの２つの
+　　.cppファイルをプロジェクトに追加する。方法は、"プロジェクト(P)"
+　　メニューの"既存項目の追加(G)"を選択し、２つのファイルを指定する。
+
+６．DirectX9 SDKが存在するディレクトリをＶｉｓｕａｌ　Ｃ＋＋に認識させる。
+　　方法は、"ツール(T)"メニューから"オプション(O)"を選択し、"Projects"
+　　(プロジェクトおよびソリューション)の"VC++ディレクトリ"を選択する。ここで、
+　　"ディレクトリを表示するプロジェクト(S):"を"インクルード　ファイル"に
+　　したとき、"インクルードディレクトリ"の部分にＤｉｒｅｃｔＸのヘッダがある
+    ディレクトリ（例えばC:MSSDK\INCLUDE）が表示されるかどうかチェックし、
+    表示されなければそれを追加し、かつそれをリストの先頭に持っていく。
+    そして、同様に"ディレクトリを表示するプロジェクト(S):"を"ライブラリ　ファ
+    イル"にしたとき、"ライブラリディレクトリ"の部分にＤｉｒｅｃｔＸのライブ
+    ラリがあるディレクトリ（例えばC:MSSDK\LIB）が表示されるか確かめ、
+    表示されなければそれを追加し、やはりリストの先頭に持っていく
+    （この操作はDirectXをインストールした直後に１回だけすればよい）。
+
+７．.NET2002、2003の場合、ビルドモードをマルチスレッドに設定する。
+　　方法は、プロジェクトのプロパティを開き、C/C++を選択する。
+　　そして、"コード生成"を選択して、"ランタイム　ライブラリ"の部分を
+　　"マルチスレッド(/MT)"に設定する。(.NET2005、2008の場合、この操作
+　　は不要)
+
+８..NET2005、2008の場合、使用する文字コード体系をマルチバイト文字
+　　(シフトJIS)に変更する。方法は、ソリューションエクスプローラでプロジェクト
+　　名が太字で表示されている部分を右クリックし、出てきたメニューの「プロパティ」
+　　を選択。出てきたダイアログの左側で「構成プロパティ」の中の「全般」を選択し、
+　　ダイアログの右側に出てきた「文字セット」を「マルチバイト文字セットを使用する」
+　　にして「OK」ボタンを押す。
+
+９．プログラムを作成し（拡張子は必ず.cpp）、５．の場合と同様にしてプロ
+    ジェクトに追加する。
+
+１０．"ビルド(B)"メニューの"（ソリューションの）ビルド(B)"を使って実行
+　　　ファイルを作成する。それを実際に実行するには、"デバッグ(D)"メニューの
+　　　"（デバッグ）開始(S)"を選択する。また、F5キーで実行することも可能である。
+
+　なお、小さいプログラムを連続してテストしたいような場合には、
+ソリューションエクスプローラでプログラムファイルを選択して
+デリートキーを押せば、そのファイルはプロジェクトから外れるので、そこで
+新しいプログラムをプロジェクトに追加するようにすると、楽にプログラムを
+切り替えられます。
+
+
+
+［プログラムの書き方］
+  本ライブラリを使ってプログラムを作成する場合には、以下の手順に従って
+ください。
+
+●まず最初に、windows.hをインクルードし、そのあとにamgame.hをインクル
+  ードする。
+  #include <windows.h>
+  #include "amgame.h"
+
+●プログラムのエントリポイント（開始点）として、通常のＷｉｎ３２アプリ
+  ケーションと同様にWinMain関数を記述する。
+  int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                      LPSTR lpCmdLine, int nCmdShow )
+  {
+
+●全ての処理に先立って、InitGraph関数によりグラフィックの初期化を行う
+　(ただし、解像度・色数の設定を行うSetGraphMode関数と全体モード設定を
+　行うSetGlobalMode関数はInitGraph関数より前に置く）。
+  この時点で、ウィンドウの作成や解像度変更など一切の初期化が行われる。
+  万一InitGraphによる初期化が失敗した場合には、速やかにプログラムを終了
+  させる。また、音声を使う場合にはInitSound関数による初期化も行う。
+  if ( !InitGraph( hInstance ) ) return 0;
+
+●プログラム本体を作成する。その際、このシステム環境がイベント駆動であ
+  ることを意識する必要はほとんどなく、ウィンドウプロシージャやメッセー
+  ジループを作る必要もない。ただし、イベント処理のため、メインループ、
+  及びある程度時間がかかるループの中にはProcessEvent関数を入れ、それが
+  FALSEを返した場合には速やかにプログラムを終了させる必要がある。
+
+●プログラムを終了させる場合には、必ずEndGraph関数を呼び出して終了処理
+  を行わせる。InitSound関数を実行している場合にはEndSound関数も実行する。
+   EndGraph();
+
+●最後に、return命令によってプログラムを終了する。
+  return 0;
+
+なお、このライブラリの最も簡単な使用例は、LoadBmp関数の解説の部分にあり
+ますので、そちらを参照して下さい。最小のプログラムがこのように十数行で
+記述できるところが、本ライブラリの特長の一つです。
+
+
+
+［画像データの扱いについて］
+　本ライブラリの旧バージョンでは、画像データとして２Ｄサーフェスを扱う
+ことができましたが、本バージョンでは、画像データはテクスチャデータとして
+しか持つことができません。したがって、３Ｄハードウェアを持たないマシンでは、
+本ライブラリで作成したプログラムを動かすことはできません。
+
+
+
+［描画優先順位・陰面消去法について］
+　ＡＭＧＡＭＥライブラリには、次の２種類の描画オブジェクトがあります。
+　
+１．２Ｄテクスチャ
+２．ポリゴンデータ
+
+　これらの描画オブジェクトの陰面消去法は、基本的には１．がペインター
+ズアルゴリズム（描画した順に上書きする）、２．がＺバッファ法となり
+ます。ただし、これら２つの描画オブジェクトを混在させた場合には、
+描画の順番にかかわらず２Ｄテクスチャが優先されます。そのため、
+現段階では、２Ｄの背景に３Ｄのオブジェクトを重ねる、といった使い方を
+することはできません。
+
+
+
+［デバッグ機能について］
+バージョン3.10より、本ライブラリにはデバッグ支援機能が実装されています。
+デバッグ支援機能を使用するには、以下の２つの方法があります。
+
+1.ユーザープログラムからデバッグ制御関数を呼び出して、デバッグ機能を
+　有効にする
+2.プログラムの実行中に、デバッグ支援キーを押すことによって、デバッグ
+　機能を有効にする
+
+1.の場合、主にSetAMDebugMode関数を使って、プログラム側からデバッグ
+機能をコントロールします。詳細については、各関数の説明を参照してください。
+2.の場合、以下に示すデバッグ支援キーを使用してください。
+
+Ｐキー：一時停止。一時停止中に押すとシングルフレーム実行（＊）
+　　　　デバッグ支援キー以外のキーを押すと通常実行に戻る
+Ｏキー：デバッグ表示のＯＮ／ＯＦＦ切り替え。一時停止中に押すとシングルフレーム実行
+　　　　ただし、OutputAMDebugStringで出力しているデバッグ文字列は、
+　　　　このキーでＯＦＦにすることはできない
+Ｉキー：デバッグ表示色の切り替え。一時停止中に押すとシングルフレーム実行
+　　　　キーを押すたびに、白→赤→緑→青→黒→白と表示色が変化する
+＊シングルフレーム実行とは、１フレーム後に再び一時停止する実行方式のこと
+
+なお、このデバッグ支援キーの入力は、ユーザープログラム側で無効にしない限り、
+最初から有効になっています。本ライブラリを用いてゲームを作成する場合には、
+完成版にする際に、SetAMDebugMode関数を使ってデバッグ支援キーを無効にする
+ようにしてください。
+
+
+
+[関数一覧]
+
+１．画面初期化関係 -----------------------------------------------------------
+1-1.  int  InitGraph( HINSTANCE hInstance );
+      グラフィックの初期化
+1-2.  int  EndGraph( void );
+      グラフィックの使用終了
+1-3.  int  SetGraphMode( int nWidth, int nHeight, int nOrderDepth );
+      グラフィックモードの指定
+
+
+２．ビットマップ・テクスチャ関係 ---------------------------------------------
+
+　　２－１．画像直接表示関数 -------------------------------------------------
+　　2-1-1.  int  LoadBmp( int x, int y, char *szFileName );
+　　　　　　ＢＭＰを画面に直接ロード
+　　2-1-2.  int  LoadBmpTh( int x, int y, char *szFileName );
+　　　　　　ＢＭＰを画面に直接ロード（アルファブレンド付き）
+
+　　２－２．画像ロード関係関数 -----------------------------------------------
+　　2-2-1.  int LoadTexture( char *szFileName );
+　　　　　　テクスチャロード
+　　2-2-2.  int LoadBlkTexture( char *szFileName,
+                                int nXSize, int nYSize,
+                                int nXNum, int nYNum, int nAllNum,
+                                int *hArray );
+            テクスチャへのブロック化ＢＭＰロード
+　　2-2-3.  int LoadBlkTextureLR( char *szFileName,
+                                  int nXSize, int nYSize,
+                                  int nXNum, int nYNum, int nAllNum,
+                                  int *hArray );
+            テクスチャへのブロック化ＢＭＰロード(左右反転付き)
+　　2-2-4.  int  ReloadGraph( char *szFileName, int hBmpSurf );
+　　　　　　テクスチャメモリへのＢＭＰの再ロード
+
+　　２－３．画像描画関係関数 -------------------------------------------------
+　　2-3-1.  int  DrawMem( int x, int y, int hPicture );
+　　　　　　画像の描画
+　　2-3-2.  int  DrawMemTh( int x, int y, int hPicture );
+　　　　　　画像の描画(アルファブレンド付き)
+　　2-3-3.  int  DrawMemLR( int x, int y, int hPicture );
+　　　　　　画像の左右反転描画
+　　2-3-4.  int  DrawMemThLR( int x, int y, int hPicture );
+　　　　　　画像の左右反転描画(アルファブレンド付き)
+　　2-3-5.  int  DrawMemExp( int x1, int y1, int x2, int y2, int hPicture );
+　　　　　　画像の拡大縮小描画
+　　2-3-6.  int  DrawMemThExp( int x1, int y1, int x2, int y2, int hPicture );
+　　　　　　画像の拡大縮小描画(アルファブレンド付き)
+　　2-3-7.  int DrawMemRot( int nCenX1, int nCenY1, int nCenX2, int nCenY2,
+                            double fAngle, double fExRate,
+                            int hAmTexture );
+            画像回転描画 
+　　2-3-8.  int DrawMemThRot( int nCenX1, int nCenY1, int nCenX2, int nCenY2,
+                              double fAngle, double fExRate,
+                              int hAmTexture );
+            画像回転描画(アルファブレンド付き)
+　　2-3-9.  int DrawMemFlex( int x1, int y1, int x2, int y2,
+                             int x3, int y3, int x4, int y4,
+                             int hAmTexture );
+            画像変形描画
+　　2-3-10. int DrawMemThFlex( int x1, int y1, int x2, int y2,
+                               int x3, int y3, int x4, int y4,
+                               int hAmTexture );
+            画像変形描画(アルファブレンド付き) 
+
+　　２－４．その他の画像関係関数 ---------------------------------------------
+　　2-4-1.  int  GetPictureSize( int hPicture, int *nWidth, int *nHeight );
+　　　　　　画像のサイズ取得
+　　2-4-2.  int  GetDispGraph( int hPicture );
+　　　　　　現在表示されているグラフィック取得
+　　2-4-3.  int  InitTexture( void );
+　　　　　　全画像用メモリの開放
+　　2-4-4.  int  SaveBmp( int x1, int y1, int x2, int y2, char *filename );
+　　　　　　ビットマップセーブ
+　　2-4-5.  int  SetDrawMode( int lDrawMode, int nParam );
+            描画モード設定
+
+
+３．図形等描画関係 -----------------------------------------------------------
+3-1.  void DrawPixel( int x, int y, int color );
+      １点の描画
+3-2.  int  GetPixel( int x, int y );
+      指定点の色取得
+3-3.  void DrawFBox( int x1, int y1, int x2, int y2, int color );
+      中が詰まった四角形の描画
+3-4.  int DrawTBox( int x1, int y1, int x2, int y2, int color );
+      半透明四角形の描画
+3-5.  void DrawString( int x, int y, char *string, int color );
+      文字列描画
+3-6.  int  SetFontSize( int nFontSize );
+      ﾌｫﾝﾄｻｲｽﾞの変更
+3-7.  int  GetColor( int nRed, int nGreen, int nBlue );
+      色コードの取得
+
+
+４．トーンコントロール関係 -----------------------------------------
+4-1.  void MovePalette( int sgreen, int sred, int sblue,
+                        int dgreen, int dred, int dblue, int speed );
+      色調の変化
+4-2.  int  SetDrawBright( int nRedBright, int nGreenBright,
+                          int nBlueBright );
+      描画明度の設定 
+
+
+５．その他画像関係 -----------------------------------------------------------
+5-1.  void HCls( void );
+      描画画面及びＺバッファのクリア
+5-2.  void SetDrawArea( int x1, int y1, int x2, int y2 );
+      描画エリアの設定
+5-3.  void WaitVSync( int WaitNum );
+      ＣＲＴの垂直同期信号待ち
+5-4.  void Flip( void );
+      描画画面の表示
+5-5.  int MakeTextureMem( int nWidth, int nHeight, int nTexBitDepth );
+      画像データ用のテクスチャメモリ確保
+
+
+６．ＰＣＭ音声関係 -----------------------------------------------------------
+6-1.  int  InitSound( int nSoundMode );
+      サウンドの初期化
+
+6-2.  int  EndSound( void );
+      サウンドの終了
+
+6-3.  int  PlayWav( char *szFileName );
+      ＷＡＶファイルの直接再生
+
+6-4.  int  PlayWavBack( char *szFileName );
+      ＷＡＶファイルの直接バックグラウンド再生
+
+6-5.  int  CheckPcm( void );
+      ＰＣＭ再生中チェック
+
+6-6.  void StopPcm( void );
+      ＰＣＭ再生停止
+
+6-7.  int  LoadWavMem( char *szFileName );
+      メモリへのＷＡＶロード
+
+6-8.  int  PlayMem( int hSound );
+      メモリ再生
+
+6-9.  int  PlayMemBack( int hSound );
+      メモリバックグラウンド再生
+
+6-10. int  PlayMemLoop( int hSound );
+      メモリループ再生
+
+6-11. int  CheckPlayMem( int hSound );
+      メモリ再生中チェック
+
+6-12. int  StopPlayMem( int hSound );
+      メモリ再生ストップ
+
+6-13. int  SetPcmVolume( int nVolume );
+      ＰＣＭ音量セット
+
+6-14. int SetMemVolume( int nVolume, int hSound );
+      メモリＰＣＭボリウムのセット
+
+6-15. int InitSoundMem( void );
+      サウンド用メモリの初期化
+
+6-16. int PlayWavStreamBack( char *szFileName );
+      ＷＡＶファイルのストリームバック再生
+
+７．ＭＩＤＩ関係 -------------------------------------------------------------
+7-1.  int  PlayMidi( char *szFileName );
+      ＭＩＤＩファイルの演奏
+7-2.  int  PlayMidiBack( char *szFileName );
+      ＭＩＤＩファイルのバックグラウンド演奏
+7-3.  int PlayMidiLoop( char *szFileName );
+      ＭＩＤＩファイルのループ演奏
+7-4.  int  CheckMusic( void );
+      ＭＩＤＩ演奏中チェック
+7-5.  int  StopMusic( void );
+      ＭＩＤＩ演奏ストップ
+7-6.  int  SetMusicVolume( int nVolume );
+      ＭＩＤＩ音量セット
+
+
+８．ムービー(ＡＶＩ)関係 -----------------------------------------------------
+8-1.  int PlayMovie( int x, int y, char *szFileName );
+      ムービー再生
+8-2.  int PlayMovieFull( char *szFileName );
+      フルスクリーンムービー再生
+8-3.  int LoadMovieMem( char *szFileName );
+      ムービーのメモリへのロード
+8-4.  int PlayMovieMem( int x, int y, int hMovie );
+      メモリムービーの再生
+8-5.  int PlayMovieMemFull( int hMovie );
+      メモリムービーのフルスクリーン再生
+8-6.  int GetMovieFrame( int hPicture, int hMovie, int nFrameNum );
+      ムービーの特定フレーム取得
+8-7.  int GetMovieCount( int hMovie );
+      ムービーフレームカウント数の取得
+8-8.  int InitMovieMem( void );
+      ムービー用メモリの開放
+
+
+９．入力関係 -----------------------------------------------------------------
+9-1.  int CheckKey( int InputMode );
+      キーボード・パッド等のキー状態チェック
+9-2.  int GetCh( void );
+      キーボード・マウスからの１文字入力
+9-3.  int KBHit( void );
+      キー入力の有無のチェック
+9-4.  int InitMouse( int bMouseState );
+      マウス初期化
+9-5.  int SetMouseState( int bMouseState );
+      マウスカーソルの状態設定
+9-6.  int GetMouseLoc( int *nXLoc, int *nYLoc );
+      マウスカーソル位置取得
+9-7.  int SetMouseLoc( int nXLoc, int nYLoc );
+      マウス位置設定
+
+
+１０．環境依存処理関係 -------------------------------------------------------
+10-1. int SetGlobalMode( int lModes );
+      環境依存グローバルモード設定
+10-2. BOOL ProcessEvent( void );
+      イベント処理
+
+
+１１．タイマ・計時関係 -------------------------------------------------------
+11-1. int GetNowTime( int nDummy );
+      現在時刻(ミリ秒単位)の取得
+11-2. int WaitByTimer( int nWaitTime );
+      タイマで指定時間だけ待つ
+11-3. int GetDateTime( AMDATETIME *pDateTime );
+      日時の取得
+11-4. int UnpackDateTime( AMDATETIME *pDateTime );
+      日時のアンパック
+
+
+１２．３Ｄ図形描画関係 -------------------------------------------------------
+12-1. int  DrawPolygons( AmVertex *pVertexes, int nVertexNum,
+						 int hTexture, int nFlags );
+      ３Ｄポリゴンの描画
+12-2. int Draw3DLines( AmVertex *pVertexes, int nVertexNum,
+					   int hTexture );
+      ３Ｄ座標指定での直線描画
+12-3. int SetLightVertex( AmVertex *pVertex,
+						  AM3D_VALUE x, AM3D_VALUE y, AM3D_VALUE z,
+						  AM3D_VALUE u, AM3D_VALUE v,
+						  AM3D_VALUE nx, AM3D_VALUE ny, AM3D_VALUE nz );
+      光源計算ありの場合の AmVertex 構造体セット
+12-4.  int SetColorVertex( AmVertex *pVertex,
+						   AM3D_VALUE x, AM3D_VALUE y, AM3D_VALUE z,
+						   AM3D_VALUE u, AM3D_VALUE v,
+						   u_char r, u_char g, u_char b, u_char a );
+      色指定あり（光源計算なし）の場合の AmVertex 構造体セット
+12-5. int SetLWMatrix( AmMatrix *pMatrix );
+      ローカル・ワールド行列セット
+12-6. int GetLWMatrix( AmMatrix *pMatrix );
+      ローカル・ワールド行列取得
+12-7. int SetWVMatrix( AmMatrix *pMatrix );
+      ワールド・ビュー行列セット
+12-8. int GetWVMatrix( AmMatrix *pMatrix );
+      ワールド・ビュー行列取得
+12-9. int SetIdentityMatrix( AmMatrix *pDest );
+      単位行列セット
+12-10. int SetRTMatrix( AmMatrix *pDest,
+                        AM3D_VALUE tx, AM3D_VALUE ty, AM3D_VALUE tz,
+                        AM3D_VALUE rx, AM3D_VALUE ry, AM3D_VALUE rz );
+      回転＋平行移動行列セット
+
+
+１３．デバッグ関係 -----------------------------------------------------------
+13-1. int  SetAMDebugMode( int nDebugMode );
+      デバッグモードのセット
+13-2. int  OutputAMDebugString( char *szOutString );
+      デバッグ文字列の出力
+（関数総数　９３）
+
+
+
+[関数の詳細]
+
+
+１．画面初期化関係関数 -------------------------------------------------------
+
+１－１．ＩｎｉｔＧｒａｐｈ
+　　［機能］
+　　　グラフィックの初期化
+
+　　［文法］
+      HWND InitGraph( HINSTANCE hInstance );
+
+　　　hInstance：呼び出し側のインスタンスハンドル
+
+　　［戻り値］
+　　　作成したウィンドウのウィンドウハンドル
+　　　ＮＵＬＬ（ＦＡＬＳＥ）の場合は初期化に失敗
+
+　　［解説］
+　　　　ウィンドウを作成し、DirectXの初期化や各種パラメータの設定を
+　　　行います。具体的には、グラフィック画面モードの設定、画面クリア、
+　　　グラフィック用メモリの初期化などを行います。デフォルトでは、画面
+　　　モードは６４０×４８０ドット、フルカラーに設定されます。本ライブラ
+　　　リを使用するプログラムは、まず最初にこの関数を実行するようにして
+　　　下さい。また、１つのプログラム内でこの関数を２回以上呼び出さない
+　　　で下さい。この２つを守らなかった場合の動作は保証されません。
+
+　　［使用例］
+　　　"２－１－１．ＬｏａｄＢｍｐ"の使用例参照
+
+
+１－２．ＥｎｄＧｒａｐｈ
+　　［機能］
+　　　グラフィックの使用終了
+
+　　［文法］
+　　　int EndGraph( void );
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　グラフィックの使用を終了します。具体的には、DirectDrawオブジェ
+　　　クトを破棄し、ウィンドウを閉じます。本ライブラリを使用するプログ
+　　　ラムは、終了する前に必ずこのEndGraphを実行するようにして下さい。
+　　　実行しないで終了すると、暴走する場合があります。
+
+　　［使用例］
+　　　"２－１－１．ＬｏａｄＢｍｐ"の使用例参照
+
+
+１－３．ＳｅｔＧｒａｐｈＭｏｄｅ
+　　［機能］
+　　　グラフィックモードの指定
+
+　　［文法］
+　　　SetGraphMode( int nWidth, int nHeight, int nOrderDepth );
+
+　　　nWidth：画面の横解像度（ 640や800や1024など ）
+　　　nHeight：画面の縦解像度（ 480や600や768など ）
+　　　nOrderDepth：１ドットあたりのビット数（ 16か32 ）
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　ディスプレイを指定の解像度で初期化するように設定します。
+　　　　この関数自体が解像度を設定するわけではありません。ここで指定さ
+　　　れた値によって、InitGraph関数が解像度の設定を行います。従って、
+　　　初期化済みの状態でこの関数を実行しても何の効果もありません。また、
+　　　現段階では、InitGraph関数は１回しか呼び出してはならない仕様になっ
+　　　ていますので、プログラムの途中で画面モードを切り替えることはでき
+　　　ません。
+　　　　なお、ここにハードウェアがサポートしていないモードを指定すると、
+　　　InitGraph関数はプログラム実行前の画面モードをそのまま用いますが、
+　　　その場合、フルスクリーンモードでもウィンドウモード相当の処理速度
+　　　しか期待できませんので注意して下さい。
+
+　　［使用例］
+
+// 800×600、フルカラーモードでRISKW.BMPという画像を表示する
+
+#include <windows.h>
+#include "amgame.h"
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+	SetGraphMode( 800, 600,	32 );								// 画面モード設定
+	if( !InitGraph( hInstance ) ) return -1;					// グラフィック初期化
+
+	LoadBmp(   0,   0, "RISKW.BMP" );							// グラフィックロード
+	LoadBmp( 640,   0, "RISKW.BMP" );
+	LoadBmp(   0, 480, "RISKW.BMP" );
+	Flip();														// 表示
+
+	GetCh();													// キー待ち
+	EndGraph();													// グラフィック終了
+	return 0;
+}
+
+
+
+２．ビットマップ関係関数 -----------------------------------------------------
+
+２－１．画像直接表示関数 -----------------------------------------------------
+２－１－１．ＬｏａｄＢｍｐ
+　　［機能］
+　　　画像ファイルを画面に直接ロード
+
+　　［文法］
+　　　int LoadBmp( int x, int y, char *filename );
+
+　　　x：画像をロードするｘ座標
+　　　y：画像をロードするｙ座標
+　　　*filename：ＢＭＰファイルのファイル名、あるいはリソース名
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　指定された画像ファイルを、画面の指定座標にロードします。
+
+　　［使用例］
+
+// RISKW.BMPという画像を表示する
+
+#include <windows.h>
+#include "amgame.h"
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+	if( !InitGraph( hInstance ) ) return -1;					// グラフィック初期化
+
+	LoadBmp( 0, 0, "RISKW.BMP" );								// グラフィックロード
+	Flip();														// 表示
+
+	GetCh();													// キー待ち
+	EndGraph();													// グラフィック終了
+	return 0;
+}
+
+
+２－１－２．ＬｏａｄＢｍｐＴｈ
+　　［機能］
+　　　ＢＭＰを画面に直接ロード（アルファブレンド付き）
+
+　　［文法］
+      int LoadBmpTh( int x, int y, char *filename );
+
+　　　x：画像をロードするｘ座標
+　　　y：画像をロードするｙ座標
+　　　filename：ＢＭＰファイルのファイル名、あるいはリソース名
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　指定された画像ファイルを、画面の指定座標にロードします。
+　　　　その際、Ｒ，Ｇ，Ｂ全てが０の色がアルファブレンドされ、その部分には
+　　　元の画像がそのまま残されます。それ以外についてはLoadBmp関数とまったく
+　　　同じです。
+
+　　［使用例］
+　　　LoadBmp関数と使用法は同じなので省略
+
+
+２－２．画像ロード関係関数 ---------------------------------------------------
+
+
+２－２－１．ＬｏａｄＴｅｘｔｕｒｅ
+　　［機能］
+　　　テクスチャのメモリへのロード
+
+　　［文法］
+      int LoadTexture( char *szFileName );
+
+　　　szFileName：ＢＭＰファイルのファイル名、あるいはリソース名
+
+　　［戻り値］
+　　　ロードされたテクスチャを識別するハンドル（TEX_HANDLE_OFFSET以上の値）
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　BMP、PNG、TGA等の画像を、テクスチャとしてメモリにロードします。
+　　　ロードが正常に終了した場合には、ロードされたテクスチャを識別する
+　　　ハンドルが返され、そのハンドルはDrawMem関数やDrawMemRot関数など
+　　　で使用することができます。
+　　　　なお、あるテクスチャが不要になった場合でも、現在のところ特定の
+　　　テクスチャだけを削除することはできません（ただし、InitTexture関
+　　　数を使えば、現在ロードされている全てのテクスチャ画像を削除するこ
+　　　とは可能）。
+　　　　また、拡張子が.bmpである画像ファイルの場合、黒( 0, 0, 0 )は
+　　　透明色に置き換えられます。
+
+　　［使用例］
+　　　　２－３－１．ＤｒａｗＭｅｍの使用例参照
+
+
+２－２－２．ＬｏａｄＢｌｋＴｅｘｔｕｒｅ
+　　［機能］
+　　　ブロック化ＢＭＰ画像のテクスチャロード
+
+　　［文法］
+      int LoadBlkTexture( char *szFileName,
+                          int nXSize, int nYSize,
+                          int nXNum, int nYNum, int nAllNum,
+                          int *hArray );
+
+　　　szFileName：ＢＭＰファイルのファイル名、あるいはリソース名
+      nXSize：１ブロックの幅
+      nYSize：１ブロックの高さ
+      nXNum：横方向のブロック数
+      nYNum：縦方向のブロック数
+      nAllNum：ブロックの総数
+      hArray：テクスチャのハンドルが格納されるバッファへのポインタ
+      
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　キャラクタがブロック状に並べられた画像ファイルの画像をテクス
+　　　チャとしてロードし、個々のブロックのキャラクタを識別するハンドル
+　　　を返します。このハンドルは、LoadTexture関数が返すハンドルと同じ
+　　　ように使うことができます。また、このハンドルは、左上のキャラクタ
+　　　のものから右下のキャラクタのものへと順にバッファに格納されていき
+　　　ます。例えば、キャラクタが５×３のブロック状に並べられていて、キャ
+　　　ラクタ総数が１２の場合、ハンドルは以下の順番で格納されます。
+
+　　　　　　　　　　　　１　　２　　３　　４　　５
+　　　　　　　　　　　　６　　７　　８　　９　１０
+　　　　　　　　　　　１１　１２
+
+　　　　ここで、当然ながら、hArrayで指定されるハンドルバッファは、
+　　　nAllNumで指定されるキャラクタ総数以上の大きさを持っていなければ
+　　　なりません。そうでない場合には、プログラムが暴走する危険があるので
+　　　注意して下さい。
+
+　　［使用例］
+
+// TYDICE.BMPの中のキャラクタ（４８×４８ドット）を表示する
+
+#include <windows.h>
+#include "amgame.h"
+
+#define CHARNUM					9								// キャラ総数
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+	int							i;
+	int							hBack;							// 背景
+	int							hTydice[CHARNUM];				// キャラハンドル
+
+	SetGlobalMode( AMMODE_WINDOWED );							// ウィンドウモードに
+	if( !InitGraph( hInstance ) ) return -1;					// DirectX初期化
+
+	hBack = LoadTexture( "Passageh.bmp" );						// 背景ロード
+	LoadBlkTexture( "TYDICE.BMP", 192, 192, 3, 3, CHARNUM, hTydice );// ロード
+	for ( i = 0; i < CHARNUM; i++ ) {
+		DrawMem( 0, 0, hBack );									// 背景描画
+		DrawString( 0, 0, "Hit any key!", GetColor( 255, 255, 255 ) );	// メッセージ表示
+		DrawMemTh( 0, 16, hTydice[i] );							// キャラ描画
+		Flip();
+		GetCh();
+		if ( !ProcessEvent() ) break;
+	}
+
+	EndGraph();													// DirectX終了
+	return 0;
+}
+
+
+２－２－３．ＬｏａｄＢｌｋＴｅｘｔｕｒｅＬＲ
+　　［機能］
+　　　ブロック化ＢＭＰ画像のテクスチャロード（左右反転キャラクタ付き）
+
+　　［文法］
+      int LoadBlkTextureLR( char *szFileName,
+                            int nXSize, int nYSize,
+                            int nXNum, int nYNum, int nAllNum,
+                            int *hArray );
+
+　　　szFileName：ＢＭＰファイルのファイル名、あるいはリソース名
+      nXSize：１ブロックの幅
+      nYSize：１ブロックの高さ
+      nXNum：横方向のブロック数
+      nYNum：縦方向のブロック数
+      nAllNum：ブロックの総数
+      hArray：テクスチャのハンドルが格納されるバッファへのポインタ
+      
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　キャラクタがブロック状に並べられたＢＭＰファイルの画像をテクス
+　　　チャとしてロードし、個々のブロックのキャラクタを識別するハンドル
+　　　を返します。LoadBlkTexture関数との違いは、ロードと同時に左右反転
+　　　キャラクタが生成され、反転なしキャラクタのハンドルと共に反転キャ
+　　　ラクタのハンドルも返されることです。これらのハンドルは、基本的に
+　　　LoadTexture関数が返すハンドルと同じように使うことができます。
+　　　　また、このハンドルは、基本的にはLoadBlkTexture関数と同じ順番で
+　　　バッファに格納されていきますが、反転キャラクタは反転なしキャラク
+　　　タの直後に格納されていきます。つまり、一番左上のキャラクタの反転
+　　　なし、一番左上のキャラクタの反転あり、左から２番目の反転なし、左
+　　　から２番目の反転あり・・・という順番で格納されていきます。
+　　　　この場合、hArrayで指定されるハンドルバッファは、nAllNumで指定
+　　　されるキャラクタ総数の２倍以上の大きさを持っていなければなりませ
+　　　ん。そうでない場合には、ハングアップする危険があるので注意して下
+　　　さい。
+
+　　［使用例］
+
+// TYDICE.BMPの中のキャラクタ（４８×４８ドット）を表示する
+
+#include <windows.h>
+#include "amgame.h"
+
+#define CHARNUM					9								// キャラ総数
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+	int							i;
+	int							hBack;							// 背景
+	int							hTydice[CHARNUM * 2];			// キャラハンドル
+
+	SetGlobalMode( AMMODE_WINDOWED );							// ウィンドウモード
+	if( !InitGraph( hInstance ) ) return -1;					// DirectX初期化
+
+	hBack = LoadTexture( "Passageh.bmp" );						// 背景ロード
+	LoadBlkTextureLR( "TYDICE.BMP", 192, 192, 3, 3, CHARNUM, hTydice );	// ロード
+
+	for ( i = 0; i < CHARNUM * 2; i++ ) {
+		DrawMem( 0, 0, hBack );									// 背景描画
+		DrawString( 0, 0, "Hit any key!", GetColor( 255, 255, 255 ) );	// メッセージ表示
+		DrawMemTh( 0, 16, hTydice[i] );							// キャラクタ描画
+		Flip();
+		GetCh();
+		if ( !ProcessEvent() ) break;
+	}
+
+	EndGraph();													// DirectX終了
+	return 0;
+}
+
+
+２－２－４．ＲｅlｏａｄＧｒａｐｈ
+　　［機能］
+　　　画像のメモリへの再ロード
+
+　　［文法］
+      int  ReloadGraph( char *szFileName, int hPicture );
+
+　　　filename：ＢＭＰファイルのファイル名、あるいはリソース名
+　　　hPicture：画像を識別するハンドル
+
+　　［戻り値］
+　　　ロードされた画像を識別するハンドル（必ずプラスの値）
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　画像ファイルの画像を、ハンドルで指定された画像が格納されてい
+　　　るメモリにロードします。LoadTexture関数ではロードするごとに新規に
+　　　画像格納用のメモリ領域が取られますが、この関数では新規のメモリは
+　　　取られず、指定の画像が格納されているメモリに上書きロードします。
+　　　従って、そこに元からあった画像は失われます。
+　　　　画像ハンドルとしては、LoadTexture関数、MakeTextureMem関数で生成
+　　　されたものが指定可能です。
+
+　　［使用例］
+
+// ３つの絵を順番にロード・表示
+
+#include <windows.h>
+#include "amgame.h"												// ＡＧＬＩＢヘッダ
+
+char *szBMPs[10] = { "Riskw.bmp", "Passageh.bmp", "Anna_h.Bmp", NULL };
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+	int				i;
+	int				nBmpLoc;									// ビットマップ番号
+	int				hTex;										// テクスチャハンドル
+
+	SetGlobalMode( AMMODE_WINDOWED );							// ウィンドウモード
+	if ( !InitGraph( hInstance ) ) return 0;					// グラフィックの初期化
+	hTex  = MakeTextureMem( 640, 480, 0 );						// テクスチャメモリ作成
+
+	nBmpLoc = 0;
+	while( ProcessEvent() && !KBHit() ) {
+		ReloadGraph( szBMPs[nBmpLoc], hTex );					// グラフィックリロード
+		for ( i = 640; i >= -640; i -= 10 ) {					// スクロールループ
+			HCls();
+			DrawMem( i, 0, hTex );
+			Flip();
+			if ( !ProcessEvent() || KBHit() ) break;
+		}
+		nBmpLoc++;
+		if ( !szBMPs[nBmpLoc] ) nBmpLoc = 0;
+	}
+
+	EndGraph();													// グラフィック使用の終了
+	return 0;
+}
+
+
+２－３．画像描画関係関数 -----------------------------------------------------
+２－３－１．ＤｒａｗＭｅｍ
+　　［機能］
+　　　画像の描画
+
+　　［文法］
+　　　int DrawMem( int x, int y, int hPicture );
+
+　　　x：画像を描画するｘ座標
+　　　y：画像を描画するｙ座標
+　　　hPicture：画像を識別するハンドル
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　LoadTexture関数などでメモリに格納された画像を、指定位置に描画します。
+　　　ＶＲＡＭにあるデータを描画するため、LoadBmp関数よりもはるかに高速に
+　　　描画を行うことができます。
+
+　　［使用例］
+
+// RISKW.BMPの画像を横スクロールさせる
+
+#include <windows.h>
+#include "amgame.h"												// AMGAMEヘッダ
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+	int				i, hRisk;
+
+	SetGlobalMode( AMMODE_WINDOWED );							// ウィンドウモードに
+	if( !InitGraph( hInstance ) ) return -1;					// グラフィック初期化
+
+	hRisk = LoadTexture( "RISKW.BMP" );							// グラフィックロード
+
+	for ( i = -640; i <= 0; i += 10 ) {
+		HCls();													// 画面クリア
+		DrawMem( i, 0, hRisk );									// グラフィック描画
+		Flip();													// 描画ページ表示
+		if ( !ProcessEvent() ) break;							// イベント処理
+	}
+
+	GetCh();													// キー待ち
+	EndGraph();													// グラフィック終了
+    return 0;
+}
+
+
+２－３－２．ＤｒａｗＭｅｍＴｈ
+　　［機能］
+　　　画像の描画(アルファブレンド付き)
+
+　　［文法］
+       DrawMemTh( int x, int y, int hPicture );
+
+　　　x：画像を描画するｘ座標
+　　　y：画像を描画するｙ座標
+　　　hPicture：画像を識別するハンドル
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　LoadTexture関数などでメモリに格納された画像を、指定位置に描画し
+　　　ます。その際、画像のαチャンネルを用いてアルファブレンドがされます。
+　　　それ以外は、DrawMem関数と同じです。
+
+　　［使用例］
+
+// 重ね合わせスクロール
+
+#include <windows.h>
+#include "amgame.h"												// AMGAMEヘッダ
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+	int							i;
+	int							hBack, hPerson;					// 画像ハンドル
+
+	SetGlobalMode( AMMODE_WINDOWED );							// ウィンドウモードに
+	if( !InitGraph( hInstance ) ) return -1;					// グラフィック初期化
+
+	hBack = LoadTexture( "PASSAGEH.BMP" );						// 背景ロード
+	hPerson = LoadTexture( "ANNA_H.BMP" );						// 人物ロード
+
+	for ( i = 640; i >= 0; i -= 10 ) {
+		HCls();													// 画面クリア
+		DrawMem( i, 0, hBack );									// 背景描画
+		DrawMemTh( i * 2, 0, hPerson );							// 人物描画
+		Flip();													// 描画ページ表示
+		if ( !ProcessEvent() ) break;							// イベント処理
+	}
+
+	GetCh();													// キー待ち
+	EndGraph();													// グラフィック終了
+    return 0;
+}
+
+
+２－３－３．ＤｒａｗＭｅｍＬＲ
+　　［機能］
+　　　画像の描画（左右反転）
+
+　　［文法］
+　　　int  DrawMemLR( int x, int y, int hPicture );
+
+　　　x：画像を描画するｘ座標
+　　　y：画像を描画するｙ座標
+　　　hPicture：画像を識別するハンドル
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　LoadTexture関数などでメモリに格納された画像を、左右反転して指
+　　　定位置に描画します。
+
+　　［使用例］
+
+// RISKW.BMPの画像を反転横スクロール
+
+#include <windows.h>
+#include "amgame.h"												// AMGAMEヘッダ
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+	int							i, hRisk;
+
+	SetGlobalMode( AMMODE_WINDOWED );							// ウィンドウモードに
+	if ( !InitGraph( hInstance ) ) return -1;					// グラフィック初期化
+
+	hRisk = LoadTexture( "RISKW.BMP" );							// グラフィックロード
+
+	for ( i = -640; i <= 0; i += 10 ) {
+		HCls();													// 画面クリア
+		DrawMemLR( i, 0, hRisk );								// グラフィック描画
+		Flip();													// 描画ページ表示
+		if ( !ProcessEvent() ) break;							// イベント処理
+	}
+
+	GetCh();										// キー待ち
+	EndGraph();										// グラフィック終了
+    return 0;
+}
+
+
+２－３－４．ＤｒａｗＭｅｍＴｈＬＲ
+　　［機能］
+　　　画像の描画（左右反転、透明処理付き）
+
+　　［文法］
+      int  DrawMemThLR( int x, int y, int hPicture );
+
+　　　x：画像を描画するｘ座標
+　　　y：画像を描画するｙ座標
+　　　hPicture：画像を識別するハンドル
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　LoadTexture関数などでメモリに格納された画像を、左右反転して
+　　　アルファブレンドしながら指定位置に描画します。
+
+　　［使用例］
+　　　省略
+
+
+２－３－５．ＤｒａｗＭｅｍＥｘｐ
+　　［機能］
+　　　画像の描画（拡大縮小処理付き）
+
+　　［文法］
+　　　int  DrawMemExp( int x1, int y1, int x2, int y2, int hPicture );
+
+　　　x1：画像を描画する左上ｘ座標
+　　　y1：画像を描画する左上ｙ座標
+　　　x2：画像を描画する右下ｘ座標
+　　　y2：画像を描画する右下ｙ座標
+　　　hPicture：画像を識別するハンドル
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　LoadTexture関数などでメモリに格納された画像を、指定された座標に
+　　　合うように拡大縮小して描画します。
+　　　　例えば、１６０×１２０ドットの画像をロードし、それをx1 = 0,
+　　　y1 = 0, x2 = 320, y2 = 480として描画すると、縦２倍、横４倍に
+　　　拡大されて描画されます。また、x1 > x2 とすれば左右反転の画像が、
+　　　y1 > y2 とすれば上下反転の画像が描画されます。
+
+　　［使用例］
+
+// RISKW.BMPを縮小・拡大表示
+
+#include <windows.h>
+#include "amgame.h"												// ＡＧＬＩＢヘッダ
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+	int			i;
+	int			hBmp;
+
+	SetGlobalMode( AMMODE_WINDOWED );							// ウィンドウモードに
+	if ( !InitGraph( hInstance ) ) return 0;					// グラフィックの初期化
+
+	hBmp = LoadTexture( "Anna_H.BMP" );							// 絵のロード
+
+	for ( i = 0; i <= 1920 * 6; i += 24 ) {
+		HCls();													// 画面のクリア
+		DrawMemExp( 320 - i / 6, 240 - i / 8,
+					320 + i / 6, 240 + i / 8, hBmp );			// 拡大描画
+		Flip();
+		if ( !ProcessEvent() ) break;
+	}
+
+	GetCh();													// キー待ち
+	EndGraph();													// グラフィック使用の終了
+	return 0;
+}
+
+
+２－３－６．ＤｒａｗＭｅｍＴｈＥｘｐ
+　　［機能］
+　　　画像の描画（拡大縮小、透明処理付き）
+
+　　［文法］
+      int  DrawMemThExp( int x1, int y1, int x2, int y2, int hPicture );
+
+　　　x1：画像を描画する左上ｘ座標
+　　　y1：画像を描画する左上ｙ座標
+　　　x2：画像を描画する右下ｘ座標
+　　　y2：画像を描画する右下ｙ座標
+　　　hPicture：画像を識別するハンドル
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　LoadTexture関数などでメモリに格納された画像を、指定された座標に
+　　　合うように拡大縮小して、アルファブレンドしながら描画します。
+
+　　［使用例］
+
+// 重ね合わせ拡大縮小
+
+#include <windows.h>
+#include "amgame.h"												// ＡＧＬＩＢヘッダ
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+	int							i;
+	int							hBack;
+	int							hBmp;
+
+	SetGlobalMode( AMMODE_WINDOWED );							// ウィンドウモードに
+	if ( !InitGraph( hInstance ) ) return 0;					// グラフィックの初期化
+
+	hBack = LoadTexture( "PASSAGEH.BMP" );						// 絵のロード
+	hBmp = LoadTexture( "ANNA_H.BMP" );							// 絵のロード
+
+	SetDrawMode( AMDRAW_BILINEAR, 0 );							// バイリニアフィルタ
+	for ( i = -1920 * 5; i <= 1920 * 5; i += 48 ) {
+		DrawMem( 0, 0, hBack );									// 背景通常描画
+		DrawMemThExp( 320 - i / 6, 240 - i / 8,
+					  320 + i / 6, 240 + i / 8, hBmp );
+		Flip();
+		if ( !ProcessEvent() ) break;
+	}
+
+	GetCh();													// キー待ち
+	EndGraph();													// グラフィック使用の終了
+	return 0;
+}
+
+
+２－３－７．ＤｒａｗＭｅｍＲｏｔ
+　　［機能］
+　　　画像の回転描画
+
+　　［文法］
+　　  int DrawMemRot( int nCenX1, int nCenY1, int nCenX2, int nCenY2,
+                      double fAngle, double fExRate,
+                      int hAmTexture );
+
+　　　nCenX1, nCenY1：画像の回転中心
+　　　nCenX2, nCenY2：画面上の回転中心
+　　　fAngle：画像の回転角（単位：ラジアン）
+　　　fExRate：画像の拡大率（等倍が１）
+　　　hAmTexture：テクスチャを識別するハンドル
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　LoadTexture関数などでメモリに格納された画像を、回転変換及び
+　　　拡大縮小をしながら描画します。
+　　　　画像が描画される位置は、指定された画像の回転中心と画面上の回転
+　　　中心によって決まります。具体的には、２つの回転中心が一致するような
+　　　位置に描画がされることになります。また、fAngle で指定する回転角は
+　　　ラジアンで、fExRate で指定する拡大率は等倍を１として指定します。
+
+　　［使用例］
+
+// 回転・拡大／縮小描画
+
+#include <stdio.h>
+#include <windows.h>
+#include <math.h>
+#include "amgame.h"												// ＡＧＬＩＢヘッダ
+
+#define PI				3.14159265358979						// 円周率
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+	int			hTex, hTex2;									// テクスチャハンドル
+	double		fAngle = 0;										// 角度
+
+	if ( !InitGraph( hInstance ) ) return 0;					// グラフィックの初期化
+
+	hTex  = LoadTexture( "Passageh.bmp" );						// テクスチャロード
+	hTex2 = LoadTexture( "Anna_h.bmp" );
+
+	SetDrawMode( AMDRAW_BILINEAR, 0 );							// バイリニアフィルタ指定
+	while ( ProcessEvent() && !( CheckKey( AMINPUT_MULT ) & KEYIN_ESC ) ) {
+		HCls();
+		DrawMemRot( 0, 0, 320, 240, -fAngle, 1.0, hTex );
+		DrawMemThRot( 320, 240, 320, 240, fAngle, 2 * sin( fAngle * .79 ) + 2, hTex2 );
+		fAngle += PI / 100.0;
+		Flip();
+	}
+
+	EndGraph();													// グラフィック使用の終了
+	return 0;
+}
+
+
+２－３－８．ＤｒａｗＭｅｍＴｈＲｏｔ
+　　［機能］
+　　　画像の回転描画(アルファブレンド付き)
+
+　　［文法］
+　　  int DrawMemThRot( int nCenX1, int nCenY1, int nCenX2, int nCenY2,
+                        double fAngle, double fExRate,
+                        int hAmTexture );
+
+　　　nCenX1, nCenY1：画像の回転中心
+　　　nCenX2, nCenY2：画面上の回転中心
+　　　fAngle：画像の回転角（単位：ラジアン）
+　　　fExRate：画像の拡大率（等倍が１）
+　　　hAmTexture：テクスチャを識別するハンドル
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　LoadTexture関数などでメモリに格納された画像を、回転変換・拡大縮小
+　　　及びアルファブレンド処理をしながら描画します。
+　　　アルファブレンド処理をする点を除けば、DrawMemRot関数と同様の動作を
+　　　します。
+
+　　［使用例］
+　　　　２－３－７．ＤｒａｗＭｅｍＲｏｔの使用例参照
+
+
+２－３－９．ＤｒａｗＭｅｍＦｌｅｘ
+　　［機能］
+　　　画像変形描画 
+
+　　［文法］
+　　  int DrawMemFlex( int x1, int y1, int x2, int y2,
+                       int x3, int y3, int x4, int y4,
+                       int hAmTexture );
+
+　　　x1, y1：画像を描画する左上座標
+　　　x2, y2：画像を描画する右上座標
+　　　x3, y3：画像を描画する左下座標
+　　　x4, y4：画像を描画する右下座標
+　　　hAmTexture：画像を識別するハンドル
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　LoadTexture関数などでメモリに格納された画像を、指定された４点に
+　　　合わせて変形描画します。
+　　　　４点指定での自由変形においては、画像全体を単一の一次変換で変換
+　　　することはできないため、基本的には以下のようなアルゴリズムで変形
+　　　が行われます。
+　　　
+　　　１.画像を、その画像の右上と左下を結ぶ対角線で２分割する
+　　　２.対角線より上の部分は、描画する左上・右上・左下座標の３点から
+         決まる変換行列により変形される
+　　　３.対角線より下の部分は、描画する右上・左下・右下座標の３点から
+         決まる変換行列により変形される
+      
+      　このようなアルゴリズムを取るため、単一の一次変換で対応できない
+      ような変形を行った場合には、対角線に沿って「折り目」のようなもの
+      が入る場合があります。
+      
+　　［使用例］
+　　　　サンプルプログラム参照
+
+
+２－３－１０．ＤｒａｗＭｅｍＴｈＦｌｅｘ
+　　［機能］
+　　　画像変形描画
+
+　　［文法］
+　　  int DrawMemThFlex( int x1, int y1, int x2, int y2,
+                         int x3, int y3, int x4, int y4,
+                         int hAmTexture );
+
+　　　x1, y1：画像を描画する左上座標
+　　　x2, y2：画像を描画する右上座標
+　　　x3, y3：画像を描画する左下座標
+　　　x4, y4：画像を描画する右下座標
+　　　hAmTexture：画像を識別するハンドル
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　LoadTexture関数などでメモリに格納された画像を、指定され
+　　　た４点に合わせて変形描画します。その際、アルファブレンド処理も
+　　　併せて行いますが、その点を除けばDrawMemFlex関数と同様の動作を
+　　　します。
+
+　　［使用例］
+
+// ＡＮＮＡＨ．ＢＭＰを変形描画
+
+#include <windows.h>
+#include <math.h>
+#include "amgame.h"												// ＡＧＬＩＢヘッダ
+
+#define PI				3.14159265358979						// 円周率
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+	int			hPerson, hBack;
+	int			x1, y1, x2, y2;
+	int			x3, y3;
+	double		fAngle = 0;
+
+	SetGlobalMode( AMMODE_WINDOWED );							// ウィンドウモードに
+	if ( !InitGraph( hInstance ) ) return 0;					// グラフィックの初期化
+
+	hPerson = LoadTexture( "Anna_h.bmp" );
+	hBack   = LoadBmpMem( "Passageh.bmp" );
+
+	SetDrawMode( AMDRAW_BILINEAR, 0 );							// バイリニアフィルタ
+	while ( ProcessEvent() && !( CheckKey( AMINPUT_MULT ) & KEYIN_ESC ) ) {
+		DrawMem( 0, 0, hBack );									// 背景描画
+		x1 = ( int )( 300 * cos(  fAngle ) ) + 640;				// 座標回す
+		y1 = ( int )( 300 * sin(  fAngle ) );
+		x2 = ( int )( 300 * cos( -fAngle * .93 ) );
+		y2 = ( int )( 300 * sin( -fAngle * .93 ) ) + 480;
+		x3 = x1 + x2;											// 一次変換で表せる位置へ
+		y3 = y1 + y2;
+		fAngle += PI / 50;										// 角度進める
+		DrawMemThFlex( 0, 0, x1, y1, x2, y2, x3, y3, hPerson );
+		Flip();
+	}
+
+	EndGraph();													// グラフィック使用の終了
+	return 0;
+}
+
+
+
+２－４．その他のＢＭＰ関係関数 -----------------------------------------------
+２－４－１．ＧｅｔＰｉｃｔｕｒｅＳｉｚｅ
+　　［機能］
+　　　メモリイメージのサイズの取得 
+
+　　［文法］
+　　　int  GetPictureSize( int hPicture, int *nWidth, int *nHeight );
+
+　　　hPicture：画像を識別するハンドル
+　　　nWidth：画像の幅を受け取るint型変数へのポインタ
+　　　nHeight：画像の高さを受け取るint型変数へのポインタ
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　LoadTexture関数、LoadMovieMem関数などでメモリに格納された画像や
+　　　ムービーのサイズ（幅と高さ）を取得します。
+
+　　［使用例］
+
+// RISKW.BMPの幅と高さ表示
+
+#include <windows.h>
+#include <stdio.h>
+#include "amgame.h"
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+	int			hBmp;											// ＢＭＰハンドル
+	int			nWidth, nHeight;								// 幅と高さ
+	char		OutStr[80];										// 表示文字列
+
+	SetGlobalMode( AMMODE_WINDOWED );							// ウィンドウモードに
+	if ( !InitGraph( hInstance ) ) return -1;					// グラフィック初期化
+
+	hBmp = LoadTexture( "RISKW.BMP" );							// 絵のロード
+	DrawMem( 0, 0, hBmp );										// 絵の描画
+	GetPictureSize( hBmp, &nWidth, &nHeight );					// 絵のサイズ取得
+	sprintf( OutStr, "幅 = %d  高さ = %d", nWidth, nHeight );
+	DrawString( 0, 0, OutStr, GetColor( 255, 255, 255 ) );		// サイズ表示
+	Flip();
+
+	GetCh();													// キー待ち
+	EndGraph();													// グラフィック終了
+	return 0;
+}
+
+
+２－４－２．ＧｅｔＤｉｓｐＧｒａｐｈ
+　　［機能］
+　　　現在表示されているグラフィックの取得
+
+　　［文法］
+　　　int  GetDispGraph( int hPicture );
+
+　　　hPicture：画像を受け取る画像用メモリを識別するハンドル
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　現在表示されている画像を、指定された画像用メモリに格納します。
+　　　指定できるハンドルは、MakeTextureMem関数で作成されたものです。
+　　　　なお、指定する画像メモリは、画面解像度と等しいサイズのものにし
+　　　て下さい。サイズが等しくなかった場合、原則的には拡大縮小でサイズ
+　　　調節されますが、ディスプレイドライバの種類によっては予期せぬ結果
+　　　になる場合もあります。
+
+　　［使用例］
+　　  省略
+
+
+２－４－３．ＩｎｉｔＴｅｘｔｕｒｅ
+　　［機能］
+　　　全画像用メモリの開放
+
+　　［文法］
+　　　int  InitTexture( void );
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　LoadTexture関数などでメモリに格納されたテクスチャ画像をすべて
+　　　無効にし、占有されていたテクスチャメモリを開放します。ステージ切
+　　　り替えなどで、新たなテクスチャ画像をロードしたいときなどに使用し
+　　　ます。
+
+　　［使用例］
+　　　省略
+
+
+２－４－４．ＳａｖｅＢｍｐ
+　　［機能］
+　　　ビットマップデータのセーブ
+
+　　［文法］
+　　　int SaveBmp( int x1, int y1, int x2, int y2, char *filename );
+
+　　　x1：セーブする領域の左上のｘ座標
+　　　y1：セーブする領域の左上のｙ座標
+　　　x2：セーブする領域の右下のｘ座標
+　　　y2：セーブする領域の右下のｙ座標
+　　　filename：ＢＭＰファイルのファイル名
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　画面上の指定された領域にある画像データを、指定されたファイルに
+　　　ＢＭＰ形式でセーブします。形式としては、ＲＬＥ圧縮なしのＢＭＰファ
+　　　イルとなります。また、ビットデプスは２４ビットになります。
+
+　　［使用例］
+　　　省略
+
+
+２－４－５．ＳｅｔＤｒａｗＭｏｄｅ
+　　［機能］
+　　　描画モードの設定
+
+　　［文法］
+　　　int  SetDrawMode( int lDrawMode, int nParam );
+
+　　　lDrawMode：描画モード指定コード
+           AMDRAW_NEAREST       : 描画ピクセルをニアレストネイバー法で
+                                  決定する（デフォルト）
+                                  nParamの値は無視される
+           AMDRAW_BILINEAR      : 描画ピクセルをバイリニア法で決定する
+                                  （バイリニアフィルタリング）
+                                  nParamの値は無視される
+                                  
+           AMDRAW_NOBLEND       : ブレンディングを行わない
+                                  （デフォルト）
+                                  nParamの値は無視される
+           AMDRAW_ALPHABLEND    : アルファブレンディングを行う
+                                  nParamの値は、α値となる(0～255)
+           AMDRAW_ADDBLEND      : 加算によるブレンディングを行う
+                                  nParamの値は、以下の式でのxとなる
+                                  (0～255)
+                                  W = D + x * S / 255
+                                  W : 書き込まれる輝度値
+                                  D : 元あったピクセルの輝度値
+                                  x : nParam の値
+                                  S : 書き込む画像のピクセルの輝度値
+
+           AMDRAW_TEX_NOREPEAT  : テクスチャ座標が絵の大きさを超えたと
+                                  き、テクスチャを繰り返し使わない
+                                  （デフォルト）
+           AMDRAW_TEX_REPEAT    : テクスチャ座標が絵の大きさを超えたと
+                                  き、テクスチャを繰り返し使う
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　画像を描画するときに適用する画像モードを設定します。
+　　　　ここで指定された描画モードは、再び SetDrawMode関数で描画モード
+　　　が変更されるまで有効です。現在のところ、指定可能な描画モードは３
+　　　カテゴリ７個で、適用ピクセルの決定法とブレンドモードを指定します。
+        AMDRAW_NEAREST と AMDRAW_BILINEAR は、描画ピクセルの決定法を制
+      御します。AMDRAW_NEAREST を指定するとニアレストネイバー法が、
+      AMDRAW_BILINEAR を指定するとバイリニア法が適用されます。特にテク
+      スチャ画像を大きく拡大する場合には、バイリニア法の方がはるかにき
+      れいに拡大することができます。
+        AMDRAW_NOBLEND、AMDRAW_ALPHABLEND、AMDRAW_ADDBLEND の３つは、
+      ブレンドモードを指定します。これらを指定したときにはそれぞれ、
+      ブレンドなし、アルファブレンディング、加算による
+      ブレンディングが行われるようになります。その際、nParam の値は、ブ
+      レンディングパラメータとして使用されます。ブレンディングパラメー
+      タは 0～255 の値で、大きい値ほど絵が濃く描画されます。
+　　　　AMDRAW_TEX_NOREPEAT と AMDRAW_TEX_REPEAT は、テクスチャマップ
+　　　の際にＵＶ座標がテクスチャからはみ出た場合の挙動を制御します。
+　　　AMDRAW_TEX_NOREPEAT を指定すると、同じテクスチャを繰り返し出すの
+　　　ではなく、テクスチャの端を延長して描画します。一方、
+　　　AMDRAW_TEX_REPEAT を指定すると、同じテクスチャが繰り返し描画され
+　　　ます。ただし、AMDRAW_TEX_REPEAT を設定にすると、DrawMemなどの
+　　　通常の描画関数による描画が、意図しない結果になる場合があります。
+
+　　［使用例］
+
+// アルファブレンディング描画
+
+#include <windows.h>
+#include "amgame.h"												// ＡＧＬＩＢヘッダ
+
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+	int			hTex, hTex2;									// テクスチャハンドル
+	int			nAlpha, nAlphaVel;								// α値制御用
+
+	SetGraphMode( 640, 480, 16 );
+	if ( !InitGraph( hInstance ) ) return 0;					// グラフィックの初期化
+
+	hTex  = LoadTexture( "Passageh.bmp" );						// テクスチャロード
+	hTex2 = LoadTexture( "Anna_h.bmp" );
+
+	nAlpha = 0;  nAlphaVel = 4;									// α初期値
+	while ( ProcessEvent() && !KBHit() ) {
+		SetDrawMode( AMDRAW_NOBLEND, 0 );						// ブレンドなし
+		DrawMem( 0, 0, hTex );
+		SetDrawMode( AMDRAW_ALPHABLEND, nAlpha );				// アルファブレンド
+		DrawMemTh( 0, 0, hTex2 );
+		nAlpha += nAlphaVel;									// α値制御
+		if ( nAlpha < 0 ) {
+			nAlpha = 0;
+			nAlphaVel = -nAlphaVel;
+		}
+		if ( nAlpha > 255 ) {
+			nAlpha = 255;
+			nAlphaVel = -nAlphaVel;
+		}
+		Flip();
+		if ( !ProcessEvent() ) break;
+	}
+
+	EndGraph();													// グラフィック使用の終了
+	return 0;
+}
+
+
+３．図形等描画関係関数 -------------------------------------------------------
+
+３－１．ＤｒａｗＰｉｘｅｌ
+　　［機能］
+　　　１点の描画
+
+　　［文法］
+　　　void DrawPixel( int x, int y, int color );
+
+　　　x：描画する点のｘ座標
+　　　y：描画する点のｙ座標
+　　　color：描画する点の色
+
+　　［戻り値］
+　　　なし
+
+　　［解説］
+　　　　画面上の指定座標に、１点を描画します。
+
+　　［使用例］
+
+// グラデーションを描画する
+
+#include <windows.h>
+#include "amgame.h"												// AMGAMEヘッダ
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow)
+{
+	int							x, y;
+	int							nBright;						// 色の明るさ
+
+	SetGlobalMode( AMMODE_WINDOWED );							// ウィンドウモードに
+	if( !InitGraph( hInstance ) ) return -1;					// グラフィック初期化
+
+	for ( y = 0; y < 480; y++ ) {
+		for ( x = 0; x < 640; x++ ) {
+			nBright = ( x + y ) & 0xff;							// 明るさ決定
+			DrawPixel( x, y, GetColor( nBright, nBright, 255 ) );
+		}
+		if ( !ProcessEvent() ) break;							// イベント処理
+    }
+	Flip();														// 表示
+
+    GetCh();
+    EndGraph();													// グラフィック終了
+    return 0;
+}
+
+
+３－２．ＧｅｔＰｉｘｅｌ
+　　［機能］
+　　　指定点のパレット番号取得
+
+　　［文法］
+      int  GetPixel( int x, int y );
+
+　　　x：色を取得する点のｘ座標
+　　　y：色を取得する点のｙ座標
+
+　　［戻り値］
+　　　取得したドットのパレット番号
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　画面上の指定座標のドットのパレット番号を返します。画面外の座標
+　　　を指定すると、AMERR_INVALIDVALUEエラーになります。
+
+　　［使用例］
+　　　省略
+
+
+３－３．ＤｒａｗＦＢｏｘ
+　　［機能］
+　　　中が詰まった四角形の描画
+
+　　［文法］
+      void DrawFBox(int x1, int y1, int x2, int y2, int color);
+
+　　　x1：描画する四角形の左上のｘ座標
+　　　y1：描画する四角形の左上のｙ座標
+　　　x2：描画する四角形の右下のｘ座標
+　　　y2：描画する四角形の右下のｙ座標
+　　　color：描画する四角形の色
+
+　　［戻り値］
+　　　なし
+
+　　［解説］
+　　　　中が詰まった四角形を描画します。ゲームでの用途としては、何かを
+　　　動かすときに、前に描いた部分を背景色で塗りつぶす場合などが考えら
+　　　れるでしょう。
+
+　　［使用例］
+
+// 四角形の描画
+
+#include <windows.h>
+#include "amgame.h"												// ＡＧＬＩＢヘッダ
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+	SetGlobalMode( AMMODE_WINDOWED );							// ウィンドウモードに
+    if ( !InitGraph( hInstance ) ) return 0;					// グラフィックの初期化
+
+    DrawFBox( 100, 100, 540, 380, GetColor(   0, 255, 255 ) );	// 四角形描画
+	Flip();														// 表示
+
+    GetCh();													// キー待ち
+    EndGraph();													// グラフィック使用の終了
+    return 0;
+}
+
+
+３－４．ＤｒａｗＴＢｏｘ
+　　［機能］
+　　　半透明四角形の描画
+
+　　［文法］
+      int DrawTBox( int x1, int y1, int x2, int y2, int color );
+
+　　　x1：描画する四角形の左上のｘ座標
+　　　y1：描画する四角形の左上のｙ座標
+　　　x2：描画する四角形の右下のｘ座標
+　　　y2：描画する四角形の右下のｙ座標
+　　　color：描画する四角形の色
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　指定された色の半透明四角形を描画します。半透明の方式としては、
+　　　単純平均が用いられます。
+
+　　［使用例］
+
+// 半透明ボックスの描画
+
+#include <windows.h>
+#include "amgame.h"												// ＡＧＬＩＢヘッダ
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+	SetGlobalMode( AMMODE_WINDOWED );							// ウィンドウモードに
+	if ( !InitGraph( hInstance ) ) return 0;					// グラフィックの初期化
+
+	LoadBmp( 0, 0, "RISKW.BMP" );								// 絵のロード
+
+	DrawTBox( 80, 300, 560, 430, GetColor( 255, 0, 128 ) );		// 半透明ボックス
+
+	Flip();														// 表示
+
+	GetCh();													// キー待ち
+	EndGraph();													// グラフィック使用の終了
+	return 0;
+}
+
+
+３－５．ＤｒａｗＳｔｒｉｎｇ
+　　［機能］
+　　　文字列の描画
+
+　　［文法］
+      void DrawString(int x, int y, char *string, int color);
+
+　　　x：描画する文字列の左上のｘ座標
+　　　y：描画する文字列の左上のｙ座標
+　　　*string：描画する文字列
+　　　color：描画する文字列の色
+
+　　［戻り値］
+　　　なし
+
+　　［解説］
+　　　　指定された位置に、指定された色の文字列を描画します。文字の大き
+　　　さは、SetFontSize関数でサイズが変更されていなければ16ドットとなり
+　　　ます。また、画面端での文字列の折り返しは行われず、クリッピングさ
+　　　れます。
+　　　　なお、この関数で指定する文字列の色は、実際にＶＲＡＭに書き込ま
+　　　れる値です。従って、その色はGetColor関数が返してきたものを使う
+　　　必要があります。
+
+　　［使用例］
+
+// （５０，２０）の位置に"Ｈｅｌｌｏ，Ｗｏｒｌｄ．"と表示
+
+#include <windows.h>
+#include "amgame.h"
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+	SetGlobalMode( AMMODE_WINDOWED );							// ウィンドウモードに
+    if( !InitGraph( hInstance ) ) return -1;					// グラフィック初期化
+
+	LoadBmp( 0, 0, "Riskw.bmp" );								// 背景ロード
+	DrawString( 50, 20, "Ｈｅｌｌｏ，Ｗｏｒｌｄ．", GetColor( 255, 255, 255 ) );	// 文字列描画
+	Flip();														// 表示
+
+	GetCh();													// キー待ち
+	EndGraph();													// グラフィック終了
+	return 0;
+}
+
+
+３－６．ＳｅｔＦｏｎｔＳｉｚｅ
+　　［機能］
+　　　フォントサイズの設定
+
+　　［文法］
+      int SetFontSize( int NFontSize );
+
+　　　NFontSize：フォントサイズ(ドット単位)
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　DrawString関数で使われる文字フォントの大きさを、ドット単位で
+　　　指定します。
+
+　　［使用例］
+　　
+// 様々な大きさの文字列を描画する
+
+#include <windows.h>
+#include <stdio.h>
+#include "amgame.h"
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow)
+{
+	int							i, y;
+	char						szOutStr[80];					// 出力文字列
+
+	SetGlobalMode( AMMODE_WINDOWED );
+	if ( !InitGraph( hInstance ) ) return FALSE;				// グラフィック初期化
+
+	LoadBmp( 0, 0, "RISKW.BMP" );								// 画像ロード
+
+	y = 0;
+	for ( i = 8; i <= 60; i += 4 ) {
+		SetFontSize( i );										// フォントサイズ設定
+		sprintf( szOutStr, "テスト用の文字出力(%d)", i );
+		DrawString( 0, y, szOutStr, GetColor( 255, 255, 255 ) );	// 文字列描画
+		y += i;
+		if ( !ProcessEvent() ) break;
+	}
+	Flip();
+
+	GetCh();
+	EndGraph();													// グラフィック使用終了
+	return 0;
+}
+
+
+３－７．ＧｅｔＣｏｌｏｒ
+　　［機能］
+　　　色コードの取得
+
+　　［文法］
+      int GetColor( int nRed, int nGreen, int nBlue );
+
+　　　nRed  ：赤の輝度( 0～255 )
+　　　nGreen：緑の輝度( 0～255 )
+　　　nBlue ：青の輝度( 0～255 )
+
+　　［戻り値］
+　　　指定された色に最も近い色コード
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　指定された赤、緑、青の輝度で決まる色に最も近い色の色コードを返
+　　　します。トゥルーカラー（３２ビット）では指定されたそのままの色の
+　　　カラーコードが返ります。ハイカラー（１６ビット）モードでは、最も
+　　　近い色のカラーコードが返ります。
+　　　　ここで返された値は、ＶＲＡＭにそのまま書き込める形式になってお
+　　　り、SetPixel関数、DrawFBox関数、DrawString関数などで用いる色として
+　　　指定することができます。
+　　　　なお、Ｗｉｎｄｏｗｓマシンにおいては、ビデオカードの種類によっ
+　　　てＲＧＢの並ぶ順番やＲＧＢそれぞれのビット幅がまちまちなので、
+　　　色指定をする際には必ずこの関数で生成した色コードを用いるように
+　　　して下さい。
+
+　　［使用例］
+
+// 色見本を表示する
+// トゥルーカラーでも試してみると良い。
+
+#include <windows.h>
+#include "amgame.h"
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+	int			x, y;
+
+	SetGraphMode( 640, 480, 16 );					// ハイカラーモード
+	if ( !InitGraph( hInstance ) ) return FALSE;	// グラフィック初期化
+
+	for ( y = 0; y < 256; y++ ) {
+		for ( x = 0; x < 256; x++ ) {
+			DrawPixel( x, y, GetColor( 255, x, y ) );	// 描画
+		}
+	}
+	Flip();											// 表示
+
+	GetCh();
+	EndGraph();										// グラフィック使用終了
+	return 0;
+}
+
+
+４．トーンコントロール関係 -----------------------------------------
+
+４－１．ＭｏｖｅＰａｌｅｔｔｅ
+　　［機能］
+　　　色調の変化
+
+　　［文法］
+      void MovePalette( int sgreen, int sred, int sblue,
+                        int dgreen, int dred, int dblue, int speed );
+
+　　　sgreen：変化前の緑の明るさ（％）
+　　　sred：変化前の赤の明るさ（％）
+　　　sblue：変化前の青の明るさ（％）
+　　　dgreen：変化後の緑の明るさ（％）
+　　　dred：変化後の赤の明るさ（％）
+　　　dblue：変化後の青の明るさ（％）
+　　　speed：変化時間（単位フレーム、つまり１／６０秒）
+
+　　［戻り値］
+　　　なし
+
+　　［解説］
+　　　　現在表示されている画面全体の色調を、sgreen,sred,sblueで指定さ
+　　　れる色調から、dgreen,dred,dblueで指定される色調へと、指定された
+　　　時間をかけてなめらかに変化させます。おのおのの明るさは％で指定し
+　　　ますが、１００％以上、あるいはマイナスの明るさを指定することはで
+　　　きません。
+
+　　　なお、引数speedに０を指定すると、この関数は何もしません。
+
+　　［使用例］
+
+// 約１秒かけて画面の色を赤っぽくする
+
+#include <windows.h>
+#include "amgame.h"
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+	SetGlobalMode( AMMODE_WINDOWED );							// ウィンドウモード
+	if ( !InitGraph( hInstance ) ) return -1;					// DirectDraw初期化
+
+	LoadBmp( 0, 0, "RISKW.BMP" );								// 画像ロード
+	Flip();														// 表示
+	GetCh();
+	MovePalette( 100, 100, 100, 0, 100, 50, 60 );				// 色変化
+
+	GetCh();													// キー待ち
+	EndGraph();													// グラフィック終了
+	return 0;
+}
+
+
+４－２．ＳｅｔＤｒａｗＢｒｉｇｈｔ
+　　［機能］
+　　　描画明度の設定
+
+　　［文法］
+　　　int  SetDrawBright( int nRedBright, int nGreenBright,
+                          int nBlueBright );
+
+　　　nRedBright：赤の明るさ（‰）
+　　　nGreenBright：緑の明るさ（‰）
+　　　nBlueBright：青の明るさ（‰）
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　以降に描画されるテクスチャ画像の描画明度を‰（パーミリ）で指定
+　　　します。
+
+　　［使用例］
+
+// PASSAGEH.BMPを明度変更しながら描画
+
+#include <windows.h>
+#include "amgame.h"									// ＡＧＬＩＢヘッダ
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+	int			hBmp1, hBmp2;
+	int			nBright, nBrVel;
+
+	SetGlobalMode( AMMODE_WINDOWED );				// ウィンドウモード
+	if ( !InitGraph( hInstance ) ) return 0;		// グラフィックの初期化
+
+	hBmp1 = LoadTexture( "PASSAGEH.BMP" );			// 絵のロード
+	hBmp2 = LoadTexture( "ANNA_H.BMP" );			// 絵のロード
+
+	nBright = 0;  nBrVel = 20;
+	while( ProcessEvent() && !KBHit() ) {
+		SetDrawBright( nBright, nBright, 1000 );
+		DrawMem( 0, 0, hBmp1 );						// 背景描画
+		SetDrawBright( 1000, 1000, 1000 );
+		DrawMemTh( 0, 0, hBmp2 );					// 人物描画
+		Flip();
+		nBright += nBrVel;
+		if ( nBright < 0 ) {
+			nBright = 0;
+			nBrVel = -nBrVel;
+		}
+		if ( nBright > 1000 ) {
+			nBright = 1000;
+			nBrVel = -nBrVel;
+		}
+	}
+
+	GetCh();										// キー待ち
+	EndGraph();										// グラフィック使用の終了
+	return 0;
+}
+
+
+
+５．その他画像関係関数 -------------------------------------------------------
+
+５－１．ＨＣｌｓ
+　　［機能］
+　　　描画画面及びＺバッファのクリア
+
+　　［文法］
+      void HCls( void );
+
+　　［戻り値］
+　　　なし
+
+　　［解説］
+　　　　現在の描画画面を、黒（パレット番号０）でクリアします。また、
+　　　Ｚバッファがある場合にはそれもクリアします。
+
+　　［使用例］
+　　　省略
+
+
+５－２．ＳｅｔＤｒａｗＡｒｅａ
+　　［機能］
+　　　クリッピング領域の設定
+
+　　［文法］
+      void SetDrawArea( int x1, int y1, int x2, int y2 );
+
+　　　x1：領域の左上のｘ座標
+　　　y1：領域の左上のｙ座標
+　　　x2：領域の右下のｘ座標
+　　　y2：領域の右下のｙ座標
+
+　　［戻り値］
+　　　なし
+
+　　［解説］
+　　　　指定された領域をクリッピング領域とし、その領域内でのみ描画が有
+　　　効になるようにします。
+
+　　［使用例］
+
+// RISKW.BMPの画像を画面の真ん中あたりだけに表示
+
+#include <windows.h>
+#include "amgame.h"												// ＡＧＬＩＢヘッダ
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+	SetGlobalMode( AMMODE_WINDOWED );							// ウィンドウモードに
+	if ( !InitGraph( hInstance ) ) return -1;					// グラフィック初期化
+   
+    SetDrawArea( 100, 100, 540, 380 );							// 描画領域設定
+    LoadBmp( 0, 0, "RISKW.BMP" );
+	Flip();
+   
+	GetCh();													// キー待ち
+	EndGraph();													// グラフィック終了
+    return 0;
+}
+
+
+５－３．ＷａｉｔＶＳｙｎｃ
+　　［機能］
+　　　ＣＲＴの垂直同期信号待ち
+
+　　［文法］
+　　　void WaitVSync( int WaitNum );
+
+　　　WaitNum：同期信号を待つ回数
+
+　　［戻り値］
+　　　なし
+
+　　［解説］
+　　　　ＣＲＴの垂直同期信号（設定にもよるが、約１／６０秒間隔で発生）
+　　　を、指定回数だけ待ちます。速度の機種依存の少ないプログラムを組み
+　　　たい場合や、画面を乱さずにパレット設定などを行いたい場合に使いま
+　　　す。
+
+　　［使用例］
+　　　省略
+
+
+５－４．Ｆｌｉｐ
+　　［機能］
+　　　描画画面の表示
+
+　　［文法］
+　　　void Flip( void );
+
+　　［戻り値］
+　　　なし
+
+　　［解説］
+　　　　描画画面の表示を行います。この命令を実行して初めて、描画した画像
+　　　は画面に表示されます。
+
+　　［使用例］
+　　　２－３－１．ＤｒａｗＭｅｍの使用例参照
+
+
+５－５．ＭａｋｅＴｅｘｔｕｒｅＭｅｍ
+　　［機能］
+　　　画像データ用のテクスチャメモリ確保
+
+　　［文法］
+　　　int MakeTextureMem( int nWidth, int nHeight, int nTexBitDepth );
+
+　　　nWidth ：確保するテクスチャメモリの幅
+　　　nHeight：確保するテクスチャメモリの高さ
+　　　nTexBitDepth：確保するテクスチャメモリのビットデプス（０、１６、
+　　　　　　　　　　３２のいずれか、０はデフォルトのビットデプス）
+
+　　［戻り値］
+　　　確保された画像メモリを識別するハンドル（必ずプラスの値）
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　画像を格納するためのテクスチャメモリを確保し、そのハンドルを返
+　　　します。
+　　　　この関数が返すハンドルは、LoadTexture関数などが返すものと同等
+　　　で、DrawMem関数やDrawMemTh関数などの描画関数に使うことができます。
+　　　また、ReloadGraph関数を用いて、この関数で確保したメモリに画像ファ
+　　　イルをロードすることもできます。
+　　　　この関数で作成されるテクスチャのビットデプスは、必ずしも
+　　　引数 nTexBitDepth で指定されたものになるとは限りません。指定され
+　　　たビットデプスのテクスチャがそのビデオカードでサポートされていな
+　　　い場合には、それに近いビットデプスのテクスチャが用いられます。ま
+　　　た、 nTexBitDepth が０ならば、現在の画面モードに最適なビットデプスが
+　　　用いられます。
+
+　　［使用例］
+　　　２－２－４．ＲｅｌｏａｄＧｒａｐｈの使用例参照
+
+
+
+６．ＰＣＭ音声関係関数 -------------------------------------------------------
+
+６－１．ＩｎｉｔＳｏｕｎｄ
+　　［機能］
+　　　サウンド機能の初期化
+
+　　［文法］
+      int InitSound( int nSoundMode );
+
+　　　nSoundMode：サウンドモード（現在は０のみ有効）
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　サウンド機能の初期化を行います。
+　　　　PlayWav、PlayMidiなどのサウンド機能を使用するためには、この
+　　　InitSoundを実行する必要があります。また、InitSoundを実行するため
+　　　には、先にInitGraphを実行しておく必要があります。
+
+　　［使用例］
+　　　６－３．ＰｌａｙＷａｖの使用例参照
+
+
+６－２．ＥｎｄＳｏｕｎｄ
+　　［機能］
+　　　サウンド機能使用の終了
+
+　　［文法］
+      int EndSound( void );
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　サウンド機能の使用を終了します。
+　　　　InitSoundを実行したら、プログラムを終了する前に必ずこのEndSound
+　　　を実行してください。実行しないでプログラムを終了すると、暴走する
+　　　場合があります。
+　　　　また、EndSoundは、必ずEndGraphより先に実行してください。
+
+　　［使用例］
+　　　６－３．ＰｌａｙＷａｖの使用例参照
+
+
+６－３．ＰｌａｙＷａｖ
+　　［機能］
+　　　ＷＡＶファイルの再生
+
+　　［文法］
+      int PlayWav( char *szFileName );
+
+　　　szFileName：ＷＡＶファイル名、あるいはリソース名
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　指定されたＷＡＶファイル、あるいはＷＡＶリソースの音声を再生し
+　　　ます。
+
+　　［使用例］
+
+// TADA.WAVというＷＡＶファイルを再生
+
+#include <windows.h>
+#include "amgame.h"
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+	if ( !InitGraph( hInstance ) ) return -1;		// グラフィック初期化
+	if ( InitSound( 0 ) < 0 ) {						// サウンド初期化
+		EndGraph();
+		return -1;
+	}
+
+	PlayWav( "TADA.WAV" );
+
+	EndSound();										// サウンド使用終了
+	EndGraph();										// グラフィック使用終了
+	return 0;
+}
+
+
+６－４．ＰｌａｙＷａｖＢａｃｋ
+　　［機能］
+　　　ＷＡＶファイルのバックグラウンド再生
+
+　　［文法］
+      int  PlayWavBack( char *szFileName );
+
+　　　szFileName：ＷＡＶファイル名
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　指定されたＷＡＶファイルの音声を再生します。PlayWavとは異なり、
+　　　この関数は再生が始まると同時に関数の実行が終了し、再生しながら他
+　　　の処理を行うことができます。また、前の音声の再生中にこの関数を実
+　　　行すると、その音声の再生を停止してから新しい音声の再生を行います。
+
+　　［使用例］
+
+// TADA.WAVというＷＡＶファイルを再生しながらスクロール
+
+#include <windows.h>
+#include "amgame.h"
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+	int			i;
+	int			hBack;											// 画像ハンドル
+
+	SetGlobalMode( AMMODE_WINDOWED );							// ウィンドウモードに
+	if ( !InitGraph( hInstance ) ) return -1;					// グラフィック初期化
+	if ( InitSound( 0 ) < 0 ) {									// サウンド初期化
+		EndGraph();
+		return -1;
+	}
+
+	hBack = LoadTexture( "PASSAGEH.BMP" );						// 背景ロード
+
+	PlayWavBack( "TADA.WAV" );									// 再生開始
+	for ( i = 640; i >= 0; i -= 10 ) {
+		HCls();													// 画面クリア
+		DrawMem( i, 0, hBack );									// 背景描画
+		Flip();													// 表示/描画ページ交換
+		if ( !ProcessEvent() ) break;							// イベント処理
+	}
+
+	GetCh();													// キー待ち
+	EndSound();													// サウンド使用終了
+	EndGraph();													// グラフィック使用終了
+	return 0;
+}
+
+
+６－５．ＣｈｅｃｋＰｃｍ
+　　［機能］
+　　　ＰＣＭ再生中かどうかチェック
+
+　　［文法］
+      int  CheckPcm( void );
+
+　　［戻り値］
+　　　０以外：再生中
+　　　０：再生中でない
+
+　　［解説］
+　　　　現在、PlayWavBack関数やPlayWavStreamBack関数によるＰＣＭ再生中である
+　　　かどうかをチェックします。両関数のどちらかでも再生中であれば再生中である
+　　　と判断されます。
+　　　　この関数では、PlayMemBack関数などによるメモリ再生中かどうかはチェック
+　　　できません。メモリ再生中かどうかをチェックするときには、CheckPlayMem関数
+　　　を使って下さい。
+
+　　［使用例］
+
+// TADA.WAVを再生しながらRISKW.BMPをロード、その後もう１回再生
+
+#include <windows.h>
+#include "amgame.h"
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+	SetGlobalMode( AMMODE_WINDOWED );							// ウィンドウモードに
+	if ( !InitGraph( hInstance ) ) return -1;					// グラフィック初期化
+	InitSound( 0 );												// サウンド初期化
+
+	PlayWavBack( "TADA.WAV" );									// 再生
+	LoadBmp( 0, 0, "RISKW.BMP" );								// 絵のロード
+	Flip();														// 表示
+	while( ProcessEvent() && CheckPcm() );						// 再生終了を待つ
+	PlayWavBack( "TADA.WAV" );									// 再び再生
+
+	GetCh();													// キー待ち
+	EndSound();													// サウンド使用終了
+	EndGraph();													// グラフィック使用終了
+	return 0;
+}
+
+
+６－６．ＳｔｏｐＰｃｍ
+　　［機能］
+　　　ＰＣＭ再生の停止
+
+　　［文法］
+      void StopPcm( void );
+
+　　［戻り値］
+　　　なし
+
+　　［解説］
+　　　　PlayWavBack関数やPlayWavStreamBack関数によるＰＣＭ再生をストップします。
+　　　PlayMemBack関数などによるメモリ再生はストップできません。メモリ再生を
+　　　ストップするときには、StopPlayMem関数を使って下さい。
+
+　　［使用例］
+
+// 再生を途中で停止
+
+#include <windows.h>
+#include "amgame.h"
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow)
+{
+	if ( !InitGraph( hInstance ) ) return -1;		// グラフィック初期化
+	if ( InitSound( 0 ) < 0 ) {						// サウンド初期化
+		EndGraph();
+		return -1;
+	}
+
+	PlayWavBack( "TADA.WAV" );						// 再生
+	WaitVSync( 20 );								// 1/3秒待ち
+	StopPcm();										// 再生停止
+
+	GetCh();										// キー待ち
+	EndSound();										// サウンド使用終了
+	EndGraph();										// グラフィック使用終了
+	return 0;
+}
+
+
+６－７．ＬｏａｄＷａｖＭｅｍ
+　　［機能］
+　　　Ｗａｖ音声のメモリへのロード
+
+　　［文法］
+      int LoadWavMem( char *szFileName );
+
+　　　szFileName：ＷＡＶファイルのファイル名、あるいはリソース名
+
+　　［戻り値］
+　　　ロードされた音声を識別するハンドル（必ずプラスの値）
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　ＷＡＶファイルの音声を、メモリにロードします。ロードが正常に終
+　　　了した場合には、ロードされた音声を識別するハンドルが返され、その
+　　　ハンドルはPlayMem関数（後述）などで使用することができます。正常
+　　　終了のハンドルは、必ずプラスの値になります。
+　　　　なお、ハードウェアミキシングがサポートされていれば、最初の方に
+　　　ロードした音声ほどシステムに負担をかけずに再生ができます。
+
+　　［使用例］
+　　　６－８．ＰｌａｙＭｅｍの使用例参照
+
+
+６－８．ＰｌａｙＭｅｍ
+　　［機能］
+　　　メモリ音声の再生
+
+　　［文法］
+　　　int PlayMem( int hSound );
+
+　　　hSound：音声を識別するハンドル
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　LoadWavMem関数などでメモリに格納された音声を再生します。メモリ
+　　　にあるデータを再生するため、PlayWav関数などよりも高速に再生を開
+　　　始することができます。
+
+　　［使用例］
+
+// TADA.WAVという音声をバッファ再生
+
+#include <windows.h>
+#include "amgame.h"
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+    int			hTada;
+
+	if ( !InitGraph( hInstance ) ) return -1;		// グラフィック初期化
+	if ( InitSound( 0 ) < 0 ) {						// サウンド初期化
+		EndGraph();
+		return -1;
+	}
+
+	hTada = LoadWavMem( "TADA.WAV" );				// メモリへロード
+	PlayMem( hTada );								// メモリ再生
+
+	GetCh();										// キー待ち
+	EndSound();										// サウンド使用終了
+	EndGraph();										// グラフィック使用終了
+	return 0;
+}
+
+
+６－９．ＰｌａｙＭｅｍＢａｃｋ
+　　［機能］
+　　　メモリ音声のバックグラウンド再生
+
+　　［文法］
+　　　int PlayMemBack( int hSound );
+
+　　　hSound：音声を識別するハンドル
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　LoadWavMem関数などでメモリに格納された音声をバックグラウンド再
+　　　生します。再生が始まると同時に関数の実行が終了し、再生しながら他
+　　　の処理を行うことができます。
+
+　　［使用例］
+
+// TADA.WAVという音声を３連続バッファ再生
+
+#include <windows.h>
+#include "amgame.h"
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+    int			hTada;
+
+	if ( !InitGraph( hInstance ) ) return -1;		// グラフィック初期化
+	if ( InitSound( 0 ) < 0 ) {						// サウンド初期化
+		EndGraph();
+		return -1;
+	}
+
+    hTada = LoadWavMem( "TADA.WAV" );				// メモリへロード
+    PlayMemBack( hTada );							// メモリ再生
+    WaitVSync( 13 );								// 時間待ち
+    PlayMemBack( hTada );							// メモリ再生
+    WaitVSync( 13 );								// 時間待ち
+    PlayMemBack( hTada );							// メモリ再生
+
+	GetCh();										// キー待ち
+	EndSound();										// サウンド使用終了
+	EndGraph();										// グラフィック使用終了
+	return 0;
+}
+
+
+６－１０．ＰｌａｙＭｅｍＬｏｏｐ
+　　［機能］
+　　　メモリ音声のバックグラウンド・ループ再生
+
+　　［文法］
+　　　int PlayMemLoop( int hSound );
+
+　　　hSound：音声を識別するハンドル
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　LoadWavMem関数などでメモリに格納された音声をバックグラウンド再
+　　　生します。PlayMemBack関数とは異なり、最後まで再生すると先頭に戻っ
+　　　て再生を続けます。
+
+　　［使用例］
+
+// TADA.WAVという音声をキーが押されるまで再生
+
+#include <windows.h>
+#include "amgame.h"
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+    int			hTada;
+
+	if ( !InitGraph( hInstance ) ) return -1;		// グラフィック初期化
+	if ( InitSound( 0 ) < 0 ) {						// サウンド初期化
+		EndGraph();
+		return -1;
+	}
+
+	hTada = LoadWavMem( "TADA.WAV" );				// メモリへロード
+	PlayMemLoop( hTada );							// メモリループ再生
+
+	GetCh();										// キー待ち
+	EndSound();										// サウンド使用終了
+	EndGraph();										// グラフィック使用終了
+	return 0;
+}
+
+
+６－１１．ＣｈｅｃｋＰｌａｙＭｅｍ
+　　［機能］
+　　　メモリ再生中かどうかチェック
+
+　　［文法］
+      int CheckPlayMem( int hSound );
+
+　　　hSound：音声を識別するハンドル
+
+　　［戻り値］
+　　　０以外：再生中
+　　　０：再生中でない
+
+　　［解説］
+　　　　指定されたハンドルが示す音声が、現在再生中であるかどうかをチェッ
+　　　クします。つまり、PlayMemBack関数やPlayMemLoop関数による再生中で
+　　　あるかをチェックします。この関数では、PlayWavBack関数による直接
+　　　再生中かどうかはチェックできません。その場合にはCheckPcm関数を使っ
+　　　て下さい。
+
+　　［使用例］
+
+// TADA.WAVを再生しながらRISKW.BMPをロード、その後もう１回再生
+
+#include <windows.h>
+#include "amgame.h"
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow)
+{
+    int			hTada;
+
+	SetGlobalMode( AMMODE_WINDOWED );							// ウィンドウモードに
+	if ( !InitGraph( hInstance ) ) return -1;					// グラフィック初期化
+	InitSound( 0 );												// サウンド初期化
+
+	hTada = LoadWavMem( "TADA.WAV" );							// Ｗａｖロード
+	PlayMemBack( hTada );										// 再生
+	LoadBmp( 0, 0, "RISKW.BMP" );								// 絵のロード
+	Flip();
+	while( ProcessEvent() && CheckPlayMem( hTada ) );			// 再生終了を待つ
+	PlayMemBack( hTada );										// 再び再生
+
+	GetCh();													// キー待ち
+	EndSound();													// サウンド使用終了
+	EndGraph();													// グラフィック使用終了
+	return 0;
+}
+
+
+６－１２．ＳｔｏｐＰｌａｙＭｅｍ
+　　［機能］
+　　　メモリ再生の停止
+
+　　［文法］
+      int StopPlayMem( int hSound );
+
+　　　hSound：音声を識別するハンドル
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　指定されたハンドルが示す（PlayMemBack関数などによる）音声再生
+　　　をストップします。PlayWavBack関数による直接再生はストップできま
+　　　せん。直接再生をストップするときには、StopPcm関数を使って下さい。
+
+　　［使用例］
+
+// 再生を途中で停止
+
+#include <windows.h>
+#include "amgame.h"
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+    int        hTada;
+
+	if ( !InitGraph( hInstance ) ) return -1;		// グラフィック初期化
+	if ( InitSound( 0 ) < 0 ) {						// サウンド初期化
+		EndGraph();
+		return -1;
+	}
+
+	hTada = LoadWavMem( "TADA.WAV" );				// Wavロード
+	PlayMemBack( hTada );							// 再生
+	WaitVSync( 20 );								// 1/3秒待ち
+	StopPlayMem( hTada );							// 再生停止
+
+	GetCh();										// キー待ち
+	EndSound();										// サウンド使用終了
+	EndGraph();										// グラフィック使用終了
+	return 0;
+}
+
+
+６－１３．ＳｅｔＰｃｍＶｏｌｕｍｅ
+　　［機能］
+　　　ＰＣＭ再生の音量設定
+
+　　［文法］
+      int  SetPcmVolume( int nVolume );
+
+　　　nVolume：ＰＣＭ再生の音量（０～１００）
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　PlayWav関数、PlayMem関数などで再生されるＰＣＭ音声の音量設定を
+　　　行います。音量は０～１００の範囲で指定し、０が最小音量、１００が
+　　　最大音量となります。初期設定値は８０です。
+　　　　なお、サウンドボードによっては、音量の調整が細かくできず、音量
+　　　設定がおおざっぱになる場合があります。
+
+　　［使用例］
+
+// CANYON.MIDを演奏しながらTADA.WAVを音量を上げつつ再生
+
+#include <windows.h>
+#include "amgame.h"
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+	int			i;
+
+	if ( !InitGraph( hInstance ) ) return -1;		// グラフィック初期化
+	if ( InitSound( 0 ) < 0 ) {						// サウンド初期化
+		EndGraph();
+		return -1;
+	}
+
+	SetMusicVolume( 70 );							// ＭＩＤＩボリウム設定
+	PlayMidiBack( "CANYON.MID" );					// ＭＩＤＩ再生
+	for ( i = 0; i <= 100; i += 10 ) {
+		SetPcmVolume( i );							// ＰＣＭボリウム設定
+		PlayWav( "TADA.WAV" );						// ＰＣＭ再生
+	}
+
+	GetCh();										// キー待ち
+	EndSound();										// サウンド使用終了
+	EndGraph();										// グラフィック使用終了
+	return 0;
+}
+
+
+６－１４．ＳｅｔＭｅｍＶｏｌｕｍｅ
+　　［機能］
+　　　メモリＰＣＭボリウムのセット
+
+　　［文法］
+      int SetMemVolume( int nVolume, int hSound );
+
+　　　nVolume：ＰＣＭ再生の音量（０～１００）
+　　　hSound  : 音量を設定する音声を識別するハンドル
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　LoadWavMem関数でロードされたメモリＰＣＭデータに対して音量を
+　　　設定します。音量は０～１００の範囲で指定し、０が最小音量、１００
+　　　が最大音量となります。
+　　　　なお、サウンドボードによっては、音量の調整が細かくできなかった
+　　　り、設定が不可能な場合があります。
+
+　　［使用例］
+
+
+６－１５．ＩｎｉｔＳｏｕｎｄＭｅｍ
+　　［機能］
+　　　サウンド用メモリの初期化
+
+　　［文法］
+　　　int InitSoundMem( void );
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　LoadWavMem関数などでメモリに格納された音声をすべて無効にし、占
+　　　有されていたメモリを開放します。ステージ切り替えなどで、新たな音
+　　　声をロードしたいときなどに使用します。
+
+　　［使用例］
+　　　省略
+
+
+６－１６．ＰｌａｙＷａｖＳｔｒｅａｍＢａｃｋ
+　　［機能］
+　　　ＷＡＶファイルのストリームバック再生
+
+　　［文法］
+　　　int PlayWavStreamBack( char *szFileName );
+
+　　　szFileName：ＷＡＶファイルのファイル名
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　指定されたファイル名のWAVファイルを、ストリーミング再生します。
+　　　最初に全てのデータを読む必要がないため、音が鳴り出すまでの時間を
+　　　短縮することができます。
+　　　　ただし、ストリーミング再生できるWAVファイルは、一度に一つだけ
+　　　です。他のファイルをストリーミング再生している最中に別のファイルを
+　　　本関数で再生すると、前のファイルの再生が中断され、新しいファイルの
+　　　再生が始まります。
+
+　　［使用例］
+　　
+// TADA.WAVというＷＡＶファイルをストリーム再生しながらスクロール
+
+#include <windows.h>
+#include "amgame.h"
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+	int			x;
+	int			hBack;								// 画像ハンドル
+
+	SetGlobalMode( AMMODE_WINDOWED );				// ウィンドウモード
+	if ( !InitGraph( hInstance ) ) return -1;		// グラフィック初期化
+	if ( InitSound( 0 ) < 0 ) {						// サウンド初期化
+		EndGraph();
+		return -1;
+	}
+
+	hBack = LoadTexture( "PASSAGEH.BMP" );			// 背景ロード
+
+	PlayWavStreamBack( "TADA.WAV" );				// 再生開始
+	x = 640;
+	while( ProcessEvent() && !KBHit() ) {
+		HCls();
+		DrawMem( x, 0, hBack );						// 背景描画
+		x -= 10;
+		if ( x < -640 ) x = 640;
+		if ( CheckPcm() ) DrawString( 0, 0, "Playing!!", GetColor( 255, 255, 255 ) );	// 演奏中か
+		Flip();										// 表示/描画ページ交換
+	}
+
+	EndSound();										// サウンド使用終了
+	EndGraph();										// グラフィック使用終了
+	return 0;
+}
+
+
+７．ＭＩＤＩ関係 -------------------------------------------------------------
+
+７－１．ＰｌａｙＭｉｄｉ
+　　［機能］
+　　　ＭＩＤＩファイルの再生
+
+　　［文法］
+      int PlayMidi( char *szFileName );
+
+　　　szFileName：ＭＩＤＩファイル名
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　指定されたＭＩＤＩファイルの音楽を再生します。ＭＩＤＩファイル
+　　　の演奏が終わるか、Ｆ１２キーによる緊急ストップがかかると関数から
+　　　返ってきます。
+　　　　なお、この関数は、ＷｉｎｄｏｗｓのＭＣＩ（Ｍｅｄｉａ Ｃｏｎｔ－
+　　　ｒｏｌ Ｉｎｔｅｒｆａｃｅ）を使用しているため、コマンドを発行し
+　　　てから演奏が始まるまでに０．５ｍｓ程度の遅れが生じるので注意して
+　　　下さい。
+
+　　［使用例］
+
+// CANYON.MIDというＭＩＤＩデータを再生
+
+#include <windows.h>
+#include "amgame.h"
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+	if ( !InitGraph( hInstance ) ) return -1;		// グラフィック初期化
+	if ( InitSound( 0 ) < 0 ) {						// サウンド初期化
+		EndGraph();
+		return -1;
+	}
+
+    PlayMidi( "CANYON.MID" );						// 再生
+
+	EndSound();										// サウンド使用終了
+	EndGraph();										// グラフィック使用終了
+	return 0;
+}
+
+
+７－２．ＰｌａｙＭｉｄｉＢａｃｋ
+　　［機能］
+　　　ＭＩＤＩファイルのバックグラウンド再生
+
+　　［文法］
+      int PlayMidiBack( char *szFileName );
+
+　　　szFileName：ＭＩＤＩファイル名
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　指定されたＭＩＤＩファイルの音楽を再生します。PlayMidiとは異な
+　　　り、この関数は再生が始まると同時に関数の実行が終了し、再生しなが
+　　　ら他の処理を行うことができます。また、前の音楽の再生中にこの関数
+　　　を実行すると、その音楽の再生を停止してから新しい音楽の再生を行い
+　　　ます。
+　　　　なお、この関数もＷｉｎｄｏｗｓ　ＭＣＩを使用しているため、再生
+　　　が始まるまでに時間がかかり、かつ再生が始まるまで処理が止まってし
+　　　まうので、リアルタイムにＭＩＤＩ再生をするのにはあまり向いていま
+　　　せん。
+
+　　［使用例］
+
+// CANYON.MIDというＭＩＤＩデータを再生し、約1秒後RISKW.BMPロード、
+// その後何かキーを押すと終了
+
+#include <windows.h>
+#include "amgame.h"
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+	SetGlobalMode( AMMODE_WINDOWED );							// ウィンドウモードに
+	if ( !InitGraph( hInstance ) ) return -1;					// グラフィック初期化
+	InitSound( 0 );												// サウンド初期化
+
+    PlayMidiBack( "CANYON.MID" );								// 再生
+    WaitVSync( 60 );											// 待ち
+    LoadBmp( 0, 0, "RISKW.BMP" );								// 画像表示
+	Flip();														// 表示
+
+	GetCh();													// キー待ち
+	EndSound();													// サウンド使用終了
+	EndGraph();													// グラフィック使用終了
+	return 0;
+}
+
+
+７－３．ＰｌａｙＭｉｄｉＬｏｏｐ
+　　［機能］
+　　　ＭＩＤＩファイルのループ再生
+
+　　［文法］
+      int PlayMidiLoop( char *szFileName );
+
+　　　szFileName：ＭＩＤＩファイル名
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　指定されたＭＩＤＩファイルの音楽を再生します。PlayMidiBackとは
+　　　異なり、最後まで再生すると先頭に戻って再生を続けます。
+　　　　なお、この関数もＷｉｎｄｏｗｓ　ＭＣＩを使用しているため、再生
+　　　が始まるまでに時間がかかり、かつ、ループする際にも先頭から再生が
+　　　始まるまでに時間がかかってしまうので注意して下さい。
+
+　　［使用例］
+　　　省略
+
+
+７－４．ＣｈｅｃｋＭｕｓｉｃ
+　　［機能］
+　　　ＭＩＤＩ再生中かどうかチェック
+
+　　［文法］
+      int CheckMusic( void );
+
+　　［戻り値］
+　　　０以外：再生中
+　　　０：再生中でない
+
+　　［解説］
+　　　　現在、PlayMidiBack関数によるＭＩＤＩ再生中であるかどうかをチェッ
+　　　クします。
+
+　　［使用例］
+
+// CANYON.MIDというＭＩＤＩデータを再生し、０．５秒後RISKW.BMPロード、
+// 演奏が終わると終了
+
+#include <windows.h>
+#include "amgame.h"
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+	SetGlobalMode( AMMODE_WINDOWED );							// ウィンドウモードに
+	if ( !InitGraph( hInstance ) ) return -1;		// グラフィック初期化
+	InitSound( 0 );									// サウンド初期化
+
+	PlayMidiBack( "CANYON.MID" );					// 再生
+	WaitVSync( 30 );
+	LoadBmp( 0, 0, "RISKW.BMP" );
+	Flip();											// 表示
+	while( ProcessEvent() && CheckMusic() );		// 終わるまで待ち
+
+	EndSound();										// サウンド使用終了
+	EndGraph();										// グラフィック使用終了
+	return 0;
+}
+
+
+７－５．ＳｔｏｐＭｕｓｉｃ
+　　［機能］
+　　　ＭＩＤＩ再生の停止
+
+　　［文法］
+      int StopMidi( void );
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　PlayMidiBack関数によるＭＩＤＩ再生をストップします。
+
+　　［使用例］
+
+// CANYON.MIDを３秒間だけ再生
+
+#include <windows.h>
+#include "amgame.h"
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+	if ( !InitGraph( hInstance ) ) return -1;		// グラフィック初期化
+	if ( InitSound( 0 ) < 0 ) {						// サウンド初期化
+		EndGraph();
+		return -1;
+	}
+
+    PlayMidiBack( "CANYON.MID" );					// 再生
+    WaitVSync( 60 * 3 );							// 待ち
+    StopMusic();									// 再生停止
+
+    GetCh();										// キー待ち
+	EndSound();										// サウンド使用終了
+	EndGraph();										// グラフィック使用終了
+	return 0;
+}
+
+
+７－６．ＳｅｔＭｕｓｉｃＶｏｌｕｍｅ
+　　［機能］
+　　　ＭＩＤＩ再生の音量設定
+
+　　［文法］
+      int  SetMusicVolume( int nVolume );
+
+　　　nVolume：ＭＩＤＩ再生の音量（０～１００）
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　PlayMidi関数、PlayMidiBack関数などで再生されるＭＩＤＩ楽曲の音
+　　　量設定を行います。音量は０～１００の範囲で指定し、０が最小音量、
+　　　１００が最大音量となります。初期設定値は８０です。
+　　　　なお、ＭＩＤＩ楽曲の再生中は、本関数で音量設定をすることはでき
+　　　ません。再生中に本関数を実行すると、AMERR_CANNOTエラーになります。
+　　　また、ＭＩＤＩデバイスの中には、音量設定の機能をサポートしていな
+　　　いものもあり、ＭＩＤＩマッパーがそのようなデバイスを選択している
+　　　場合には、AMERR_SOUNDOUTエラーになります。
+
+　　［使用例］
+　　　６－１３．ＳｅｔＰｃｍＶｏｌｕｍｅの使用例参照
+
+
+
+８．ムービー(ＡＶＩ)関係関数 -------------------------------------------------
+
+８－１．ＰｌａｙＭｏｖｉｅ
+　　［機能］
+　　　ＡＶＩムービーの再生
+
+　　［文法］
+      int PlayMovie( int x, int y, char *szFileName );
+
+　　　x：ムービーを表示するｘ座標
+　　　y：ムービーを表示するｙ座標
+　　　szFileName：ＡＶＩファイル名
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　指定されたＡＶＩファイルのムービーを再生します。ムービーの再生
+　　　が終わるか、何かキーが押されると関数から返ってきます。
+　　　　なお、本関数でムービーをきれいに再生するためには、
+　　　SetPage( 1, 0 ); としてダブルバッファを使用するようにして下さい。
+　　　ダブルバッファを使えば、ティアリング（画面のちらつき）をなくすこ
+　　　とができます。
+　　　　また、この関数は、ＷｉｎｄｏｗｓのデジタルビデオＡＰＩを使用し
+　　　ているため、それがサポートしていないＡＶＩファイル（ＣＤからの再
+　　　生用にインターリーブされているもの、ＭＰＥＧなどのフレーム間圧縮
+　　　を用いているもの）は再生できませんので注意して下さい。
+　　　　
+
+　　［使用例］
+　　
+// CLOCK.AVIという動画ファイルを再生
+
+#include <windows.h>
+#include "amgame.h"												// AMGAMEヘッダ
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+	SetGlobalMode( AMMODE_WINDOWED );							// ウィンドウモードに
+	if( !InitGraph( hInstance ) ) return -1;					// グラフィック初期化
+
+	PlayMovie( 160, 80, "CLOCK.AVI" );						// 動画再生
+
+	EndGraph();													// グラフィック終了
+    return 0;
+}
+
+
+８－２．ＰｌａｙＭｏｖｉｅＦｕｌｌ
+　　［機能］
+　　　フルスクリーンでのＡＶＩムービーの再生
+
+　　［文法］
+      int PlayMovieFull( char *szFileName );
+
+　　　szFileName：ＡＶＩファイル名
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　指定されたＡＶＩファイルのムービーを、全画面に拡大して再生しま
+　　　す。そのこと以外は、PlayMovie 関数と同様です。
+
+
+　　［使用例］
+
+// CLOCK.AVIという動画ファイルをフルスクリーン再生
+
+#include <windows.h>
+#include "amgame.h"									// AMGAMEヘッダ
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+	if( !InitGraph( hInstance ) ) return -1;		// グラフィック初期化
+
+	PlayMovieFull( "CLOCK.AVI" );					// 動画再生
+
+	GetCh();										// キー待ち
+	EndGraph();										// グラフィック終了
+    return 0;
+}
+
+
+８－３．ＬｏａｄＭｏｖｉｅＭｅｍ
+　　［機能］
+　　　ＡＶＩムービーのメモリへのロード
+
+　　［文法］
+      int LoadMovieMem( char *szFileName );
+
+　　　szFileName：ＡＶＩファイル名
+
+　　［戻り値］
+　　　ロードされたムービーを識別するハンドル（必ずプラスの値）
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　指定されたＡＶＩファイルのムービーをメモリにロードし、そのムー
+　　　ビーを識別するハンドルを返します。ただし、LoadTexture 関数のように
+　　　全ての画像をロードしメモリに常駐させるわけではなく、ムービーの再生
+　　　に必要な情報のロードのみを行います。
+　　　　なお、本関数で同時にメモリに置くことができるムービーの数は最大
+　　　定数 AM_MAXMOVIENUM で定義されている数までです（現在は１０）。そ
+　　　れ以上の数のムービーを再生したい場合には、いったんInitMovieMem
+　　　関数でムービー用メモリをクリアしてからロードを行うようにして下さ
+　　　い。
+　　　　また、本関数で返されるハンドルは、PlayMovieMem 関数や
+　　　GetPictureSize 関数などで使用することができますが、現バージョン
+　　　では通常の描画関数（DrawMem関数など）で使用することはできません。
+　　　　さらに、本関数で再生できないＡＶＩファイル
+　　　（８－１．ＰｌａｙＭｏｖｉｅ関数の解説参照）をロードした場合、エ
+　　　ラーが返る場合とそうでない場合があります。特に、ＣＤ用にインター
+　　　リーブされたＡＶＩファイルの場合、Ｗｉｎｄｏｗｓ自体が再生できな
+　　　いことを感知しないため、ロードは正常終了するが正常に再生できない
+　　　という事態が起こり得るので注意して下さい。
+
+　　［使用例］
+　　　８－４．ＰｌａｙＭｏｖｉｅＭｅｍの使用例参照
+
+
+８－４．ＰｌａｙＭｏｖｉｅＭｅｍ
+　　［機能］
+　　　メモリムービーの再生
+
+　　［文法］
+      int PlayMovieMem( int x, int y, int hMovie );
+
+　　　x：ムービーを描画するｘ座標
+　　　y：ムービーを描画するｙ座標
+　　　hMovie：ムービーを識別するハンドル
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　LoadMovieMem 関数でロードされたムービーを再生します。ムービー
+　　　の再生が終わるか、何かキーが押されると関数から返ってきます。
+
+　　［使用例］
+
+// CLOCK.AVIという動画ファイルをループ再生
+
+#include <windows.h>
+#include "amgame.h"												// AMGAMEヘッダ
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+	int				hMovie;										// ムービーハンドル
+
+	SetGlobalMode( AMMODE_WINDOWED );							// ウィンドウモードに
+	if( !InitGraph( hInstance ) ) return -1;					// グラフィック初期化
+
+	hMovie = LoadMovieMem( "CLOCK.AVI" );						// ムービーロード
+
+	do {
+		HCls();													// 画面クリア
+		PlayMovieMem( rand() * 320 / RAND_MAX,
+					  rand() * 160 / RAND_MAX, hMovie );		// 動画再生
+	} while( ProcessEvent() && !KBHit() );
+
+	EndGraph();													// グラフィック終了
+    return 0;
+}
+
+
+８－５．ＰｌａｙＭｏｖｉｅＭｅｍＦｕｌｌ
+　　［機能］
+　　　 メモリムービーのフルスクリーン再生
+
+　　［文法］
+      int PlayMovieMemFull( int hMovie );
+
+　　　hMovie：ムービーを識別するハンドル
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　LoadMovieMem 関数でロードされたムービーをフルスクリーン再生し
+　　　ます。そのこと以外は、PlayMovieMem 関数と同様です。
+
+　　［使用例］
+　　　省略
+
+
+８－６．ＧｅｔＭｏｖｉｅＦｒａｍｅ
+　　［機能］
+　　　ムービーの特定フレーム取得
+
+　　［文法］
+      int GetMovieFrame( int hPicture, int hMovie, int nFrameNum );
+
+　　　hPicture：フレームの画像データを受け取るビットマップ／テクスチャ
+　　　　　　　　のハンドル
+　　　hMovie：ムービーを識別するハンドル
+　　　nFrameNum：取得するフレーム番号
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　LoadMovieMem 関数でロードされたムービーの指定されたフレームの
+　　　画像データを取得します。画像データの書き込み先は、hPictureで指定
+　　　されたテクスチャとなります。
+　　　　なお、nFrameNum に指定すべきフレーム番号は、GetMovieCount 関数
+　　　（後述）を使うと簡単に取得できます。
+
+
+　　［使用例］
+
+// Clock.AVI をテクスチャで回転させつつ再生
+
+#include <windows.h>
+#include <math.h>
+#include "amgame.h"									// ＡＧＬＩＢヘッダ
+
+#define PI					3.14159265358979
+#define DISP_WIDTH			640
+#define DISP_HEIGHT			480
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+	double			x, y;							// 位置
+	double			velocity.x, velocity.y;							// 速度
+	double			fAngle;							// 角度
+	int				hMovie;							// ムービーハンドル
+	int				nWidth, nHeight;				// サイズ
+	int				hMovieTex;						// テクスチャハンドル
+	int				nFrameLoc;						// フレーム位置
+
+	SetGlobalMode( AMMODE_WINDOWED );				// ウィンドウモードに
+	if ( !InitGraph( hInstance ) ) return 0;		// グラフィックの初期化
+
+	hMovie = LoadMovieMem( "Clock.AVI" );			// ムービーロード
+	GetPictureSize( hMovie, &nWidth, &nHeight );	// 大きさ取得
+	hMovieTex = MakeTextureMem( nWidth, nHeight, 0 );	// テクスチャ作成
+	SetDrawMode( AMDRAW_BILINEAR, 0 );				// バイリニアフィルタ
+
+	x  = 0.0;  y  = 0.0;							// 位置初期化		
+	velocity.x = 5.0;  velocity.y = 3.0;							// 速度初期化
+	fAngle = 0.0;									// 角度
+	while ( ProcessEvent() && !KBHit() ) {
+		HCls();
+		nFrameLoc = GetMovieCount( hMovie );		// フレーム番号取得
+		if ( nFrameLoc < 0 ) nFrameLoc = GetMovieCount( hMovie );	// ループ
+		GetMovieFrame( hMovieTex, hMovie, nFrameLoc );	// フレーム取得
+		DrawMemRot( nWidth / 2, nHeight / 2, ( int )x, ( int )y,
+					fAngle, 1.0 + 0.3 * sin( fAngle * 1.1 ), hMovieTex );
+		x += velocity.x;									// ｘ移動
+		if ( x < 0 ) {
+			x = 0;  velocity.x = -velocity.x;
+		}
+		if ( x > DISP_WIDTH ) {
+			x = DISP_WIDTH;  velocity.x = -velocity.x;
+		}
+		y += velocity.y;									// ｙ移動
+		if ( y < 0 ) {
+			y = 0;  velocity.y = -velocity.y;
+		}
+		if ( y > DISP_HEIGHT ) {
+			y = DISP_HEIGHT;  velocity.y = -velocity.y;
+		}
+		fAngle += PI / 50.0;						// 角度移動
+		Flip();
+	}
+
+	EndGraph();										// グラフィック使用の終了
+	return 0;
+}
+
+
+８－７．ＧｅｔＭｏｖｉｅＣｏｕｎｔ
+　　［機能］
+　　　ムービーフレームカウント数の取得
+
+　　［文法］
+      int GetMovieCount( int hMovie );
+
+　　　hMovie：ムービーを識別するハンドル
+
+　　［戻り値］
+　　　現在表示すべきフレーム番号（必ずゼロ以上の値）
+　　　AM_ENDOFSTREAM：再生終了時間を過ぎた（マイナスの値）
+　　　その他のマイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　指定されたムービーの、現在表示すべきフレーム番号を取得します。
+　　　本関数で返されるフレーム番号は、以下のようにして決定されます。
+
+　　　●再生の開始時刻は、そのムービーに対して初めて GetMovieCount関数
+　　　　が呼び出された時点となる
+　　　●再生が順当に進んでいれば、ムービー固有のフレームレートに合わせ
+　　　　てフレーム番号がカウントアップされる
+　　　●再生が間に合っていない場合（直後に GetMovieCount 関数が呼び出
+　　　　されてからすでに２フレーム分以上の時間が経過している場合）には、
+　　　　現在のフレームが飛ばされる。ただし、飛ばされるフレームはどんな
+　　　　に時間が遅れていても１回に１フレームのみであるため、本来のフレー
+　　　　ムレートの半分以下の間隔でしかこの関数を呼び出さないと、再生時
+　　　　間が遅れてゆく
+　　　●再生が終わると、フレーム番号として AM_ENDOFSTREAM （マイナスの
+　　　　値）が返される。その状態でもう一度 GetMovieCount 関数を呼び出
+　　　　すと、カウンタが０にリセットされ、ループ再生となる
+
+　　　　なお現バージョンでは、ムービー再生の最中にアプリケーション切り
+　　　替えを行うと、カウンタだけが先行してしまうため、この関数が返すフ
+　　　レームカウント値も適切なものではなくなってしまいますので注意して
+　　　下さい。
+
+
+　　［使用例］
+　　　８－６．ＧｅｔＭｏｖｉｅＦｒａｍｅの使用例参照
+
+
+８－８．ＩｎｉｔＭｏｖｉｅＭｅｍ
+　　［機能］
+　　　ムービー用メモリの開放
+
+　　［文法］
+      int InitMovieMem( void );
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　LoadMovieMem 関数でロードされていた全てのムービーデータを破棄
+　　　し、占有されていたメモリを開放します。
+
+　　［使用例］
+　　　省略
+
+
+
+９．入力関係関数 -------------------------------------------------------------
+
+９－１．ＣｈｅｃｋＫｅｙ
+　　［機能］
+　　　入力機器（キーボード・パッド等）のユーザー入力状態チェック
+
+　　［文法］
+      int CheckKey( int InputMode );
+
+　　　InputMode：入力モード
+　　　　　　　　 AMINPUT_MULT      キーボード・１Ｐパッド混合入力
+　　　　　　　　 AMINPUT_KEYBOARD  キーボード入力
+　　　　　　　　 AMINPUT_PAD1      １Ｐパッド入力
+　　　　　　　　 AMINPUT_PAD2      ２Ｐパッド入力
+
+　　［戻り値］
+　　　キー入力状態を示す３２ビット値
+
+　　［解説］
+　　　　InputMode で指定された入力機器に対する現在のユーザー入力の状態
+　　　を調べ、その結果を３２ビット値として返します。
+　　　　InputMode に AMINPUT_MULT （あるいは０）を指定すると、キーボー
+　　　ドと１Ｐパッドの状態が混合されて入力されるため、１Ｐしかいないゲー
+　　　ムを製作する場合にこれを指定しておけば、キーボードとパッド両対応
+　　　にすることができます。一方、InputMode に AMINPUT_KEYBOARD、
+　　　AMINPUT_PAD1、AMINPUT_PAD2を指定すると、それぞれキーボード、１Ｐ
+　　　側パッド、２Ｐ側パッドの入力を調べることができます。
+　　　　本関数の戻り値のビットは、次のキーにそれぞれ対応しています。
+
+　　　 ビット位置　　　　　　　対応するキー　　　　　対応マスク
+　　　第　０ビット　”↓”orテンキーの”２”キー　　　KEYIN_DOWN
+　　　第　１ビット　”←”orテンキーの”４”キー　　　KEYIN_LEFT
+　　　第　２ビット　”→”orテンキーの”６”キー　　　KEYIN_RIGHT
+　　　第　３ビット　”↑”orテンキーの”８”キー　　　KEYIN_UP
+　　　第　４ビット　スペースキー（パッドのＭボタン）　KEYIN_SPC
+　　　第　５ビット　ＥＳＣキー（パッドのスタート）　　KEYIN_ESC
+　　　第　６ビット　シフトキー　　　　　　　　　　　　KEYIN_SFT
+　　　第　７ビット　リターンキー　　　　　　　　　　　KEYIN_RET
+　　　第　８ビット　”Ｚ”キー（パッドのＡボタン）　　KEYIN_Z
+　　　第　９ビット　”Ｘ”キー（パッドのＢボタン）　　KEYIN_X
+　　　第１０ビット　”Ｃ”キー（パッドのＣボタン）　　KEYIN_C
+　　　第１１ビット　”Ａ”キー（パッドのＸボタン）　　KEYIN_A
+　　　第１２ビット　”Ｓ”キー（パッドのＹボタン）　　KEYIN_S
+　　　第１３ビット　”Ｄ”キー（パッドのＺボタン）　　KEYIN_D
+　　　第１４ビット　”Ｑ”キー（パッドのＬボタン）　　KEYIN_Q
+　　　第１５ビット　”Ｗ”キー（パッドのＲボタン）　　KEYIN_W
+
+　　　更に、InitMouse関数によってマウスが使用可能状態にされている場合
+　　　には、以下のような対応も追加されます。
+
+　　　 ビット位置　　　　　　　対応するキー　　　　　対応マスク
+　　　第１６ビット　マウスの左ボタン　　　　　　　　　MOUSEKEY_LEFT
+　　　第１７ビット　マウスの右ボタン　　　　　　　　　MOUSEKEY_RIGHT
+　　　第１８ビット　マウスの中央ボタン　　　　　　　　MOUSEKEY_MIDDLE
+
+　　　　これらのビットが、対応するキーが押されていれば１に、押されてい
+　　　なければ０にセットされます。
+　　　　ここで、”対応マスク”というのは、本関数の戻り値とＡＮＤ演算す
+　　　ると、キーが押されていれば結果が真、押されていなければ結果が偽に
+　　　なるように定義された値です。例えば、”↓”キーが押されているかど
+　　　うかチェックするためには、
+
+        ckey = CheckKey( AMINPUT_MULT );
+        if ( ckey & KEYIN_DOWN ) printf("↓キーは押されています。\n");
+                            else printf("↓キーは押されていません。\n");
+
+　　　というようにします。
+
+　　［使用例］
+
+// ＥＳＣキーが押されるまで、CheckKeyの戻り値と方向キーの状態を表示
+
+#include <windows.h>
+#include <stdio.h>
+#include "amgame.h"									// AMGAMEヘッダ
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+	int			nPushed;							// 押されたキー
+	char		szOut[80];							// 表示文字列
+
+	SetGlobalMode( AMMODE_WINDOWED );
+	if( !InitGraph( hInstance ) ) return -1;		// グラフィック初期化
+	InitMouse( 0 );									// マウス初期化
+
+	do {
+		HCls();										// 画面クリア
+		nPushed = CheckKey( AMINPUT_MULT );			// キー入力
+		sprintf( szOut, "%x", nPushed );
+		DrawFBox( 300, 240, 640, 272, 0 );			// クリア
+		DrawString( 300, 240, szOut, GetColor( 255, 255, 255 ) );			// 文字表示
+		if ( nPushed & KEYIN_LEFT )  DrawString( 300, 256, "左", GetColor( 255, 255, 255 ) );
+		if ( nPushed & KEYIN_RIGHT ) DrawString( 316, 256, "右", GetColor( 255, 255, 255 ) );
+		if ( nPushed & KEYIN_UP )    DrawString( 332, 256, "上", GetColor( 255, 255, 255 ) );
+		if ( nPushed & KEYIN_DOWN )  DrawString( 348, 256, "下", GetColor( 255, 255, 255 ) );
+		Flip();
+	} while( ProcessEvent() && !( nPushed & KEYIN_ESC ) );
+
+	EndGraph();										// グラフィック終了
+    return 0;
+}
+
+
+９－２．ＧｅｔＣｈ
+　　［機能］
+　　　入力機器からの１文字入力
+
+　　［文法］
+　　　int GetCh( void );
+
+　　［戻り値］
+　　　入力された文字のアスキーコード
+　　　これが０の場合、プログラムを速やかに終了すべき
+
+　　［解説］
+　　　　Ｃの標準関数getchと同じ機能を実現します。すなわち、何かキー入
+　　　力がされるのを待ち、入力されたキーのアスキーコードを返します。
+　　　　本関数は、基本的にキーボードからの入力を行いますが、InitMouse
+　　　関数によってマウスが使用可能状態にされていれば、マウスボタンも入
+　　　力対象とします。その場合、マウスボタンが押されたときに返されるコー
+　　　ドは以下のようになります。
+
+　　　左ボタン：　　MOUSECODE_LEFT  ( 0x101 )
+　　　右ボタン：　　MOUSECODE_RIGHT ( 0x102 )
+　　　中央ボタン：　MOUSECODE_MIDDLE( 0x103 ）
+
+　　　　キー待ちを行っている間、本関数はイベント処理を行っていますが、
+　　　ウィンドウがWM_DESTROYメッセージを受け取った場合(つまり、アプリ
+　　　ケーション終了の操作がされた場合)、この関数は何も押されていなく
+　　　ても終了し、０を返します。
+
+　　［使用例］
+
+// ＥＳＣキーが押されるまで、GetChの戻り値を表示
+
+#include <windows.h>
+#include <stdio.h>
+#include "amgame.h"												// AMGAMEヘッダ
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+	int			nPushed;										// 押されたキー
+	char		szOut[80];										// 表示文字列
+
+	SetGlobalMode( AMMODE_WINDOWED );							// ウィンドウモードに
+	if ( !InitGraph( hInstance ) ) return -1;					// グラフィック初期化
+
+	do {
+		HCls();													// 画面クリア
+		nPushed = GetCh();										// キー入力
+		sprintf( szOut, "%x", nPushed );
+		DrawString( 300, 240, szOut, GetColor( 255, 255, 255 ) );	// 描画
+		Flip();													// 表示
+	} while( ProcessEvent() && nPushed != 0x1b );
+
+	EndGraph();													// グラフィック終了
+    return 0;
+}
+
+
+９－３．ＫＢＨｉｔ
+　　［機能］
+　　　キー入力の有無のチェック
+
+　　［文法］
+　　　int KBHit( void );
+
+　　［戻り値］
+　　　キー入力があった場合：直前に入力されたキーのアスキーコード
+　　　キー入力がなかった場合：０
+
+　　［解説］
+　　　　Ｃの標準関数kbhitと同じ機能を実現します。ただし、kbhit関数と異
+　　　なり、本関数は、キー入力があった場合には、直前に入力されたキーの
+　　　アスキーコードを返します。
+　　　　なお、本関数においてキー入力があったと判定されるのは、GetCh関数
+　　　で読み出される入力があった場合です。従って、InitMouse関数が実行
+　　　されていれば、マウスボタンが押された場合もキーが押されたという判
+　　　定になります。
+
+　　［使用例］
+　　　省略
+
+
+９－４．ＩｎｉｔＭｏｕｓｅ
+　　［機能］
+　　　マウスの初期化
+
+　　［文法］
+      int InitMouse( int bMouseState );
+
+　　　bMouseState：マウスカーソル表示の有無
+　　　　　　　　　 ０：カーソルを表示しない
+　　　　　　　　　 １：カーソルを表示する
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　マウスのシステムを初期化し、マウスを使用可能状態にします。マウ
+　　　ス関係の関数を使用するときには、必ずまず最初に本関数を実行するよ
+　　　うにして下さい。本関数を実行せずにマウス関係関数を実行すると、
+　　　AMERR_NOINITIALIZE エラーとなります。
+
+　　［使用例］
+　　　９－６．ＧｅｔＭｏｕｓｅＬｏｃの使用例参照
+
+
+９－５．ＳｅｔＭｏｕｓｅＳｔａｔｅ
+　　［機能］
+　　　マウスカーソルの状態設定
+
+　　［文法］
+      int SetMouseState( int bMouseState );
+
+　　　bMouseState：マウスカーソル表示の有無
+　　　　　　　　　 ０：カーソルを表示しない
+　　　　　　　　　 １：カーソルを表示する
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　マウスカーソルの表示／非表示を設定します。
+
+　　［使用例］
+　　　省略
+
+
+９－６．ＧｅｔＭｏｕｓｅＬｏｃ
+　　［機能］
+　　　マウスカーソル位置取得
+
+　　［文法］
+　　　int GetMouseLoc( int *nXLoc, int *nYLoc );
+
+　　　nXLoc：マウスカーソルのｘ座標を受け取るint型変数へのポインタ
+　　　nYLoc：マウスカーソルのｙ座標を受け取るint型変数へのポインタ
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　現在のマウスカーソル位置を取得します。
+
+　　［使用例］
+
+// マウスで絵が動く、クリックで描画色変更、右クリックで終了
+
+#include <windows.h>
+#include "amgame.h"												// ＡＧＬＩＢヘッダ
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+	int							hBmp;
+	int							x, y;
+	int							nInput;
+
+	if ( !InitGraph( hInstance ) ) return 0;					// グラフィックの初期化
+	InitMouse( 1 );												// マウス初期化
+
+	hBmp = LoadTexture( "ANNA_H.BMP" );							// 絵のロード
+
+	do {
+		HCls();													// 画面クリア
+		GetMouseLoc( &x, &y );									// マウス位置取得
+		DrawMemTh( x - 320, y - 240, hBmp );
+		nInput = CheckKey( AMINPUT_MULT );						// キーチェック
+		Flip();
+		if ( nInput & MOUSEKEY_LEFT ) SetDrawBright(    0, 1500, 1500 );
+								 else SetDrawBright( 1000, 1000, 1000 );
+	} while( ProcessEvent() && !( nInput & MOUSEKEY_RIGHT ) );
+
+	EndGraph();													// グラフィック使用の終了
+	return 0;
+}
+
+
+９－７．ＳｅｔＭｏｕｓｅＬｏｃ
+　　［機能］
+　　　マウスカーソル位置取得
+
+　　［文法］
+　　　int SetMouseLoc( int nXLoc, int nYLoc );
+
+　　　nXLoc：マウスカーソルのｘ座標
+　　　nYLoc：マウスカーソルのｙ座標
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　マウスカーソルを指定された座標に移動します。指定座標が画面外だっ
+　　　た場合には、画面内になるようにクリップされます。
+
+　　［使用例］
+
+// マウスで絵が動く、クリックで中央に戻り、右クリックで終了
+
+#include <windows.h>
+#include "amgame.h"												// ＡＧＬＩＢヘッダ
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+	int			hBmp;
+	int			x, y;
+	int			nInput;
+
+	SetGlobalMode( AMMODE_WINDOWED );							// ウィンドウモードに
+	if ( !InitGraph( hInstance ) ) return 0;					// グラフィックの初期化
+	InitMouse( 1 );												// マウス初期化
+
+	hBmp = LoadTexture( "ANNA_H.BMP" );							// 絵のロード
+
+	do {
+		HCls();													// 画面クリア
+		GetMouseLoc( &x, &y );									// マウス位置取得
+		DrawMemTh( x - 320, y - 240, hBmp );
+		nInput = CheckKey( AMINPUT_MULT );						// キーチェック
+		if ( nInput & MOUSEKEY_LEFT ) SetMouseLoc( 320, 240 );
+		Flip();
+	} while( ProcessEvent() && !( nInput & MOUSEKEY_RIGHT ) );
+
+	EndGraph();													// グラフィック使用の終了
+	return 0;
+}
+
+
+
+１０．環境依存処理関係関数 ---------------------------------------------------
+
+１０－１．ＳｅｔＧｌｏｂａｌＭｏｄｅ
+　　［機能］
+　　　プラットフォーム依存グローバルモードの設定
+
+　　［文法］
+　　　int SetGlobalMode( int lModes );
+
+　　　lModes：モード指定コード
+           AMMODE_WINDOWED        : これをInitGraph関数を実行する前に指
+                                    定すると、ウィンドウモードで動作する
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　プラットフォーム（今の場合Ｗｉｎｄｏｗｓ＋ＤｉｒｅｃｔＸ）に依
+      存する環境設定を行います。
+　　　　本ライブラリの関数のほとんどは、基本的に特定のプラットフォーム
+      に依存しない仕様になっていますが、本関数は例外で、特定のプラット
+      フォームで最大のパフォーマンスを得るためのモード設定を行います。
+        ただし、本関数を用いても、そのモード設定が無効なプラットフォー
+      ムではそれを無視することにより、プラットフォームに依存しないプロ
+      グラムを作成することができます。
+        現在、Ｗｉｎｄｏｗｓ＋ＤｉｒｅｃｔＸで用いることができるモード
+      指定コードは、AMMODE_WINDOWED１個だけです。
+        AMMODE_WINDOWED は、画面の初期モードをウィンドウモードにします
+      （デフォルトは全画面排他モードです）。ただし、このウィンドウモー
+      ドは現在のところサポートが弱いので、デバッグモードとしてだけ
+      使用するようにしてください。
+
+　　［使用例］
+　　　省略
+
+
+１０－２．ＰｒｏｃｅｓｓＥｖｅｎｔ
+　　［機能］
+　　　イベント駆動処理系でのイベント処理
+
+　　［文法］
+　　　BOOL ProcessEvent( void );
+
+　　［戻り値］
+　　　プログラム続行：ＴＲＵＥ
+　　　プログラム終了：ＦＡＬＳＥ
+
+　　［解説］
+　　　　イベント駆動処理系（今の場合Ｗｉｎｄｏｗｓ）の各種イベント(メッ
+　　　セージ)の処理を行います。
+　　　　メインループ、あるいは一定時間以上かかるループには、必ずこの関
+　　　数を入れるようにして下さい。さもないとプログラムがハングアップす
+　　　る危険があります。
+　　　　また、この関数がＦＡＬＳＥを返した場合には、できるだけ速やかに
+　　　プログラムを終了するようにしてください。さもないと、プログラムが
+　　　永久に終わらなくなる危険があります。
+
+　　［使用例］
+　　　２－３－１．ＤｒａｗＭｅｍの使用例参照
+
+
+
+１１．タイマ・計時関係関数 ---------------------------------------------------
+
+１１－１．ＧｅｔＮｏｗＴｉｍｅ
+　　［機能］
+　　　現在時刻(ミリ秒単位)の取得
+
+　　［文法］
+      int GetNowTime( int nDummy );
+
+　　　nDummy：予約パラメータ（必ず０を指定）
+
+　　［戻り値］
+　　　現在時刻(ミリ秒単位)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　ミリ秒単位で計った現在時刻を取得します。カウント桁数は３２ビッ
+　　　トです。
+　　　　なお、タイムカウントが始まるタイミングは、処理系によって異なる
+　　　ため（システムを起動した時点、プログラムを起動した時点など）、初
+　　　期カウントがいつ始まったかに依存しないようにプログラムを組む必要
+　　　があります。
+
+　　［使用例］
+
+// プログラム開始からの時間表示
+
+#include <windows.h>
+#include <stdio.h>
+#include "amgame.h"												// AMGAMEヘッダ
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+	int		nFirstTime, nNowTime;								// 時刻
+	char	szOut[80];
+
+	SetGlobalMode( AMMODE_WINDOWED );							// ウィンドウモードに
+	if ( !InitGraph( hInstance ) ) return -1;					// グラフィック初期化
+
+	nFirstTime = GetNowTime( 0 );								// 最初の時刻
+	while( ProcessEvent() && !KBHit() ) {
+		nNowTime = GetNowTime( 0 );								// 今の時刻
+		HCls();
+		sprintf( szOut, "プログラム開始から%8.3f秒",
+			     ( nNowTime - nFirstTime ) / 1000.0 );
+		DrawString( 0, 0, szOut, GetColor( 255, 255, 255 ) );
+		Flip();													// 表示/描画ページ交換
+	}
+
+	GetCh();													// キー待ち
+	EndGraph();													// グラフィック終了
+    return 0;
+}
+
+
+１１－２．ＷａｉｔＢｙＴｉｍｅｒ
+　　［機能］
+　　　タイマで指定時間だけ待つ
+
+　　［文法］
+      int WaitByTimer( int nWaitTime );
+
+　　　nWaitTime：待ち時間(ミリ秒単位)
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　タイマを用いて時間待ちを行います。そのため、本関数はWaitVSync
+　　　関数と異なり、垂直同期周波数によらない一定時間の待ちを行うことが
+　　　できます。また、CheckKey関数に反映されるキーが押された場合には、
+　　　待ちを中断してリターンします。
+
+　　［使用例］
+
+// 絵を表示し、５秒待って終了
+
+#include <windows.h>
+#include "amgame.h"									// AMGAMEヘッダ
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+	SetGlobalMode( AMMODE_WINDOWED );
+	if( !InitGraph( hInstance ) ) return -1;		// グラフィック初期化
+	
+	LoadBmp( 0, 0, "RISKW.BMP" );					// 絵の表示
+	Flip();
+	WaitByTimer( 5000 );							// ５秒待ち
+
+	EndGraph();										// グラフィック終了
+    return 0;
+}
+
+
+１１－３．ＧｅｔＤａｔｅＴｉｍｅ
+　　［機能］
+　　　日時の取得
+
+　　［文法］
+      int GetDateTime( AMDATETIME *pDateTime );
+
+　　　pDateTime：日時データを受け取るAMDATETIME構造体へのポインタ
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　現在の日時を取得します。日時データを受け取るAMDATETIME構造体は、
+　　　以下のような構造をしています。
+
+typedef struct tagAMDATETIME {
+	unsigned int    nPackedTime;                    // パックト時間
+	unsigned int    nYear;                          // 年（西暦）
+	unsigned char   nMonth;                         // 月
+	unsigned char   nDay;                           // 日
+	unsigned char   nHour;                          // 時
+	unsigned char   nMinute;                        // 分
+	unsigned char   nSecond;                        // 秒
+	unsigned char   dPadding;                       // パディング
+	WORD            dPadding2;                      // パディング
+} AMDATETIME;
+
+　　　　ここで、パックト時間とは、１個の３２ビット数値の中に年月日・
+　　　時分秒のデータをパックしたものであり、この数字１つから
+　　　UnpackDateTime関数（後述）を用いて日時データを復元することが可能
+　　　です。ただしその場合、秒の精度は２秒単位となります。
+　　　　本関数は、パックト時間を含め、AMDATETIME構造体の全てのメンバ
+　　　（ただしパディングは除く）に有効な値をセットします。
+
+　　［使用例］
+
+// 時計表示
+
+#include <windows.h>
+#include <stdio.h>
+#include "amgame.h"												// AMGAMEヘッダ
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+	AMDATETIME	TimeData;										// 日時データ
+	char		szOut[80];
+
+	SetGlobalMode( AMMODE_WINDOWED );							// ウィンドウモード
+	if( !InitGraph( hInstance ) ) return -1;					// グラフィック初期化
+
+	while( ProcessEvent() && !KBHit() ) {
+		HCls();
+		GetDateTime( &TimeData );								// 日時取得
+		wsprintf( szOut, "%d年 %d月 %d日 %d時 %d分 %d秒",
+				  TimeData.nYear, TimeData.nMonth, TimeData.nDay,
+				  TimeData.nHour, TimeData.nMinute, TimeData.nSecond );
+		DrawString( 0, 0, szOut, GetColor( 255, 255, 255 ) );
+		Flip();													// 表示/描画ページ交換
+	}
+
+	EndGraph();													// グラフィック終了
+    return 0;
+}
+
+
+１１－４．ＵｎｐａｃｋＤａｔｅＴｉｍｅ
+　　［機能］
+　　　日時のアンパック
+
+　　［文法］
+      int UnpackDateTime( AMDATETIME *pDateTime );
+
+　　　pDateTime：日時データを受け取るAMDATETIME構造体へのポインタ
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　pDateTime が示す AMDATETIME 構造体の nPackedTime メンバにセッ
+　　　トされているパックド時間を元に、AMDATETIME 構造体の他のメンバを
+　　　セットします。本関数は、日時データをセーブする際にパックド時間の
+　　　みをセーブしておき、それを元にして日時を再現する、といった用途に
+　　　使います。ただし、GetDateTime関数の項でも触れたように、再現され
+　　　た秒の精度は２秒単位となります。
+　　　　AMDATETIME 構造体の詳細については、11-3.GetDateTimeの解説を参
+　　　照して下さい。
+
+　　［使用例］
+
+// 時計をアンパック表示
+
+#include <windows.h>
+#include <stdio.h>
+#include "amgame.h"									// AMGAMEヘッダ
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+	AMDATETIME	TimeData, TimeData2;				// 日時データ
+	char		szOut[80];
+
+	SetGlobalMode( AMMODE_WINDOWED );
+	if( !InitGraph( hInstance ) ) return -1;		// グラフィック初期化
+
+	while( ProcessEvent() && !KBHit() ) {
+		HCls();
+		GetDateTime( &TimeData );					// 日時取得
+		TimeData2.nPackedTime = TimeData.nPackedTime;
+		UnpackDateTime( &TimeData2 );				// データアンパック
+		wsprintf( szOut, "%d年 %d月 %d日 %d時 %d分 %d秒",
+				  TimeData2.nYear, TimeData2.nMonth, TimeData2.nDay,
+				  TimeData2.nHour, TimeData2.nMinute, TimeData2.nSecond );
+		DrawString( 0, 0, szOut, GetColor( 255, 255, 255 ) );
+		Flip();										// 表示/描画ページ交換
+	}
+
+	EndGraph();										// グラフィック終了
+    return 0;
+}
+
+
+１２．３Ｄ図形描画関係 -------------------------------------------------------
+
+１２－１．ＤｒａｗＰｏｌｙｇｏｎｓ
+　　［機能］
+　　　３Ｄポリゴンの描画
+
+　　［文法］
+　　　int  DrawPolygons( AmVertex *pVertexes, int nVertexNum,
+						 int hTexture, int nFlags );
+
+　　　pVertexes ： 描くポリゴンの頂点列を表すAmVertex構造体配列へのポインタ
+　　　nVertexNum： 頂点の数
+　　　hTexture  ： ポリゴンに張るテクスチャのハンドル（-1であればテクスチャなし）
+　　　nFlags    ： 動作モードフラグ（デフォルトは０）
+　　　             AMPOLY_NOLIGHT    : 光源計算をせず、頂点色を使って描画する
+　　　             AMPOLY_LIGHTING   : 頂点の法線ベクトルを使って光源計算をする
+　　　                                 （デフォルト）
+　　　             AMPOLY_QUADRANGLE : 四角形ポリゴンを描画する
+　　　             AMPOLY_TRIANGLE   : 三角形ポリゴンを描画する（デフォルト）
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　指定された頂点列を元に３Ｄポリゴンを描画します。具体的には、
+　　　三角形ポリゴンを描画する場合には頂点３つにつき１つのポリゴンが、
+　　　四角形ポリゴンを描画する場合には頂点４つにつき１つのポリゴンが、
+　　　それぞれ描画されていきます。従って、指定する頂点列の数は、三角形
+　　　ポリゴンであれば３の倍数、四角形ポリゴンであれば４の倍数でなけれ
+　　　ばなりません。
+　　　　指定する頂点は、AmVertex構造体によって３Ｄ空間内の頂点として指
+　　　定します。AmVertex構造体は以下のような形式になっています。
+
+　　　typedef struct tagAmVertex {							// 頂点構造体
+　　　　	AM3D_VALUE				x, y, z;				// 座標
+　　　　	AM3D_VALUE				u, v;					// テクスチャ座標
+　　　　	AM3D_VALUE				nx, ny, nz;				// 法線ベクトル
+　　　　	unsigned char			r, g, b, a;				// 色・アルファ値
+　　　} AmVertex;
+　　　(AM3D_VALUEは現在のところfloat型)
+
+　　　　この頂点構造体には、座標・テクスチャ座標・法線ベクトル・色の４
+　　　つの要素がありますが、それぞれの要素は以下の場合にきちんとセット
+　　　しなければなりません。
+
+　　　　座標　　　　　：必ずセットしなければならない
+　　　　テクスチャ座標：テクスチャを張る場合にはセットしなければならない
+　　　　法線ベクトル　：光源計算をする場合にセットしなければならない
+　　　　　　　　　　　　（デフォルトは光源計算あり）
+　　　　色　　　　　　：光源計算をしない場合にセットしなければならない
+
+      　なお、本関数を始めとする３Ｄ系関数が用いる座標系は、デフォルト
+	  では、z=0であれば２Ｄ座標と一致するように設定されています。従っ
+	  て、z=0とすれば２Ｄ関数と同じ感覚で描画を行うことが可能です。
+	  　また、注意点としては、本関数を含む３Ｄ系関数では、縦横のサイズ
+	  が２のｎ乗でないようなテクスチャを指定すると、テクスチャを正常に
+	  張ることができない場合があります。
+
+　　［使用例］
+
+// 色が付き、テクスチャが張られた三角形を描画する
+
+#include <windows.h>
+#include <math.h>
+#include "amgame.h"
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+	int				hTexture;									// テクスチャハンドル
+	AmVertex		avVertexes[3];								// 頂点
+
+	SetGlobalMode( AMMODE_WINDOWED );							// ウィンドウモードに
+	if( !InitGraph( hInstance ) ) return -1;					// グラフィック初期化
+
+	hTexture = LoadTexture( "SKY_TEX.BMP" );					// テクスチャロード
+
+	// 頂点情報セット
+	SetColorVertex( &avVertexes[0], 320.0f,  60.0f, 0.0f,		// ３Ｄ座標
+									64.0f, 0.0f,				// テクスチャ座標
+									0, 0xff, 0xff, 0xff );		// 頂点色
+	SetColorVertex( &avVertexes[1], 600.0f, 420.0f, 0.0f,
+									128.0f, 128.0f,
+									0xff, 0, 0xff, 0xff );
+	SetColorVertex( &avVertexes[2],  40.0f, 420.0f, 0.0f,
+									0.0f, 128.0f,
+									0xff, 0xff, 0, 0xff );
+
+	SetDrawMode( AMDRAW_BILINEAR, 0 );							// バイリニアフィルタ
+	while( ProcessEvent() && !KBHit() ) {
+		HCls();
+		DrawPolygons( avVertexes, 3, hTexture, AMPOLY_NOLIGHT );	// ポリゴン描画
+		Flip();
+	}
+
+	EndGraph();													// グラフィック終了
+	return 0;
+}
+
+
+１２－２．Ｄｒａｗ３ＤＬｉｎｅｓ
+　　［機能］
+　　　３Ｄ座標指定での直線描画
+
+　　［文法］
+　　　int Draw3DLines( AmVertex *pVertexes, int nVertexNum,
+					   int hTexture );
+
+　　　pVertexes ： 描く直線の始点・終点を表すAmVertex構造体配列へのポインタ
+　　　nVertexNum： 頂点の数
+　　　hTexture  ： 直線に張るテクスチャのハンドル（-1であればテクスチャなし）
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　指定された頂点列を元に３Ｄ直線を描画します。具体的には、頂点２
+　　　つにつき１つの３Ｄ直線が描画されていきます。従って、指定する頂点
+　　　列の数は２の倍数でなければなりません。
+　　　　指定する頂点は、AmVertex構造体によって３Ｄ空間内の頂点として指
+　　　定します。AmVertex構造体の形式については、13-1.DrawPolygons関数
+　　　の解説を参照してください。
+　　　　AmVertex構造体の要素のうち、法線ベクトルはセットする必要はあり
+　　　ません。常に頂点の色を指定するようにしてください。また、テクスチャ
+　　　に関しての注意点はDrawPolygons関数と同様です。
+
+　　［使用例］
+
+// 異世界のようなエフェクト
+
+#include <windows.h>
+#include <math.h>
+#include "amgame.h"
+
+#define WAVE_A				80						// 波の振幅
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+	int				i;
+	AmVertex		avVertexes[480 * 2];			// 頂点
+	double			fAngle;							// 角度
+	double			fLAngle;						// ローカル角度
+	int				hTexture;						// テクスチャハンドル
+
+	SetGlobalMode( AMMODE_WINDOWED );							// ウィンドウモードに
+	if( !InitGraph( hInstance ) ) return -1;		// グラフィック初期化
+
+	hTexture = MakeTextureMem( 1024, 512, 0 );		// ２のｎ乗サイズのテクスチャ
+	ReloadGraph( "passageh.bmp", hTexture );		// テクスチャに絵をロード
+
+	// 頂点情報の初期化（ラスタスクロール用）
+	for ( i = 0; i < 480; i++ ) {
+		SetColorVertex( &avVertexes[i * 2], 0.0f, 0.0f + i, 0.0f,
+											0.5f, i + 0.5f,
+											0xff, 0xff, 0xff, 0xff );
+		SetColorVertex( &avVertexes[i * 2 + 1], 640.0f, 0.0f + i, 0.0f,
+												640.0f, i + 0.5f,
+												0xff, 0xff, 0xff, 0xff );
+	}
+	SetDrawMode( AMDRAW_BILINEAR, 0 );
+
+	fAngle = 0.0f;
+	while( ProcessEvent() && !KBHit() ) {
+		HCls();
+		fLAngle = fAngle;
+		for ( i = 0; i < 480; i++ ) {
+			avVertexes[i * 2    ].x = ( float )(      -WAVE_A - WAVE_A * sin( fLAngle ) );
+			avVertexes[i * 2 + 1].x = ( float )( 640 + WAVE_A + WAVE_A * sin( fLAngle ) );
+			avVertexes[i * 2    ].r = ( int )( 100 * sin( fLAngle * 0.7 ) + 155 );
+			avVertexes[i * 2 + 1].r = ( int )( 100 * sin( fLAngle * 2.2 ) + 155 );
+			fLAngle += 3.1416 / 100.0;
+		}
+		Draw3DLines( avVertexes, 480 * 2, hTexture );	// 線描画
+		Flip();
+		fAngle += 3.1416 / 50.0;
+	}
+
+	EndGraph();										// グラフィック終了
+	return 0;
+}
+
+
+１２－３．ＳｅｔＬｉｇｈｔＶｅｒｔｅｘ
+　　［機能］
+　　　光源計算ありの場合の AmVertex 構造体セット
+
+　　［文法］
+　　　int SetLightVertex( AmVertex *pVertex,
+						  AM3D_VALUE x, AM3D_VALUE y, AM3D_VALUE z,
+						  AM3D_VALUE u, AM3D_VALUE v,
+						  AM3D_VALUE nx, AM3D_VALUE ny, AM3D_VALUE nz );
+　　　(AM3D_VALUEは現在のところfloat型)
+
+　　　x, y, z   ： 頂点のx, y, z座標
+　　　u, v      ： 頂点のテクスチャ座標
+　　　nx, ny, nz： 法線のx, y, z成分
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　指定されたAmVertex構造体に、光源計算ありの場合にセットすべき
+　　　頂点データをセットします。
+
+　　［使用例］
+
+// 円筒を描画する
+
+#include <windows.h>
+#include <math.h>
+#include "amgame.h"
+
+#define PI					3.14159265358979		// 円周率
+#define DIVIDE_NUM			20						// ポリゴン分割数
+#define R					150						// 円筒半径
+#define OBJ_HEIGHT			100.0f					// 円筒高さ
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+	int				i, j;
+	int				hTexture;						// テクスチャハンドル
+	AmVertex		avVertexes[DIVIDE_NUM * 4];		// 頂点
+	AmMatrix		amLWMatrix;						// ローカル→ワールド行列
+	double			fAngle, fAngle2;				// 角度
+	int				nTex_w, nTex_h;					// テクスチャ幅／高さ
+
+	SetGlobalMode( AMMODE_WINDOWED );				// ウィンドウモードに
+	if( !InitGraph( hInstance ) ) return -1;		// グラフィック初期化
+
+	hTexture = LoadTexture( "SKY_TEX.BMP" );		// テクスチャロード
+	GetPictureSize( hTexture, &nTex_w, &nTex_h );	// 絵のサイズ取得
+
+	// 円筒作成
+	fAngle = 0.0f;  fAngle2 = fAngle + 2.0 * PI / DIVIDE_NUM;
+	for ( i = 0; i < DIVIDE_NUM; i++ ) {
+		SetLightVertex( &avVertexes[i * 4],
+						( float )( R * cos( fAngle  ) ), -OBJ_HEIGHT, ( float )( R * sin( fAngle  ) ),
+						( float )( fAngle  * nTex_w / ( 2.0 * PI ) ), 0.0f,
+						( float )cos( fAngle ), 0, ( float )sin( fAngle ) );
+		SetLightVertex( &avVertexes[i * 4 + 1],
+						( float )( R * cos( fAngle2 ) ), -OBJ_HEIGHT, ( float )( R * sin( fAngle2 ) ),
+						( float )( fAngle2 * nTex_w / ( 2.0 * PI ) ), 0.0f,
+						( float )cos( fAngle2 ), 0, ( float )sin( fAngle2 ) );
+		SetLightVertex( &avVertexes[i * 4 + 2],
+						( float )( R * cos( fAngle  ) ),  OBJ_HEIGHT, ( float )( R * sin( fAngle  ) ),
+						( float )( fAngle  * nTex_w / ( 2.0 * PI ) ), ( float )nTex_h,
+						( float )cos( fAngle ), 0, ( float )sin( fAngle ) );
+		SetLightVertex( &avVertexes[i * 4 + 3], 
+						( float )( R * cos( fAngle2 ) ),  OBJ_HEIGHT, ( float )( R * sin( fAngle2 ) ),
+						( float )( fAngle2 * nTex_w / ( 2.0 * PI ) ), ( float )nTex_h,
+						( float )cos( fAngle2 ), 0, ( float )sin( fAngle2 ) );
+		fAngle += 2.0 * PI / DIVIDE_NUM;  fAngle2 += 2.0 * PI / DIVIDE_NUM;
+	}
+
+	// ローカル→ワールド行列初期化
+	for ( i = 0; i < 4; i++ ) {						// 単位行列セット
+		for ( j = 0; j < 4; j++ ) {
+			if ( i == j ) amLWMatrix.m[i][j] = 1.0f;
+					 else amLWMatrix.m[i][j] = 0.0f;
+		}
+	}
+	amLWMatrix.m[3][0] = 320.0f;  amLWMatrix.m[3][1] = 240.0f;	// 画面中心に
+
+	fAngle = 0.0f;
+	SetDrawMode( AMDRAW_BILINEAR, 0 );
+	while( ProcessEvent() && !KBHit() ) {
+		amLWMatrix.m[0][0] =  ( float )cos( fAngle );  amLWMatrix.m[0][2] = ( float )sin( fAngle );
+		amLWMatrix.m[2][0] = -( float )sin( fAngle );  amLWMatrix.m[2][2] = ( float )cos( fAngle );
+		amLWMatrix.m[3][2] = ( float )( 400.0 * sin( fAngle / 2.0 ) );	// Ｚ位置
+		SetLWMatrix( &amLWMatrix );					// ローカル→ワールド行列セット
+		HCls();
+		DrawPolygons( avVertexes, 4 * DIVIDE_NUM, hTexture, AMPOLY_QUADRANGLE );
+		Flip();
+		fAngle += PI / 100.0;
+	}
+
+	EndGraph();										// グラフィック終了
+	return 0;
+}
+
+
+１２－４．ＳｅｔＣｏｌｏｒＶｅｒｔｅｘ
+　　［機能］
+　　　色指定あり（光源計算なし）の場合の AmVertex 構造体セット
+
+　　［文法］
+　　　int SetColorVertex( AmVertex *pVertex,
+						  AM3D_VALUE x, AM3D_VALUE y, AM3D_VALUE z,
+						  AM3D_VALUE u, AM3D_VALUE v,
+						  u_char r, u_char g, u_char b, u_char a );
+　　　(AM3D_VALUEは現在のところfloat型)
+
+　　　x, y, z   ： 頂点のx, y, z座標
+　　　u, v      ： 頂点のテクスチャ座標
+　　　r, g, b, a： 頂点の色とアルファ値
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　指定されたAmVertex構造体に、色指定あり（光源計算なし）の場合
+　　　にセットすべき頂点データをセットします。
+
+　　［使用例］
+　　　１２－１．ＤｒａｗＰｏｌｙｇｏｎｓの使用例参照
+
+
+１２－５．ＳｅｔＬＷＭａｔｒｉｘ
+　　［機能］
+　　　ローカル・ワールド行列のセット
+
+　　［文法］
+　　　int SetLWMatrix( AmMatrix *pMatrix );
+
+　　　pMatrix ： セットする行列へのポインタ
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　ローカル座標をワールド座標に変換する行列をセットします。
+　　　　行列は、AmMatrix構造体で指定します。AmMatrix構造体の形式は、
+　　　以下のようになっています。
+
+　　　typedef struct tagAmMatrix {						// 行列構造体
+　　　　	AM3D_VALUE				m[4][4];
+　　　} AmMatrix;
+　　　(AM3D_VALUEは現在のところfloat型)
+
+　　　　また、変換行列は以下のように使われます。
+
+　　　( x', y', z', w' ) = ( x, y, z, w )Ｍ
+　　　
+　　　x', y', z', w' : 変換後の座標
+　　　x , y , z , w  : 変換前の座標
+　　　Ｍ             : 変換行列
+
+　　　　従って、実際に行われる演算は以下のようになります。
+
+　　　x' = m[0][0] * x + m[1][0] * y + m[2][0] * z + m[3][0] * w
+　　　y' = m[0][1] * x + m[1][1] * y + m[2][1] * z + m[3][1] * w
+　　　z' = m[0][2] * x + m[1][2] * y + m[2][2] * z + m[3][2] * w
+　　　w' = m[0][3] * x + m[1][3] * y + m[2][3] * z + m[3][3] * w
+
+　　［使用例］
+　　　１２－３．ＳｅｔＬｉｇｈｔＶｅｒｔｅｘの使用例参照
+
+
+１２－６．ＧｅｔＬＷＭａｔｒｉｘ
+　　［機能］
+　　　ローカル・ワールド行列の取得
+
+　　［文法］
+　　　int GetLWMatrix( AmMatrix *pMatrix );
+
+　　　pMatrix ： 行列を受け取るAmMatrix構造体へのポインタ
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　現在システムにセットされているローカル・ワールド行列を取得し
+　　　ます。行列はAmMatrix構造体で受け取りますが、AmMatrix構造体の
+　　　構造については、13-8.SetLWMatrix関数の解説を参照してください。
+　　　　なお、デフォルトでは、ローカル・ワールド行列は単位行列にセット
+　　　されています。
+
+　　［使用例］
+　　　省略
+
+
+１２－７．ＳｅｔＷＶＭａｔｒｉｘ
+　　［機能］
+　　　ワールド・ビュー行列のセット
+
+　　［文法］
+　　　int SetWVMatrix( AmMatrix *pMatrix );
+
+　　　pMatrix ： セットする行列へのポインタ
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　ワールド座標をビュー座標に変換する行列をセットします。
+　　　　行列は、AmMatrix構造体で指定します。AmMatrix構造体の形式につ
+　　　いては、13-8.SetLWMatrix関数の解説を参照してください。
+
+　　［使用例］
+　　　省略
+
+
+１２－１１．ＧｅｔＷＶＭａｔｒｉｘ
+　　［機能］
+　　　ワールド・ビュー行列の取得
+
+　　［文法］
+　　　int GetWVMatrix( AmMatrix *pMatrix );
+
+　　　pMatrix ： 行列を受け取るAmMatrix構造体へのポインタ
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　現在システムにセットされているワールド・ビュー行列を取得しま
+　　　す。行列はAmMatrix構造体で受け取りますが、AmMatrix構造体の構造
+　　　については、13-8.SetLWMatrix関数の解説を参照してください。
+　　　　なお、デフォルトでは、ワールド・ビュー行列は、z=0のとき２Ｄの
+　　　座標と一致するような変換行列がセットされています。
+
+　　［使用例］
+　　　１２－１０．ＳｅｔＷＶＭａｔｒｉｘの使用例参照
+
+
+１２－１２．ＳｅｔＩｄｅｎｔｉｔｙＭａｔｒｉｘ
+　　［機能］
+　　　単位行列セット
+
+　　［文法］
+　　　int SetIdentityMatrix( AmMatrix *pDest );
+
+　　　pDest ： 行列を受け取るAmMatrix構造体へのポインタ
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　指定されたAmMatrix構造体に、単位行列をセットします。
+
+　　［使用例］
+　　　省略
+
+
+１２－１２．ＳｅｔＲＴＭａｔｒｉｘ
+　　［機能］
+　　　回転＋平行移動行列セット
+
+　　［文法］
+　　　int SetRTMatrix( AmMatrix *pDest,
+                       AM3D_VALUE tx, AM3D_VALUE ty, AM3D_VALUE tz,
+                       AM3D_VALUE rx, AM3D_VALUE ry, AM3D_VALUE rz );
+
+　　　pDest ： 行列を受け取るAmMatrix構造体へのポインタ
+　　　tx    ： 平行移動のｘ成分
+　　　ty    ： 平行移動のｙ成分
+　　　tz    ： 平行移動のｚ成分
+　　　rx    ： ｘ軸中心の回転角
+　　　ry    ： ｙ軸中心の回転角
+　　　rz    ： ｚ軸中心の回転角
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　指定されたAmMatrix構造体に、指定された回転と平行移動を行う行列
+　　　をセットします。変換の順番は、
+
+　　　ｘ軸回転→ｙ軸回転→ｚ軸回転→平行移動
+
+　　　となります。
+
+　　［使用例］
+　　　省略
+
+
+
+１３．デバッグ関係 -------------------------------------------------------
+
+１３－１．ＳｅｔＡＭＤｅｂｕｇＭｏｄｅ
+　　［機能］
+　　　デバッグモードの設定
+
+　　［文法］
+　　　int  SetAMDebugMode( int nDebugMode );
+
+　　　nDebugMode： デバッグモード
+　　　             AMDEBUG_ALL_OFF     : すべてのデバッグ機能を無効にする
+　　　             AMDEBUG_ALL_ON      : すべてのデバッグ機能を有効にする
+　　　             AMDEBUG_REGISTER_OFF: デバッグ情報のライブラリへの登録をＯＦＦにする（デフォルト）
+　　　             AMDEBUG_REGISTER_ON : デバッグ情報のライブラリへの登録をＯＮにする
+　　　             AMDEBUG_DISPLAY_OFF : デバッグ情報の表示をＯＦＦにする（デフォルト）
+　　　             AMDEBUG_DISPLAY_ON  : デバッグ情報の表示をＯＮにする
+　　　             AMDEBUG_KEY_OFF     : デバッグ支援キー入力を無効にする
+　　　             AMDEBUG_KEY_ON      : デバッグ支援キー入力を有効にする（デフォルト）
+　　　             AMDEBUG_FILE_OFF    : デバッグ情報のファイルへの出力をＯＦＦにする（デフォルト）
+　　　             AMDEBUG_FILE_ON     : デバッグ情報のファイルへの出力をＯＮにする
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　ＡＭＧＡＭＥライブラリのデバッグモードを設定します。本ライブラリ
+　　　には、以下のデバッグ機能があります。
+　　　
+　　　１．グラフィックデータの描画履歴を画面出力する
+　　　２．デバッグ機能をユーザーのキー入力でコントロールする
+　　　３．グラフィックデータのロード履歴をファイルAM_DEBUG.txtに出力する
+　　　
+　　　１．の描画履歴の画面出力をするには、デバッグ情報のライブラリへの
+　　　登録(AMDEBUG_REGISTER_ON)と、デバッグ情報の表示(AMDEBUG_DISPLAY_ON)
+　　　を有効にします。デバッグ情報の画面出力は、Flip関数が実行された際に
+　　　行われます。もし画面に描画するものが多くてデバッグ表示が画面に
+　　　収まりきらない場合には、履歴を表示したい描画命令のみを登録するよう
+　　　に設定します。例えば、
+　　　
+　　　SetAMDebugMode( AMDEBUG_DISPLAY_ON );
+　　　SetAMDebugMode( AMDEBUG_REGISTER_ON );
+　　　DrawMem( 0, 0, hBack1 );
+　　　DrawMemExp( 0, 0, hChar1 );
+　　　SetAMDebugMode( AMDEBUG_REGISTER_OFF );
+　　　DrawMem( 0, 0, hBack2 );
+　　　DrawMemExp( 0, 0, hChar2 );
+　　　Flip();
+　　　
+　　　とすれば、hBack1とhChar1を描画したときのデバッグ情報のみが表示され
+　　　ます。
+　　　また、デバッグ情報を出力する際のフォントは、Flip関数が実行された
+　　　ときに設定されているものが使われます。そのため、SetFontSize関数で
+　　　小さいフォントを指定すれば、より多くのデバッグ情報を表示することも
+　　　可能です。
+　　　２．のユーザーによるデバッグ支援キー入力機能は、デフォルトで有効に
+　　　されており、AMDEBUG_ALL_OFFかAMDEBUG_KEY_OFFによって無効にされない
+　　　限りは、デバッグ機能のキーコントロールができるようになっています。
+　　　デバッグ支援キーの詳細については、本ドキュメント冒頭の
+　　　［デバッグ機能について］を参照してください。
+　　　３．のファイル出力機能は、AM_DEBUG.txtに、画像ロードについてのログ
+　　　を出力するものです。具体的には、LoadTexture関数やLoadBlkTexture関数
+　　　で画像をロードした際、ファイル名や、ロードに成功したかどうかのログを
+　　　出力します。
+
+　　［使用例］
+　　
+// デバッグ機能使用
+// 白い背景とデバッグ文字が重なって見にくいときは、実行中にＩキーを押すとよい
+
+#include <windows.h>
+#include "amgame.h"												// ＡＧＬＩＢヘッダ
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+	int							i;
+	int							hBack;
+	int							hBmp;
+
+	SetGlobalMode( AMMODE_WINDOWED );							// ウィンドウモードに
+	if ( !InitGraph( hInstance ) ) return 0;					// グラフィックの初期化
+
+	SetAMDebugMode( AMDEBUG_ALL_ON );							// デバッグ機能をすべてＯＮに
+
+	hBack = LoadTexture( "PASSAGEH.BMP" );						// 背景のロード
+	hBmp = LoadTexture( "ANNA_H.BMP" );							// キャラのロード
+
+	SetFontSize( 12 );											// 表示フォントサイズ設定
+
+	for ( i = -1920 * 5; i <= 1920 * 5; i += 48 ) {
+		DrawMem( 0, 0, hBack );
+		DrawMemThExp( 320 + i / 6, 240 + i / 8,
+					  320 - i / 6, 240 - i / 8, hBmp );			// キャラ描画
+		Flip();
+		if ( !ProcessEvent() ) break;
+	}
+
+	GetCh();													// キー待ち
+	EndGraph();													// グラフィック使用の終了
+	return 0;
+}
+
+
+
+１３－２．ＯｕｔｐｕｔＡＭＤｅｂｕｇＳｔｒｉｎｇ
+　　［機能］
+　　　デバッグ文字列の出力
+
+　　［文法］
+　　　int  OutputAMDebugString( char *szOutString );
+
+　　　szOutString：出力するデバッグ文字列
+
+　　［戻り値］
+　　　AM_OK：正常終了(0)
+　　　マイナスの値：エラー（エラーの種類とエラーコード参照）
+
+　　［解説］
+　　　　画面に、デバッグ文字列を表示します。DrawSting命令で文字列を描画した
+　　　場合、その後にグラフィックが描画されると、上書きされて文字が消えてしま
+　　　いますが、本関数では、上書きされて文字列が表示されない、ということは
+　　　ありません。ただし、デバッグ情報出力機能や、本関数自身で出力した情報が
+　　　多すぎて、画面に収まり切れない場合はあります。その場合、表示する情報を
+　　　切り詰めるか、SetFontSize関数でフォントを小さくするようにしてください。
+　　　　なお、本関数が実行されると、無条件でデバッグ表示はＯＮにされ、キー
+　　　コントロールによるデバッグ表示ＯＦＦはできなくなりますので注意して下さい。
+
+　　［使用例］
+
+// デバッグ文字列の出力
+
+#include <stdio.h>
+#include <windows.h>
+#include <math.h>
+#include "amgame.h"												// ＡＧＬＩＢヘッダ
+
+#define PI				3.14159265358979						// 円周率
+
+int WINAPI WinMain( HINSTANCE hInstance, HINSTANCE hPrevInstance,
+                    LPSTR lpCmdLine, int nCmdShow )
+{
+	int			hTex, hTex2;									// テクスチャハンドル
+	double		fAngle = 0;										// 角度
+
+	SetGlobalMode( AMMODE_WINDOWED );							// ウィンドウモードに
+	if ( !InitGraph( hInstance ) ) return 0;					// グラフィックの初期化
+
+	SetAMDebugMode( AMDEBUG_ALL_ON );							// デバッグ機能をすべてＯＮに
+
+	hTex  = LoadTexture( "Passageh.bmp" );						// テクスチャロード
+	hTex2 = LoadTexture( "Anna_h.bmp" );
+
+	SetDrawMode( AMDRAW_BILINEAR, 0 );							// バイリニアフィルタ指定
+	while ( ProcessEvent() && !( CheckKey( AMINPUT_MULT ) & KEYIN_ESC ) ) {
+		HCls();
+		OutputAMDebugString( "テスト文字列１" );				// デバッグ文字列１出力
+		DrawMemRot( 0, 0, 320, 240, -fAngle, 1.0, hTex );
+		OutputAMDebugString( "テスト文字列２" );				// デバッグ文字列２出力
+		DrawMemThRot( 320, 240, 320, 240, fAngle, 0.5f, hTex2 );
+		fAngle += PI / 100.0;
+		Flip();
+	}
+
+	EndGraph();													// グラフィック使用の終了
+	return 0;
+}
+
+
+
+[エラーの種類とエラーコード]
+
+　本ライブラリでは、エラーが起こると関数の戻り値がマイナスになります。
+逆に言えば、戻り値がマイナスならば何らかのエラーが起こったことになりま
+す。ただし、ＤｉｒｅｃｔＸウィンドウに対してWM_CLOSEメッセージが送られ、
+アプリケーションをできるだけ速やかに終了しなければならない状況になった
+にもかかわらず本ライブラリの関数を呼び出した場合には、ほとんどの関数が
+AMERR_NOINITIALIZEエラーを返します。
+　以下、本ライブラリで起こるエラーの種類とエラーコードを列挙します。
+
+　エラー定義名　　　　　　　エラーの意味　　　　　　　  エラーコード
+AMERR_NOFILE         ：ファイルやリソースが見つからない    (-1)
+AMERR_INVALIDFILE    ：ファイルの形式が不正                (-2)
+AMERR_NOMEMORY       ：必要なメモリが確保できない          (-3)
+AMERR_INVALIDVALUE   ：指定された値が不正                  (-4)
+AMERR_INITIALIZE     ：イニシャライズができない            (-5)
+AMERR_NODRIVER       ：必要なドライバが見つからない        (-6)
+AMERR_INVALIDMODE    ：現在のモードでは実行できない        (-7)
+AMERR_NOINITIALIZE   ：イニシャライズがされていない        (-8)
+AMERR_DISPLAY        ：ディスプレイ出力のエラー            (-9)
+AMERR_NOFREEHANDLE   ：新しいハンドルが作れない            (-10)
+AMERR_NOFREESURFACE  ：新しいサーフェスが作れない          (-11)
+AMERR_CANNOTCREATE   ：指定されたファイルが作れない        (-12)
+AMERR_SOUNDOUT       ：サウンド出力のエラー                (-13)
+AMERR_INVALIDFORM    ：データの形式が不正                  (-14)
+AMERR_INVALIDHANDLE  ：指定されたハンドルが不正            (-15)
+AMERR_CANNOT         ：命令が実行不可能                    (-16)
+AMERR_OUTOFRANGE     ：値が範囲外                          (-17)
+AMERR_OVERBUFFER     ：バッファオーバー                    (-18)
+AMERR_FILEIO         ：ファイル入出力エラー                (-19)
+AMERR_INVALIDSIZE    ：指定されたサイズが不正              (-20)
+AMERR_INVALIDPOINTER ：指定されたポインタが不正            (-21)
+
+
+
+[Ｖｅｒｓｉｏｎ　３．２０ａからの変更点]
+ＰｌａｙＷａｖＳｔｒｅａｍＢａｃｋ関数を連続して呼び出した際に、
+例外エラーが起こる場合がある不具合を修正しました。
+ムービー再生時にキーを押していると、エラーが発生する場合がある
+不具合を修正しました。
+長時間立ち上げ続けているマシンで、ムービー再生の速度が狂う場合が
+ある不具合を修正しました。
+ウィンドウモードでウィンドウサイズが指定のものにならないことがある
+不具合を修正しました。
+VisualStudio2015でDirectXが使用している関数によるリンクエラーが
+起きる不具合を修正しました。
+
+
+[使用の許諾]
+
+　本ライブラリは、アミューズメントメディア総合学院の生徒であれば、著作
+権所有者の許可を得て使用し、応用ソフトウェアを再配布することができます。
+ただし、著作権者に無断で本ライブラリ及びamgamew.sysを改変することを禁
+じます。

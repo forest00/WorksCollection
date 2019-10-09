@@ -1,0 +1,3 @@
+continue2 2種：(484,296)
+title2 2種　 ：(484,447)
+gameover_cursor：(343,303)(343,510)

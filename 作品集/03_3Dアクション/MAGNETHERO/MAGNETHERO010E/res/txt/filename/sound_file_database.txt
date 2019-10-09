@@ -1,0 +1,20 @@
+//使用する楽曲ファイルのファイルパス(exeからの相対パス)
+//[ファイル名]、[ストリーム再生するか]、[ループ再生するか]
+
+//BGM
+"res/sound/bgm/bgm.wav",                1,1,  //ゲームプレイ中に流すBGM
+"res/sound/bgm/title.wav",              1,1,  //タイトルで流すBGM
+//SE
+"res/sound/se/beam.wav",                0,0,  //磁力発射の瞬間の効果音
+"res/sound/se/footstep.wav",            0,0,  //自機の地上足音
+"res/sound/se/jump.wav",                0,0,  //ジャンプした瞬間
+"res/sound/se/magarrive.wav",           0,0,  //自機がビームの衝突相手とくっついた瞬間
+"res/sound/se/magfly.wav",              0,0,  //くっつく移動開始時
+"res/sound/se/maghit.wav",              0,0,  //磁力が対象にヒットしたとき
+"res/sound/se/maghover.wav",            0,0,  //浮遊開始時
+"res/sound/se/声優音声/goal.wav",        0,0,  //ゴール時
+"res/sound/se/声優音声/magjump.wav",     0,0,  //磁力命中時　どちらかをランダムに再生
+"res/sound/se/声優音声/magjump2.wav",    0,0,  //磁力命中時　どちらかをランダムに再生
+"res/sound/se/声優音声/miss.wav",        0,0,  //ステージ外落下時
+"res/sound/se/声優音声/start.wav",       0,0,  //ステージ開始時
+"res/sound/se/声優音声/titlecall.wav",   0,0,  //タイトル描画時

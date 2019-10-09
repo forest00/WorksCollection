@@ -1,0 +1,4 @@
+//ステージ3で使うFBXファイル名
+"res/fbx/stage3/stage3.fbx",
+"res/fbx/stage3/stage3_mag.fbx",
+"res/fbx/stage3/stage3_nomag.fbx",

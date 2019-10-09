@@ -1,0 +1,3 @@
+//タスクバーに出すアイコン画像のファイルパス
+
+"res/texture/ico/magnet_hero_icon.ico"

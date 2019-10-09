@@ -1,0 +1,9 @@
+#pragma once
+void initTitle();
+void preTitle();
+void processTitle();
+void drawTitle();
+void processRedEyes();
+void drawRedEyes();
+void processMist();
+void drawMist();

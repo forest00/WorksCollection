@@ -1,0 +1,12 @@
+//プレーヤーが使うFBXファイル名
+"res/fbx/sen_fbx/sen.fbx",
+"res/fbx/sen_fbx/sen_ stand.fbx",
+"res/fbx/sen_fbx/sen_ front walk.fbx",
+"res/fbx/sen_fbx/sen_ back walk.fbx",
+"res/fbx/sen_fbx/sen_ side walk1.fbx",
+"res/fbx/sen_fbx/sen_ side walk2.fbx",
+"res/fbx/sen_fbx/sen_ run.fbx",
+"res/fbx/sen_fbx/sen_ jump.fbx",
+"res/fbx/sen_fbx/sen_ damage.fbx",
+"res/fbx/sen_fbx/sen_ fall.fbx",
+"res/fbx/sen_fbx/sen_hanpatu.fbx",

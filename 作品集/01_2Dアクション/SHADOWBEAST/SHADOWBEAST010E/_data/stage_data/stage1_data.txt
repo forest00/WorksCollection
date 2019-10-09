@@ -1,0 +1,108 @@
+最初は1行だけ何か書いてください(空白も可)
+world
+3000,720
+
+1p
+200,400
+
+2p
+1300,400
+
+object
+1500,640
+
+block
+0,640,3000,720,1
+-1,-1,-1,-1,-1
+
+
+register,0
+0,100,500,goblin
+0,2900,500,goblin
+-1,-1,-1,-1
+
+register,1
+0,100,500,goblin
+0,2900,500,goblin
+-1,-1,-1,-1
+
+register,2
+0,100,500,goblin
+120,100,400,goblin
+240,100,500,goblin
+-1,-1,-1,-1
+
+register,3
+0,2900,500,goblin
+120,2900,500,goblin
+240,2900,500,goblin
+-1,-1,-1,-1
+
+appear,0
+
+wait_enemy,0
+
+if,not_elapsed,200
+	enemy,2400,550,goblin
+	enemy,2100,550,goblin
+	wait_enemy,0
+ endif
+
+wait_enemy,0
+
+appear,1
+
+wait_enemy,0
+
+if,not_elapsed,400
+	enemy,100,550,goblin
+	enemy,400,400,goblin
+	wait_enemy,0
+ endif
+
+if,not_elapsed,800
+	wait_enemy,0
+	enemy,600,550,goblin
+	enemy,400,400,goblin
+ endif
+
+wait_enemy,0
+
+appear,2
+
+wait_enemy,0
+
+if,not_elapsed,1500
+	enemy,1200,550,goblin
+	enemy,1800,400,goblin
+	wait_enemy,0
+ endif
+
+wait_enemy,0
+
+appear,3
+
+wait_enemy,0
+
+if,not_elapsed,2000
+	enemy,1200,400,goblin
+	enemy,1800,550,goblin
+	wait_enemy,0
+ endif
+
+if,not_elapsed,2500
+	wait_enemy,0
+endif
+
+wait_enemy,0
+
+if,not_elapsed,2500
+	enemy,1200,400,goblin
+	enemy,1800,550,goblin
+	wait_enemy,0
+ endif
+
+wait_enemy,0
+
+end
+最後に改行が必要

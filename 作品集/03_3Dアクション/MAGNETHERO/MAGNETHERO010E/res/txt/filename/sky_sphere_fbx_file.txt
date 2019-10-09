@@ -1,0 +1,3 @@
+//スカイスフィアのFBXファイルパス
+"res/fbx/sky/sky.fbx",
+"res/fbx/skysphere/skysphere.fbx",

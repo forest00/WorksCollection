@@ -1,0 +1,586 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{8ae0834a-6fde-49b0-baa9-c1afe5596c0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\calc">
+      <UniqueIdentifier>{b309e78a-ad23-44fe-a5b6-7d05fd381416}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\input">
+      <UniqueIdentifier>{5884c11e-cc9e-4700-9ff6-3e6b194e12dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\file_reader">
+      <UniqueIdentifier>{79417176-5c3e-4b3d-9fc1-a02a928258fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\sound">
+      <UniqueIdentifier>{b2a4aabf-c229-4385-b3c0-db9b36b6b0a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\texture_manager">
+      <UniqueIdentifier>{1771d63d-ae93-4dc0-aa1d-e9fd1415b954}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="res">
+      <UniqueIdentifier>{378d4707-7638-4d6c-984b-12199f7880f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="res\txt">
+      <UniqueIdentifier>{1dabb3d3-f0a5-49ac-a8e4-82e04fc379dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\fbx_table">
+      <UniqueIdentifier>{9ff1841b-8f0e-4eaa-b237-51123160353b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\sound\detail">
+      <UniqueIdentifier>{237dd9b9-3b2e-4d7a-a3ad-a9a39a0509d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\window">
+      <UniqueIdentifier>{6a4ce275-e9a0-4029-b6a1-e83601649e9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\file_data">
+      <UniqueIdentifier>{d86e5f35-1d67-4179-9bb8-f8550b09eefc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\char_ptr">
+      <UniqueIdentifier>{5a137866-8f89-40f1-a2de-85d43d0d9c19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\mylib">
+      <UniqueIdentifier>{3125f2cc-e0fb-4cae-966d-8c38d5df071a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\shader_use">
+      <UniqueIdentifier>{2dbff359-4bc5-4b83-8ac6-387d07642a5d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\easing">
+      <UniqueIdentifier>{0cf55aa4-cf28-47d6-b671-e99a3faddca1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="res\txt\filename">
+      <UniqueIdentifier>{2902160c-d577-424c-9674-5104a38e91a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="res\txt\database">
+      <UniqueIdentifier>{7e00f325-bea6-4fe6-b621-bd5b6b51b747}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="res\txt\naming_convention">
+      <UniqueIdentifier>{ab0984d6-e08e-40d7-adec-4dc4c47d1211}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\magnet_hero">
+      <UniqueIdentifier>{9b152683-e34c-488e-9842-d8908c1a2872}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\magnet_hero\magnet_hero_state">
+      <UniqueIdentifier>{b23cfc80-e5a6-4057-89de-794e73d415dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\magnet_hero\magnet_hero_state\ending">
+      <UniqueIdentifier>{7d3714fb-e887-4587-8b0e-f1c68ba9abda}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\magnet_hero\magnet_hero_state\game_main">
+      <UniqueIdentifier>{540339b1-e5f2-4ff0-b586-0dd4443e90df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\magnet_hero\magnet_hero_state\game_main\sprite">
+      <UniqueIdentifier>{b911d4a1-51e8-4af5-a9ab-f8014d6b7a8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\magnet_hero\magnet_hero_state\game_main\fbx_object">
+      <UniqueIdentifier>{753b2e24-7a44-4710-b241-af3a55d20866}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\magnet_hero\magnet_hero_state\game_main\connecter">
+      <UniqueIdentifier>{13cf9245-020d-475c-9b88-7795fd795d98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\magnet_hero\magnet_hero_state\game_main\stage_event">
+      <UniqueIdentifier>{8d1df9e7-2d73-4ad2-b118-f54e407c2a3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\magnet_hero\magnet_hero_state\game_main\camera">
+      <UniqueIdentifier>{a28f700f-0074-4327-b42c-9bc09d4852bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\magnet_hero\magnet_hero_state\title">
+      <UniqueIdentifier>{4b7fb6fb-1a4b-49ab-881b-eecc4f6f9cb4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\framework">
+      <UniqueIdentifier>{8af95a87-bb04-4d2f-810a-26dd62f67f36}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\movie">
+      <UniqueIdentifier>{26576026-3f4b-41d1-ac9d-4c3e87de5da5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\amlib">
+      <UniqueIdentifier>{405c2751-9aca-4c8c-ada0-b64cb703af22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\magnet_hero\magnet_hero_state\game_main\glitter">
+      <UniqueIdentifier>{8d216e46-e920-4bcb-a7fd-b12ab75516a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="res\shader">
+      <UniqueIdentifier>{0a62a52e-5128-4fcb-8bdb-5a23b36b314d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\magnet_hero\magnet_hero_state\game_main\aiming">
+      <UniqueIdentifier>{05c781b7-24ba-4de5-b948-c6d835f3da4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\option">
+      <UniqueIdentifier>{c2e18331-ea86-40ca-8d67-4beec635d231}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\input\input.cpp">
+      <Filter>src\input</Filter>
+    </ClCompile>
+    <ClCompile Include="src\input\input_button.cpp">
+      <Filter>src\input</Filter>
+    </ClCompile>
+    <ClCompile Include="src\input\input_controller.cpp">
+      <Filter>src\input</Filter>
+    </ClCompile>
+    <ClCompile Include="src\input\input_keyboard.cpp">
+      <Filter>src\input</Filter>
+    </ClCompile>
+    <ClCompile Include="src\input\input_mouse.cpp">
+      <Filter>src\input</Filter>
+    </ClCompile>
+    <ClCompile Include="src\texture_manager\texture_manager.cpp">
+      <Filter>src\texture_manager</Filter>
+    </ClCompile>
+    <ClCompile Include="src\calc\calc.cpp">
+      <Filter>src\calc</Filter>
+    </ClCompile>
+    <ClCompile Include="src\file_reader\file_reader.cpp">
+      <Filter>src\file_reader</Filter>
+    </ClCompile>
+    <ClCompile Include="src\fbx_table\fbx_table.cpp">
+      <Filter>src\fbx_table</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sound\detail\sound_table.cpp">
+      <Filter>src\sound\detail</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sound\sound.cpp">
+      <Filter>src\sound</Filter>
+    </ClCompile>
+    <ClCompile Include="src\file_data\file_data.cpp">
+      <Filter>src\file_data</Filter>
+    </ClCompile>
+    <ClCompile Include="src\window\icon_file_name.cpp">
+      <Filter>src\window</Filter>
+    </ClCompile>
+    <ClCompile Include="src\window\startup_option.cpp">
+      <Filter>src\window</Filter>
+    </ClCompile>
+    <ClCompile Include="src\char_ptr\char_ptr.cpp">
+      <Filter>src\char_ptr</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mylib\mylib.cpp">
+      <Filter>src\mylib</Filter>
+    </ClCompile>
+    <ClCompile Include="src\easing\easing.cpp">
+      <Filter>src\easing</Filter>
+    </ClCompile>
+    <ClCompile Include="src\shader_use\simple_shader.cpp">
+      <Filter>src\shader_use</Filter>
+    </ClCompile>
+    <ClCompile Include="src\shader_use\diffuse_only_shader.cpp">
+      <Filter>src\shader_use</Filter>
+    </ClCompile>
+    <ClCompile Include="src\framework\framework.cpp">
+      <Filter>src\framework</Filter>
+    </ClCompile>
+    <ClCompile Include="src\magnet_hero\magnet_hero_state.cpp">
+      <Filter>src\magnet_hero</Filter>
+    </ClCompile>
+    <ClCompile Include="src\magnet_hero\magnet_hero.cpp">
+      <Filter>src\magnet_hero</Filter>
+    </ClCompile>
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\title\title.cpp">
+      <Filter>src\magnet_hero\magnet_hero_state\title</Filter>
+    </ClCompile>
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\ending\ending.cpp">
+      <Filter>src\magnet_hero\magnet_hero_state\ending</Filter>
+    </ClCompile>
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\game_main.cpp">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main</Filter>
+    </ClCompile>
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\stage_event\stage_data.cpp">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\stage_event</Filter>
+    </ClCompile>
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\stage_event\stage_event.cpp">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\stage_event</Filter>
+    </ClCompile>
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\stage_event\stage_index_saver.cpp">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\stage_event</Filter>
+    </ClCompile>
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\stage_event\stage_setup.cpp">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\stage_event</Filter>
+    </ClCompile>
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\stage_event\stage_ui.cpp">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\stage_event</Filter>
+    </ClCompile>
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\sprite\aiming_cursor.cpp">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\sprite\bibibi.cpp">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\sprite\sprite_integration.cpp">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\fbx_object\bg.cpp">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\fbx_object</Filter>
+    </ClCompile>
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\fbx_object\bg_rotate.cpp">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\fbx_object</Filter>
+    </ClCompile>
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\fbx_object\ground.cpp">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\fbx_object</Filter>
+    </ClCompile>
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\fbx_object\object_manager.cpp">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\fbx_object</Filter>
+    </ClCompile>
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\fbx_object\player.cpp">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\fbx_object</Filter>
+    </ClCompile>
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\fbx_object\sky_sphare.cpp">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\fbx_object</Filter>
+    </ClCompile>
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\connecter\info_drawer.cpp">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\connecter</Filter>
+    </ClCompile>
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\connecter\info_holder.cpp">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\connecter</Filter>
+    </ClCompile>
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\camera\camera_controll.cpp">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\camera</Filter>
+    </ClCompile>
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\camera\camera_manager.cpp">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\camera</Filter>
+    </ClCompile>
+    <ClCompile Include="src\shader_use\post_wave.cpp">
+      <Filter>src\shader_use</Filter>
+    </ClCompile>
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\fbx_object\wrench.cpp">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\fbx_object</Filter>
+    </ClCompile>
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\fbx_object\magnet.cpp">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\fbx_object</Filter>
+    </ClCompile>
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\sprite\qte.cpp">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="src\movie\avi.cpp">
+      <Filter>src\movie</Filter>
+    </ClCompile>
+    <ClCompile Include="src\amlib\dslib.cpp">
+      <Filter>src\amlib</Filter>
+    </ClCompile>
+    <ClCompile Include="src\amlib\ExFbxMeshAmg.cpp">
+      <Filter>src\amlib</Filter>
+    </ClCompile>
+    <ClCompile Include="src\amlib\FbxMeshAmg.cpp">
+      <Filter>src\amlib</Filter>
+    </ClCompile>
+    <ClCompile Include="src\amlib\AmBridge.cpp">
+      <Filter>src\amlib</Filter>
+    </ClCompile>
+    <ClCompile Include="src\amlib\AmDirectX.cpp">
+      <Filter>src\amlib</Filter>
+    </ClCompile>
+    <ClCompile Include="src\shader_use\texture_shader.cpp">
+      <Filter>src\shader_use</Filter>
+    </ClCompile>
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\glitter\glitter_manager.cpp">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\glitter</Filter>
+    </ClCompile>
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\glitter\glitter.cpp">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\glitter</Filter>
+    </ClCompile>
+    <ClCompile Include="src\easing\easing_type.cpp">
+      <Filter>src\easing</Filter>
+    </ClCompile>
+    <ClCompile Include="src\input\virtual_input.cpp">
+      <Filter>src\input</Filter>
+    </ClCompile>
+    <ClCompile Include="src\entry_point.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\aiming\aiming.cpp">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\aiming</Filter>
+    </ClCompile>
+    <ClCompile Include="src\option\option.cpp">
+      <Filter>src\option</Filter>
+    </ClCompile>
+    <ClCompile Include="src\option\option_ui.cpp">
+      <Filter>src\option</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\input\input.h">
+      <Filter>src\input</Filter>
+    </ClInclude>
+    <ClInclude Include="src\input\input_button.h">
+      <Filter>src\input</Filter>
+    </ClInclude>
+    <ClInclude Include="src\input\input_controller.h">
+      <Filter>src\input</Filter>
+    </ClInclude>
+    <ClInclude Include="src\input\input_controller_code.h">
+      <Filter>src\input</Filter>
+    </ClInclude>
+    <ClInclude Include="src\input\input_keyboard.h">
+      <Filter>src\input</Filter>
+    </ClInclude>
+    <ClInclude Include="src\input\input_mouse.h">
+      <Filter>src\input</Filter>
+    </ClInclude>
+    <ClInclude Include="src\input\input_mouse_code.h">
+      <Filter>src\input</Filter>
+    </ClInclude>
+    <ClInclude Include="src\input\input_define.h">
+      <Filter>src\input</Filter>
+    </ClInclude>
+    <ClInclude Include="src\texture_manager\texture_manager.h">
+      <Filter>src\texture_manager</Filter>
+    </ClInclude>
+    <ClInclude Include="src\calc\calc.h">
+      <Filter>src\calc</Filter>
+    </ClInclude>
+    <ClInclude Include="src\file_reader\file_reader.h">
+      <Filter>src\file_reader</Filter>
+    </ClInclude>
+    <ClInclude Include="src\fbx_table\fbx_table.h">
+      <Filter>src\fbx_table</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sound\detail\sound_index.h">
+      <Filter>src\sound\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sound\detail\sound_table.h">
+      <Filter>src\sound\detail</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sound\sound.h">
+      <Filter>src\sound</Filter>
+    </ClInclude>
+    <ClInclude Include="src\file_data\file_data.h">
+      <Filter>src\file_data</Filter>
+    </ClInclude>
+    <ClInclude Include="src\window\icon_file_name.h">
+      <Filter>src\window</Filter>
+    </ClInclude>
+    <ClInclude Include="src\window\startup_option.h">
+      <Filter>src\window</Filter>
+    </ClInclude>
+    <ClInclude Include="src\char_ptr\char_ptr.h">
+      <Filter>src\char_ptr</Filter>
+    </ClInclude>
+    <ClInclude Include="src\easing\easing.h">
+      <Filter>src\easing</Filter>
+    </ClInclude>
+    <ClInclude Include="src\shader_use\simple_shader.h">
+      <Filter>src\shader_use</Filter>
+    </ClInclude>
+    <ClInclude Include="src\shader_use\diffuse_only_shader.h">
+      <Filter>src\shader_use</Filter>
+    </ClInclude>
+    <ClInclude Include="src\framework\framework.h">
+      <Filter>src\framework</Filter>
+    </ClInclude>
+    <ClInclude Include="src\magnet_hero\magnet_hero_state.h">
+      <Filter>src\magnet_hero</Filter>
+    </ClInclude>
+    <ClInclude Include="src\magnet_hero\magnet_hero.h">
+      <Filter>src\magnet_hero</Filter>
+    </ClInclude>
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\title\title.h">
+      <Filter>src\magnet_hero\magnet_hero_state\title</Filter>
+    </ClInclude>
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\ending\ending.h">
+      <Filter>src\magnet_hero\magnet_hero_state\ending</Filter>
+    </ClInclude>
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\game_main.h">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main</Filter>
+    </ClInclude>
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\stage_event\stage_data.h">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\stage_event</Filter>
+    </ClInclude>
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\stage_event\stage_event.h">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\stage_event</Filter>
+    </ClInclude>
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\stage_event\stage_index.h">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\stage_event</Filter>
+    </ClInclude>
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\stage_event\stage_index_saver.h">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\stage_event</Filter>
+    </ClInclude>
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\stage_event\stage_setup.h">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\stage_event</Filter>
+    </ClInclude>
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\stage_event\stage_ui.h">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\stage_event</Filter>
+    </ClInclude>
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\sprite\aiming_cursor.h">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\sprite\bibibi.h">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\sprite\sprite_integration.h">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\fbx_object\bg.h">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\fbx_object</Filter>
+    </ClInclude>
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\fbx_object\bg_rotate.h">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\fbx_object</Filter>
+    </ClInclude>
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\fbx_object\ground.h">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\fbx_object</Filter>
+    </ClInclude>
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\fbx_object\object_manager.h">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\fbx_object</Filter>
+    </ClInclude>
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\fbx_object\player.h">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\fbx_object</Filter>
+    </ClInclude>
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\fbx_object\sky_sphare.h">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\fbx_object</Filter>
+    </ClInclude>
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\connecter\info_drawer.h">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\connecter</Filter>
+    </ClInclude>
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\connecter\info_holder.h">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\connecter</Filter>
+    </ClInclude>
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\camera\camera_controll.h">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\camera</Filter>
+    </ClInclude>
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\camera\camera_definition.h">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\camera</Filter>
+    </ClInclude>
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\camera\camera_manager.h">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\camera</Filter>
+    </ClInclude>
+    <ClInclude Include="src\shader_use\post_wave.h">
+      <Filter>src\shader_use</Filter>
+    </ClInclude>
+    <ClInclude Include="src\mylib\mylib.h">
+      <Filter>src\mylib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\fbx_object\wrench.h">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\fbx_object</Filter>
+    </ClInclude>
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\fbx_object\magnet.h">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\fbx_object</Filter>
+    </ClInclude>
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\sprite\qte.h">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="src\movie\avi.h">
+      <Filter>src\movie</Filter>
+    </ClInclude>
+    <ClInclude Include="src\amlib\dslib.h">
+      <Filter>src\amlib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\amlib\ExFbxMeshAmg.h">
+      <Filter>src\amlib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\amlib\FbxMeshAmg.h">
+      <Filter>src\amlib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\amlib\amgame.h">
+      <Filter>src\amlib</Filter>
+    </ClInclude>
+    <ClInclude Include="src\shader_use\texture_shader.h">
+      <Filter>src\shader_use</Filter>
+    </ClInclude>
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\glitter\glitter_manager.h">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\glitter</Filter>
+    </ClInclude>
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\glitter\glitter.h">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\glitter</Filter>
+    </ClInclude>
+    <ClInclude Include="src\easing\easing_type.h">
+      <Filter>src\easing</Filter>
+    </ClInclude>
+    <ClInclude Include="src\texture_manager\texuture_id.h">
+      <Filter>src\texture_manager</Filter>
+    </ClInclude>
+    <ClInclude Include="src\input\virtual_input.h">
+      <Filter>src\input</Filter>
+    </ClInclude>
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\aiming\aiming.h">
+      <Filter>src\magnet_hero\magnet_hero_state\game_main\aiming</Filter>
+    </ClInclude>
+    <ClInclude Include="src\option\option.h">
+      <Filter>src\option</Filter>
+    </ClInclude>
+    <ClInclude Include="src\option\option_ui.h">
+      <Filter>src\option</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="res\txt\filename\icon_file_name.txt">
+      <Filter>res\txt\filename</Filter>
+    </Text>
+    <Text Include="res\txt\filename\magnetic_fbx_file.txt">
+      <Filter>res\txt\filename</Filter>
+    </Text>
+    <Text Include="res\txt\filename\player_fbx_file_database.txt">
+      <Filter>res\txt\filename</Filter>
+    </Text>
+    <Text Include="res\txt\filename\sky_sphere_fbx_file.txt">
+      <Filter>res\txt\filename</Filter>
+    </Text>
+    <Text Include="res\txt\filename\sound_file_database.txt">
+      <Filter>res\txt\filename</Filter>
+    </Text>
+    <Text Include="res\txt\database\init_state.txt">
+      <Filter>res\txt\database</Filter>
+    </Text>
+    <Text Include="res\txt\database\player_database.txt">
+      <Filter>res\txt\database</Filter>
+    </Text>
+    <Text Include="res\txt\database\window_startup_option.txt">
+      <Filter>res\txt\database</Filter>
+    </Text>
+    <Text Include="res\txt\database\camera_database.txt">
+      <Filter>res\txt\database</Filter>
+    </Text>
+    <Text Include="res\txt\naming_convention\naming_convention.txt">
+      <Filter>res\txt\naming_convention</Filter>
+    </Text>
+    <Text Include="res\txt\database\stage3_event.txt">
+      <Filter>res\txt\database</Filter>
+    </Text>
+    <Text Include="res\txt\database\stage1_event.txt">
+      <Filter>res\txt\database</Filter>
+    </Text>
+    <Text Include="res\txt\database\stage2_event.txt">
+      <Filter>res\txt\database</Filter>
+    </Text>
+    <Text Include="res\txt\filename\stage3_fbx_file_database.txt">
+      <Filter>res\txt\filename</Filter>
+    </Text>
+    <Text Include="res\txt\filename\stage4_fbx_file_database.txt">
+      <Filter>res\txt\filename</Filter>
+    </Text>
+    <Text Include="res\txt\filename\stage1_fbx_file_database.txt">
+      <Filter>res\txt\filename</Filter>
+    </Text>
+    <Text Include="res\txt\filename\stage2_fbx_file_database.txt">
+      <Filter>res\txt\filename</Filter>
+    </Text>
+    <Text Include="res\txt\filename\texture_file_database.txt">
+      <Filter>res\txt\filename</Filter>
+    </Text>
+    <Text Include="res\txt\database\qte_config.txt">
+      <Filter>res\txt\database</Filter>
+    </Text>
+    <Text Include="src\amlib\Amgamew.txt">
+      <Filter>src\amlib</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="res\shader\simple_shader.fx">
+      <Filter>res\shader</Filter>
+    </FxCompile>
+    <FxCompile Include="res\shader\texture_shader.fx">
+      <Filter>res\shader</Filter>
+    </FxCompile>
+    <FxCompile Include="res\shader\texture_shader2.fx">
+      <Filter>res\shader</Filter>
+    </FxCompile>
+    <FxCompile Include="res\shader\diffuse_only_shader.fx">
+      <Filter>res\shader</Filter>
+    </FxCompile>
+    <FxCompile Include="res\shader\post_wave.fx">
+      <Filter>res\shader</Filter>
+    </FxCompile>
+    <FxCompile Include="res\shader\simple_shader_max_alpha.fx">
+      <Filter>res\shader</Filter>
+    </FxCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,3 @@
+continue.png2種：(457,230)
+title.png2種　 ：(475,411)
+cursor.png   　：(324,275)(340,439)

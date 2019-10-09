@@ -1,0 +1,38 @@
+
+// このファイルにゲームで使用する楽曲ファイルのパスを書きます
+// フルパスではなくexeファイルからの相対パスです
+// パスを書いたら、「,」を使ってストリーム再生するかしないか決める必要があります
+// このファイル自体の名前と位置、およびパス達の順番は変えてはいけません
+// (プログラムを書き換える必要が生じるため)
+
+// ※フォルダが見つからないとエラーで動作停止する(多分)ため注意
+
+// 書き方の例
+
+//「name.wav」をストリーム再生する
+// path/path/name.wav,1
+
+//「hit.wav」をストリーム再生しない
+// path/path/hit.wav,0
+
+
+
+res/wav/bgm/ice_paradin/エンディング_BGM.wav,1
+
+res/wav/bgm/ice_paradin/オープニング_BGM.wav,1
+
+res/wav/bgm/ice_paradin/タイトル_BGM.wav,1
+
+res/wav/bgm/ice_paradin/中ボス戦_BGM.wav,1
+
+
+res/wav/se/ice_paradin/決定音_SE.wav,0
+res/wav/se/ice_paradin/ラスボスブレス_SE.wav,0
+res/wav/se/ice_paradin/着地_SE.wav,0
+res/wav/se/ice_paradin/剣を振る_SE.wav,0
+res/wav/se/ice_paradin/氷ブロック砕ける_SE.wav,0
+res/wav/se/ice_paradin/魔力回復_SE.wav,0
+
+
+
+

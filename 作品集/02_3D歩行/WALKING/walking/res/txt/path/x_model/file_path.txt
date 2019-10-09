@@ -1,0 +1,18 @@
+
+// このファイルにゲームで使用するxファイルのパスを書きます
+// フルパスではなくexeファイルからの相対パスです
+// このファイル自体の名前と位置、およびパス達の順番は変えてはいけません
+// (プログラムを書き換える必要が生じるため)
+
+
+res/x_model/back01/back01.x
+
+res/x_model/ball/ball.x
+
+res/x_model/Hubon/Hubon.x
+
+res/x_model/sky/sky.x
+
+
+
+

@@ -1,0 +1,587 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="source\AmDirectX.cpp">
+      <Filter>99_am_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="source\opening.cpp">
+      <Filter>03_opening</Filter>
+    </ClCompile>
+    <ClCompile Include="source\title.cpp">
+      <Filter>01_title</Filter>
+    </ClCompile>
+    <ClCompile Include="source\option.cpp">
+      <Filter>03_option</Filter>
+    </ClCompile>
+    <ClCompile Include="source\mode_select.cpp">
+      <Filter>02_mode_select</Filter>
+    </ClCompile>
+    <ClCompile Include="source\stage_select.cpp">
+      <Filter>03_stage_select</Filter>
+    </ClCompile>
+    <ClCompile Include="source\game_play.cpp">
+      <Filter>04_game\play</Filter>
+    </ClCompile>
+    <ClCompile Include="source\game_complete.cpp">
+      <Filter>04_game\complete</Filter>
+    </ClCompile>
+    <ClCompile Include="source\game_clear.cpp">
+      <Filter>04_game\clear</Filter>
+    </ClCompile>
+    <ClCompile Include="source\gameover.cpp">
+      <Filter>04_game\gameover</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ending.cpp">
+      <Filter>05_ending</Filter>
+    </ClCompile>
+    <ClCompile Include="source\chara__render.cpp">
+      <Filter>99_chara\base</Filter>
+    </ClCompile>
+    <ClCompile Include="source\chara__manager.cpp">
+      <Filter>99_chara\base</Filter>
+    </ClCompile>
+    <ClCompile Include="source\chara__common.cpp">
+      <Filter>99_chara\base</Filter>
+    </ClCompile>
+    <ClCompile Include="source\chara_block.cpp">
+      <Filter>99_chara\unit</Filter>
+    </ClCompile>
+    <ClCompile Include="source\camera.cpp">
+      <Filter>99_chara\camera</Filter>
+    </ClCompile>
+    <ClCompile Include="source\WinMain.cpp">
+      <Filter>___main</Filter>
+    </ClCompile>
+    <ClCompile Include="source\image_manager.cpp">
+      <Filter>99_image_sound_input</Filter>
+    </ClCompile>
+    <ClCompile Include="source\sound_manager.cpp">
+      <Filter>99_image_sound_input</Filter>
+    </ClCompile>
+    <ClCompile Include="source\chara_attacker.cpp">
+      <Filter>99_chara\unit</Filter>
+    </ClCompile>
+    <ClCompile Include="source\anima.cpp">
+      <Filter>99_utility</Filter>
+    </ClCompile>
+    <ClCompile Include="source\easing.cpp">
+      <Filter>99_utility</Filter>
+    </ClCompile>
+    <ClCompile Include="source\forDebug.cpp">
+      <Filter>forDebug</Filter>
+    </ClCompile>
+    <ClCompile Include="source\game.cpp">
+      <Filter>___main</Filter>
+    </ClCompile>
+    <ClCompile Include="source\chara__hit_rect.cpp">
+      <Filter>99_chara\base</Filter>
+    </ClCompile>
+    <ClCompile Include="source\AmBridge.cpp">
+      <Filter>99_am_lib</Filter>
+    </ClCompile>
+    <ClCompile Include="source\input_manager.cpp">
+      <Filter>99_image_sound_input</Filter>
+    </ClCompile>
+    <ClCompile Include="source\chara_enemy.cpp">
+      <Filter>99_chara\enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="source\chara_enemy_goblin.cpp">
+      <Filter>99_chara\enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="source\chara_enemy_wyvern.cpp">
+      <Filter>99_chara\enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="source\chara_enemy_wyvern_fire.cpp">
+      <Filter>99_chara\enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="source\chara_enemy_snake.cpp">
+      <Filter>99_chara\enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="source\type_parameter.cpp">
+      <Filter>99_utility</Filter>
+    </ClCompile>
+    <ClCompile Include="source\out_game_effect.cpp">
+      <Filter>99_chara\effect</Filter>
+    </ClCompile>
+    <ClCompile Include="source\chara_boss_stage1.cpp">
+      <Filter>99_chara\boss</Filter>
+    </ClCompile>
+    <ClCompile Include="source\game_state.cpp">
+      <Filter>00_game_state</Filter>
+    </ClCompile>
+    <ClCompile Include="source\chara_item.cpp">
+      <Filter>99_chara\unit</Filter>
+    </ClCompile>
+    <ClCompile Include="source\in_game_effect.cpp">
+      <Filter>99_chara\effect</Filter>
+    </ClCompile>
+    <ClCompile Include="source\stage_data_reader.cpp">
+      <Filter>99_chara\read_file</Filter>
+    </ClCompile>
+    <ClCompile Include="source\stage_data_reader_assistant.cpp">
+      <Filter>99_chara\read_file</Filter>
+    </ClCompile>
+    <ClCompile Include="source\chara_boss_stage2.cpp">
+      <Filter>99_chara\boss</Filter>
+    </ClCompile>
+    <ClCompile Include="source\chara_boss_stage2_thunder.cpp">
+      <Filter>99_chara\boss</Filter>
+    </ClCompile>
+    <ClCompile Include="source\chara_boss_stage2_water.cpp">
+      <Filter>99_chara\boss</Filter>
+    </ClCompile>
+    <ClCompile Include="source\team_logo.cpp">
+      <Filter>00_team_logo</Filter>
+    </ClCompile>
+    <ClCompile Include="source\common.cpp">
+      <Filter>99_utility</Filter>
+    </ClCompile>
+    <ClCompile Include="source\tree_sign.cpp">
+      <Filter>99_chara\unit</Filter>
+    </ClCompile>
+    <ClCompile Include="source\in_game_result.cpp">
+      <Filter>04_game\play</Filter>
+    </ClCompile>
+    <ClCompile Include="source\player_1_2_bridge.cpp">
+      <Filter>99_chara\unit</Filter>
+    </ClCompile>
+    <ClCompile Include="source\opening2.cpp">
+      <Filter>03_opening</Filter>
+    </ClCompile>
+    <ClCompile Include="source\in_game_simple_effect.cpp">
+      <Filter>99_chara\effect</Filter>
+    </ClCompile>
+    <ClCompile Include="source\tutorial.cpp">
+      <Filter>04_game\play</Filter>
+    </ClCompile>
+    <ClCompile Include="source\chara_enemy_death.cpp">
+      <Filter>99_chara\enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="source\chara_point.cpp">
+      <Filter>99_chara\unit</Filter>
+    </ClCompile>
+    <ClCompile Include="source\chara_player1.cpp">
+      <Filter>99_chara\player</Filter>
+    </ClCompile>
+    <ClCompile Include="source\chara_player1_sub.cpp">
+      <Filter>99_chara\player</Filter>
+    </ClCompile>
+    <ClCompile Include="source\chara_player2.cpp">
+      <Filter>99_chara\player</Filter>
+    </ClCompile>
+    <ClCompile Include="source\chara_player2_bullet.cpp">
+      <Filter>99_chara\player</Filter>
+    </ClCompile>
+    <ClCompile Include="source\chara_player2_sub.cpp">
+      <Filter>99_chara\player</Filter>
+    </ClCompile>
+    <ClCompile Include="source\chara_player2_recovered_bullet.cpp">
+      <Filter>99_chara\player</Filter>
+    </ClCompile>
+    <ClCompile Include="source\staffRoll.cpp">
+      <Filter>06_staffroll</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ui.cpp">
+      <Filter>99_chara\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ui_mgr.cpp">
+      <Filter>99_chara\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="source\stage_time.cpp">
+      <Filter>04_game\play</Filter>
+    </ClCompile>
+    <ClCompile Include="source\new_effect_mgr.cpp">
+      <Filter>99_chara\new_effect</Filter>
+    </ClCompile>
+    <ClCompile Include="source\chara_castle.cpp">
+      <Filter>99_chara\castle</Filter>
+    </ClCompile>
+    <ClCompile Include="source\new_effect_pinch_effect.cpp">
+      <Filter>99_chara\new_effect</Filter>
+    </ClCompile>
+    <ClCompile Include="source\new_effect_rain_effect.cpp">
+      <Filter>99_chara\new_effect</Filter>
+    </ClCompile>
+    <ClCompile Include="source\new_effect_hp_heal.cpp">
+      <Filter>99_chara\new_effect</Filter>
+    </ClCompile>
+    <ClCompile Include="source\new_effect_shield_break.cpp">
+      <Filter>99_chara\new_effect</Filter>
+    </ClCompile>
+    <ClCompile Include="source\new_effect_shield.cpp">
+      <Filter>99_chara\new_effect</Filter>
+    </ClCompile>
+    <ClCompile Include="source\new_effect_confusion_star.cpp">
+      <Filter>99_chara\new_effect</Filter>
+    </ClCompile>
+    <ClCompile Include="source\new_effect_goblin_death_dust.cpp">
+      <Filter>99_chara\new_effect</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\game_state.h">
+      <Filter>00_game_state</Filter>
+    </ClInclude>
+    <ClInclude Include="source\opening.h">
+      <Filter>03_opening</Filter>
+    </ClInclude>
+    <ClInclude Include="source\title.h">
+      <Filter>01_title</Filter>
+    </ClInclude>
+    <ClInclude Include="source\option.h">
+      <Filter>03_option</Filter>
+    </ClInclude>
+    <ClInclude Include="source\mode_select.h">
+      <Filter>02_mode_select</Filter>
+    </ClInclude>
+    <ClInclude Include="source\stage_select.h">
+      <Filter>03_stage_select</Filter>
+    </ClInclude>
+    <ClInclude Include="source\game_play.h">
+      <Filter>04_game\play</Filter>
+    </ClInclude>
+    <ClInclude Include="source\game_complete.h">
+      <Filter>04_game\complete</Filter>
+    </ClInclude>
+    <ClInclude Include="source\game_clear.h">
+      <Filter>04_game\clear</Filter>
+    </ClInclude>
+    <ClInclude Include="source\gameover.h">
+      <Filter>04_game\gameover</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ending.h">
+      <Filter>05_ending</Filter>
+    </ClInclude>
+    <ClInclude Include="source\chara__render.h">
+      <Filter>99_chara\base</Filter>
+    </ClInclude>
+    <ClInclude Include="source\chara__manager.h">
+      <Filter>99_chara\base</Filter>
+    </ClInclude>
+    <ClInclude Include="source\chara__common.h">
+      <Filter>99_chara\base</Filter>
+    </ClInclude>
+    <ClInclude Include="source\chara_block.h">
+      <Filter>99_chara\unit</Filter>
+    </ClInclude>
+    <ClInclude Include="source\camera.h">
+      <Filter>99_chara\camera</Filter>
+    </ClInclude>
+    <ClInclude Include="source\image_manager.h">
+      <Filter>99_image_sound_input</Filter>
+    </ClInclude>
+    <ClInclude Include="source\sound_manager.h">
+      <Filter>99_image_sound_input</Filter>
+    </ClInclude>
+    <ClInclude Include="source\chara_attacker.h">
+      <Filter>99_chara\unit</Filter>
+    </ClInclude>
+    <ClInclude Include="source\anima.h">
+      <Filter>99_utility</Filter>
+    </ClInclude>
+    <ClInclude Include="source\easing.h">
+      <Filter>99_utility</Filter>
+    </ClInclude>
+    <ClInclude Include="source\game.h">
+      <Filter>___main</Filter>
+    </ClInclude>
+    <ClInclude Include="source\chara__hit_rect.h">
+      <Filter>99_chara\base</Filter>
+    </ClInclude>
+    <ClInclude Include="source\amgame.h">
+      <Filter>99_am_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="source\input_manager.h">
+      <Filter>99_image_sound_input</Filter>
+    </ClInclude>
+    <ClInclude Include="source\chara_enemy_wyvern_fire.h">
+      <Filter>99_chara\enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="source\chara_enemy.h">
+      <Filter>99_chara\enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="source\chara_enemy_goblin.h">
+      <Filter>99_chara\enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="source\chara_enemy_wyvern.h">
+      <Filter>99_chara\enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="source\chara_enemy_snake.h">
+      <Filter>99_chara\enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="source\type_parameter.h">
+      <Filter>99_utility</Filter>
+    </ClInclude>
+    <ClInclude Include="source\out_game_effect.h">
+      <Filter>99_chara\effect</Filter>
+    </ClInclude>
+    <ClInclude Include="source\chara_boss_stage1.h">
+      <Filter>99_chara\boss</Filter>
+    </ClInclude>
+    <ClInclude Include="source\forDebug.h">
+      <Filter>forDebug</Filter>
+    </ClInclude>
+    <ClInclude Include="source\chara_item.h">
+      <Filter>99_chara\unit</Filter>
+    </ClInclude>
+    <ClInclude Include="source\in_game_effect.h">
+      <Filter>99_chara\effect</Filter>
+    </ClInclude>
+    <ClInclude Include="source\stage_data_reader.h">
+      <Filter>99_chara\read_file</Filter>
+    </ClInclude>
+    <ClInclude Include="source\stage_data_reader_assistant.h">
+      <Filter>99_chara\read_file</Filter>
+    </ClInclude>
+    <ClInclude Include="source\chara_boss_stage2.h">
+      <Filter>99_chara\boss</Filter>
+    </ClInclude>
+    <ClInclude Include="source\chara_boss_stage2_thunder.h">
+      <Filter>99_chara\boss</Filter>
+    </ClInclude>
+    <ClInclude Include="source\chara_boss_stage2_water.h">
+      <Filter>99_chara\boss</Filter>
+    </ClInclude>
+    <ClInclude Include="source\team_logo.h">
+      <Filter>00_team_logo</Filter>
+    </ClInclude>
+    <ClInclude Include="source\common.h">
+      <Filter>99_utility</Filter>
+    </ClInclude>
+    <ClInclude Include="source\tree_sign.h">
+      <Filter>99_chara\unit</Filter>
+    </ClInclude>
+    <ClInclude Include="source\in_game_result.h">
+      <Filter>04_game\play</Filter>
+    </ClInclude>
+    <ClInclude Include="source\player_1_2_bridge.h">
+      <Filter>99_chara\unit</Filter>
+    </ClInclude>
+    <ClInclude Include="source\opening2.h">
+      <Filter>03_opening</Filter>
+    </ClInclude>
+    <ClInclude Include="source\in_game_simple_effect.h">
+      <Filter>99_chara\effect</Filter>
+    </ClInclude>
+    <ClInclude Include="source\tutorial.h">
+      <Filter>04_game\play</Filter>
+    </ClInclude>
+    <ClInclude Include="source\init_graph_no_sys.h">
+      <Filter>99_am_lib</Filter>
+    </ClInclude>
+    <ClInclude Include="source\chara_enemy_death.h">
+      <Filter>99_chara\enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="source\chara_point.h">
+      <Filter>99_chara\unit</Filter>
+    </ClInclude>
+    <ClInclude Include="source\chara_player1.h">
+      <Filter>99_chara\player</Filter>
+    </ClInclude>
+    <ClInclude Include="source\chara_player1_sub.h">
+      <Filter>99_chara\player</Filter>
+    </ClInclude>
+    <ClInclude Include="source\chara_player2.h">
+      <Filter>99_chara\player</Filter>
+    </ClInclude>
+    <ClInclude Include="source\chara_player2_bullet.h">
+      <Filter>99_chara\player</Filter>
+    </ClInclude>
+    <ClInclude Include="source\chara_player2_sub.h">
+      <Filter>99_chara\player</Filter>
+    </ClInclude>
+    <ClInclude Include="source\chara_player2_recovered_bullet.h">
+      <Filter>99_chara\player</Filter>
+    </ClInclude>
+    <ClInclude Include="source\staffroll.h">
+      <Filter>06_staffroll</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ui.h">
+      <Filter>99_chara\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ui_mgr.h">
+      <Filter>99_chara\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="source\stage_time.h">
+      <Filter>04_game\play</Filter>
+    </ClInclude>
+    <ClInclude Include="source\new_effect_mgr.h">
+      <Filter>99_chara\new_effect</Filter>
+    </ClInclude>
+    <ClInclude Include="source\chara_castle.h">
+      <Filter>99_chara\castle</Filter>
+    </ClInclude>
+    <ClInclude Include="source\new_effect_pinch_effect.h">
+      <Filter>99_chara\new_effect</Filter>
+    </ClInclude>
+    <ClInclude Include="source\new_effect_rain_effect.h">
+      <Filter>99_chara\new_effect</Filter>
+    </ClInclude>
+    <ClInclude Include="source\new_effect_hp_heal.h">
+      <Filter>99_chara\new_effect</Filter>
+    </ClInclude>
+    <ClInclude Include="source\new_effect_shield.h">
+      <Filter>99_chara\new_effect</Filter>
+    </ClInclude>
+    <ClInclude Include="source\new_effect_shield_break.h">
+      <Filter>99_chara\new_effect</Filter>
+    </ClInclude>
+    <ClInclude Include="source\new_effect_confusion_star.h">
+      <Filter>99_chara\new_effect</Filter>
+    </ClInclude>
+    <ClInclude Include="source\new_effect_goblin_death_dust.h">
+      <Filter>99_chara\new_effect</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="99_am_lib">
+      <UniqueIdentifier>{60c2c4b4-a306-4f48-8c11-a9e7237f03a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03_option">
+      <UniqueIdentifier>{e5546b75-9224-49fb-9387-18f0f71b535a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02_mode_select">
+      <UniqueIdentifier>{375e6280-e290-46f5-8480-315ef015e9d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03_stage_select">
+      <UniqueIdentifier>{b9b09171-8566-4b7c-9c8f-136d6a556def}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04_game">
+      <UniqueIdentifier>{54de7bf2-45b9-439c-a37b-56c8747fb0ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04_game\play">
+      <UniqueIdentifier>{c4a9bfb6-9c46-466b-a537-77e632dca0dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04_game\gameover">
+      <UniqueIdentifier>{535dfa3e-8b9c-4a7c-843b-9e5c84fbaea6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04_game\clear">
+      <UniqueIdentifier>{bebb3f0e-7027-49d5-b5d0-a2023cd27d6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04_game\complete">
+      <UniqueIdentifier>{f1292d4c-957d-45ff-84d6-c0c49386835e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05_ending">
+      <UniqueIdentifier>{87aea460-685b-4cc2-a217-78ee35523a7b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="99_chara">
+      <UniqueIdentifier>{f6b55694-ad09-4a51-b0fc-3380b116d8b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="99_utility">
+      <UniqueIdentifier>{733a9ba1-692b-4a15-9dcd-eff556d9f0f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="99_chara\unit">
+      <UniqueIdentifier>{c1a1e104-5646-4c0d-b6ba-a64af09ac84c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="99_chara\camera">
+      <UniqueIdentifier>{41c44a29-9cbc-4814-a26c-51d604c12d23}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03_opening">
+      <UniqueIdentifier>{6c975565-ac8f-4bbe-a46e-d4d2d29eae62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="forDebug">
+      <UniqueIdentifier>{340f5ca7-2949-49c1-aeaf-c7985bf1fa9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="99_image_sound_input">
+      <UniqueIdentifier>{09f2cb01-5e6a-471b-b848-5bca42d939c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="99_chara\enemy">
+      <UniqueIdentifier>{c26f534a-8437-4cca-84be-3d68282378a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="99_chara\effect">
+      <UniqueIdentifier>{4c7a4f5e-52ee-4d99-9c67-4f472e35d8b0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="00_game_state">
+      <UniqueIdentifier>{07e4b93c-a79d-452e-90a7-1f30f4629a48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="99_chara\base">
+      <UniqueIdentifier>{d0dcc0ff-443a-48ee-9ffa-36983ca25a05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="99_chara\boss">
+      <UniqueIdentifier>{02bf5a64-b198-4bf7-9430-1ce337cea48d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="___main">
+      <UniqueIdentifier>{67afe8d6-788b-439a-bc38-629ea2ad4069}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="99_chara\read_file">
+      <UniqueIdentifier>{3bd1c26b-8a8f-480b-a218-8d172a1afb85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="99_chara\read_file\resource">
+      <UniqueIdentifier>{9500536f-f1d4-432e-a452-6749ea13023e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="99_chara\read_file\resource\stage">
+      <UniqueIdentifier>{386d872c-8af2-45a5-abb7-a4b14489197b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="99_chara\read_file\resource\enemy">
+      <UniqueIdentifier>{79b98b17-e4cf-460f-9709-dc6f8590e524}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="00_team_logo">
+      <UniqueIdentifier>{a50b36be-6567-4868-9784-9a8730545c19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01_title">
+      <UniqueIdentifier>{c124799e-572f-495a-856c-08e91e3aeca9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="99_chara\player">
+      <UniqueIdentifier>{71821aa6-966b-44c3-8130-3cedd2d52b57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="06_staffroll">
+      <UniqueIdentifier>{97509dd0-200f-43c8-9fa1-1548154ebdfb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="99_chara\ui">
+      <UniqueIdentifier>{a1185e90-9fe4-410e-b413-d88c56d575f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="99_chara\new_effect">
+      <UniqueIdentifier>{8a803361-a88e-4dac-8d54-399432dc5b29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="99_chara\castle">
+      <UniqueIdentifier>{095ba864-700c-4121-af04-b18b5ae3ec1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="99_chara\read_file\resource\item">
+      <UniqueIdentifier>{e1de1139-85d0-46fa-b6bc-a681ab6b0a24}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="source\Amgamew.txt">
+      <Filter>99_am_lib</Filter>
+    </Text>
+    <Text Include="_data\stage_data\stage1_data.txt">
+      <Filter>99_chara\read_file\resource\stage</Filter>
+    </Text>
+    <Text Include="_data\stage_data\stage2_data.txt">
+      <Filter>99_chara\read_file\resource\stage</Filter>
+    </Text>
+    <Text Include="_data\stage_data\stage3_data.txt">
+      <Filter>99_chara\read_file\resource\stage</Filter>
+    </Text>
+    <Text Include="_data\stage_data\stage4_data.txt">
+      <Filter>99_chara\read_file\resource\stage</Filter>
+    </Text>
+    <Text Include="_data\stage_data\stage5_data.txt">
+      <Filter>99_chara\read_file\resource\stage</Filter>
+    </Text>
+    <Text Include="_data\stage_data\stage6_data.txt">
+      <Filter>99_chara\read_file\resource\stage</Filter>
+    </Text>
+    <Text Include="_data\enemy_data\_boss1_data.txt">
+      <Filter>99_chara\read_file\resource\enemy</Filter>
+    </Text>
+    <Text Include="_data\enemy_data\_goblin_data.txt">
+      <Filter>99_chara\read_file\resource\enemy</Filter>
+    </Text>
+    <Text Include="_data\enemy_data\_snake_data.txt">
+      <Filter>99_chara\read_file\resource\enemy</Filter>
+    </Text>
+    <Text Include="_data\enemy_data\_wyvern_data.txt">
+      <Filter>99_chara\read_file\resource\enemy</Filter>
+    </Text>
+    <Text Include="_data\1p_data.txt">
+      <Filter>99_chara\read_file\resource</Filter>
+    </Text>
+    <Text Include="_data\2p_data.txt">
+      <Filter>99_chara\read_file\resource</Filter>
+    </Text>
+    <Text Include="_data\item_data\hp_heal_item_data.txt">
+      <Filter>99_chara\read_file\resource\item</Filter>
+    </Text>
+  </ItemGroup>
+</Project>

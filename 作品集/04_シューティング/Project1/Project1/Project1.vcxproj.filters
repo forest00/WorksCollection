@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="ソース ファイル\game_cpp">
+      <UniqueIdentifier>{f5d60e38-5ce6-4d2c-a772-3c32a32ee213}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\game_h">
+      <UniqueIdentifier>{a3d0d5bf-954d-4e0f-a11d-c9ea7d2af31c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\game_cpp\object_cpp">
+      <UniqueIdentifier>{ed23b17f-0c69-42ab-8513-504dd295c45d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\game_cpp\object_cpp\primitive_cpp">
+      <UniqueIdentifier>{6ae97075-d6a8-49f1-8624-dfe07b64048c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\game_h\object_h">
+      <UniqueIdentifier>{3fb9e648-dae9-48ad-aaa3-0da4ef9abc02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\game_h\object_h\primitive_h">
+      <UniqueIdentifier>{3660725d-0301-40ef-9c01-ac798d10338f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="res\looks\bullet.txt" />
+    <Text Include="res\looks\enemy.txt" />
+    <Text Include="res\looks\player.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\mode.cpp">
+      <Filter>ソース ファイル\game_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\object\player_ref.cpp">
+      <Filter>ソース ファイル\game_cpp\object_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\object\spawn_enemy_random.cpp">
+      <Filter>ソース ファイル\game_cpp\object_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\object\bullet.cpp">
+      <Filter>ソース ファイル\game_cpp\object_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\object\enemy.cpp">
+      <Filter>ソース ファイル\game_cpp\object_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\object\looks.cpp">
+      <Filter>ソース ファイル\game_cpp\object_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\object\object.cpp">
+      <Filter>ソース ファイル\game_cpp\object_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\object\object_kind.cpp">
+      <Filter>ソース ファイル\game_cpp\object_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\object\player.cpp">
+      <Filter>ソース ファイル\game_cpp\object_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\object\primitive\vector2d.cpp">
+      <Filter>ソース ファイル\game_cpp\object_cpp\primitive_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\object\primitive\random.cpp">
+      <Filter>ソース ファイル\game_cpp\object_cpp\primitive_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\object\primitive\rect.cpp">
+      <Filter>ソース ファイル\game_cpp\object_cpp\primitive_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\object\primitive\debug.cpp">
+      <Filter>ソース ファイル\game_cpp\object_cpp\primitive_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\object\primitive\screen.cpp">
+      <Filter>ソース ファイル\game_cpp\object_cpp\primitive_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\object\primitive\keyboard.cpp">
+      <Filter>ソース ファイル\game_cpp\object_cpp\primitive_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\game.cpp">
+      <Filter>ソース ファイル\game_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\title.cpp">
+      <Filter>ソース ファイル\game_cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\main_play.cpp">
+      <Filter>ソース ファイル\game_cpp</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\game\mode.h">
+      <Filter>ヘッダー ファイル\game_h</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\object\player_ref.h">
+      <Filter>ヘッダー ファイル\game_h\object_h</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\object\spawn_enemy_random.h">
+      <Filter>ヘッダー ファイル\game_h\object_h</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\object\bullet.h">
+      <Filter>ヘッダー ファイル\game_h\object_h</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\object\enemy.h">
+      <Filter>ヘッダー ファイル\game_h\object_h</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\object\looks.h">
+      <Filter>ヘッダー ファイル\game_h\object_h</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\object\object.h">
+      <Filter>ヘッダー ファイル\game_h\object_h</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\object\object_kind.h">
+      <Filter>ヘッダー ファイル\game_h\object_h</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\object\player.h">
+      <Filter>ヘッダー ファイル\game_h\object_h</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\object\primitive\random.h">
+      <Filter>ヘッダー ファイル\game_h\object_h\primitive_h</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\object\primitive\rect.h">
+      <Filter>ヘッダー ファイル\game_h\object_h\primitive_h</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\object\primitive\vector2d.h">
+      <Filter>ヘッダー ファイル\game_h\object_h\primitive_h</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\object\primitive\debug.h">
+      <Filter>ヘッダー ファイル\game_h\object_h\primitive_h</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\object\primitive\keyboard.h">
+      <Filter>ヘッダー ファイル\game_h\object_h\primitive_h</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\object\primitive\screen.h">
+      <Filter>ヘッダー ファイル\game_h\object_h\primitive_h</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\game.h">
+      <Filter>ヘッダー ファイル\game_h</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\title.h">
+      <Filter>ヘッダー ファイル\game_h</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\main_play.h">
+      <Filter>ヘッダー ファイル\game_h</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

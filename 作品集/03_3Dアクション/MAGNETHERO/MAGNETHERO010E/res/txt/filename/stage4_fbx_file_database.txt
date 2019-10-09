@@ -1,0 +1,4 @@
+//ステージ4で使うFBXファイルパス
+"res/fbx/stage4/stage4.fbx",
+"res/fbx/stage4/stage4_mag.fbx",
+"res/fbx/stage4/stage4_nomag.fbx",

@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\AmBridge.cpp">
+      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">TurnOffAllWarnings</WarningLevel>
+    </ClCompile>
+    <ClCompile Include="source\AmDirectX.cpp">
+      <WarningLevel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">TurnOffAllWarnings</WarningLevel>
+    </ClCompile>
+    <ClCompile Include="source\anima.cpp" />
+    <ClCompile Include="source\camera.cpp" />
+    <ClCompile Include="source\chara_boss_stage2.cpp" />
+    <ClCompile Include="source\chara_boss_stage2_thunder.cpp" />
+    <ClCompile Include="source\chara_boss_stage2_water.cpp" />
+    <ClCompile Include="source\chara_enemy_death.cpp" />
+    <ClCompile Include="source\chara_player1_sub.cpp" />
+    <ClCompile Include="source\chara_attacker.cpp" />
+    <ClCompile Include="source\chara_block.cpp" />
+    <ClCompile Include="source\chara_boss_stage1.cpp" />
+    <ClCompile Include="source\chara_player2_bullet.cpp" />
+    <ClCompile Include="source\chara_point.cpp" />
+    <ClCompile Include="source\in_game_result.cpp" />
+    <ClCompile Include="source\in_game_effect.cpp" />
+    <ClCompile Include="source\chara_enemy.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="source\chara_enemy_goblin.cpp" />
+    <ClCompile Include="source\chara_enemy_wyvern.cpp" />
+    <ClCompile Include="source\chara_enemy_wyvern_fire.cpp" />
+    <ClCompile Include="source\chara_player2.cpp" />
+    <ClCompile Include="source\chara_enemy_snake.cpp" />
+    <ClCompile Include="source\chara_player2_sub.cpp" />
+    <ClCompile Include="source\chara_castle.cpp" />
+    <ClCompile Include="source\chara_item.cpp" />
+    <ClCompile Include="source\chara__hit_rect.cpp" />
+    <ClCompile Include="source\chara__render.cpp" />
+    <ClCompile Include="source\chara__common.cpp" />
+    <ClCompile Include="source\chara__manager.cpp" />
+    <ClCompile Include="source\chara_player1.cpp" />
+    <ClCompile Include="source\common.cpp" />
+    <ClCompile Include="source\easing.cpp" />
+    <ClCompile Include="source\in_game_simple_effect.cpp" />
+    <ClCompile Include="source\new_effect_confusion_star.cpp" />
+    <ClCompile Include="source\new_effect_goblin_death_dust.cpp" />
+    <ClCompile Include="source\new_effect_hp_heal.cpp" />
+    <ClCompile Include="source\new_effect_mgr.cpp" />
+    <ClCompile Include="source\new_effect_rain_effect.cpp" />
+    <ClCompile Include="source\new_effect_shield.cpp" />
+    <ClCompile Include="source\new_effect_shield_break.cpp" />
+    <ClCompile Include="source\opening2.cpp" />
+    <ClCompile Include="source\chara_player2_recovered_bullet.cpp" />
+    <ClCompile Include="source\new_effect_pinch_effect.cpp" />
+    <ClCompile Include="source\player_1_2_bridge.cpp" />
+    <ClCompile Include="source\staffRoll.cpp" />
+    <ClCompile Include="source\stage_data_reader.cpp" />
+    <ClCompile Include="source\out_game_effect.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="source\stage_data_reader_assistant.cpp" />
+    <ClCompile Include="source\stage_time.cpp" />
+    <ClCompile Include="source\team_logo.cpp" />
+    <ClCompile Include="source\tree_sign.cpp" />
+    <ClCompile Include="source\tutorial.cpp" />
+    <ClCompile Include="source\type_parameter.cpp" />
+    <ClCompile Include="source\ending.cpp" />
+    <ClCompile Include="source\forDebug.cpp" />
+    <ClCompile Include="source\game.cpp" />
+    <ClCompile Include="source\gameover.cpp" />
+    <ClCompile Include="source\game_clear.cpp" />
+    <ClCompile Include="source\game_complete.cpp" />
+    <ClCompile Include="source\game_play.cpp" />
+    <ClCompile Include="source\game_state.cpp" />
+    <ClCompile Include="source\image_manager.cpp" />
+    <ClCompile Include="source\sound_manager.cpp" />
+    <ClCompile Include="source\input_manager.cpp" />
+    <ClCompile Include="source\mode_select.cpp" />
+    <ClCompile Include="source\opening.cpp" />
+    <ClCompile Include="source\option.cpp" />
+    <ClCompile Include="source\stage_select.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="source\title.cpp" />
+    <ClCompile Include="source\ui.cpp" />
+    <ClCompile Include="source\ui_mgr.cpp" />
+    <ClCompile Include="source\WinMain.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</ExcludedFromBuild>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\amgame.h" />
+    <ClInclude Include="source\anima.h" />
+    <ClInclude Include="source\camera.h" />
+    <ClInclude Include="source\chara_boss_stage2.h" />
+    <ClInclude Include="source\chara_boss_stage2_thunder.h" />
+    <ClInclude Include="source\chara_boss_stage2_water.h" />
+    <ClInclude Include="source\chara_enemy_death.h" />
+    <ClInclude Include="source\chara_player1_sub.h" />
+    <ClInclude Include="source\chara_attacker.h" />
+    <ClInclude Include="source\chara_block.h" />
+    <ClInclude Include="source\chara_boss_stage1.h" />
+    <ClInclude Include="source\chara_player2_bullet.h" />
+    <ClInclude Include="source\chara_point.h" />
+    <ClInclude Include="source\init_graph_no_sys.h" />
+    <ClInclude Include="source\in_game_result.h" />
+    <ClInclude Include="source\in_game_effect.h" />
+    <ClInclude Include="source\chara_enemy.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="source\chara_enemy_goblin.h" />
+    <ClInclude Include="source\chara_enemy_wyvern.h" />
+    <ClInclude Include="source\chara_enemy_wyvern_fire.h" />
+    <ClInclude Include="source\chara_enemy_snake.h" />
+    <ClInclude Include="source\chara_player2_sub.h" />
+    <ClInclude Include="source\chara_castle.h" />
+    <ClInclude Include="source\chara_item.h" />
+    <ClInclude Include="source\chara__hit_rect.h" />
+    <ClInclude Include="source\chara__render.h" />
+    <ClInclude Include="source\chara__common.h" />
+    <ClInclude Include="source\chara__manager.h" />
+    <ClInclude Include="source\chara_player1.h" />
+    <ClInclude Include="source\common.h" />
+    <ClInclude Include="source\easing.h" />
+    <ClInclude Include="source\in_game_simple_effect.h" />
+    <ClInclude Include="source\new_effect_confusion_star.h" />
+    <ClInclude Include="source\new_effect_goblin_death_dust.h" />
+    <ClInclude Include="source\new_effect_hp_heal.h" />
+    <ClInclude Include="source\new_effect_mgr.h" />
+    <ClInclude Include="source\new_effect_rain_effect.h" />
+    <ClInclude Include="source\new_effect_shield.h" />
+    <ClInclude Include="source\new_effect_shield_break.h" />
+    <ClInclude Include="source\opening2.h" />
+    <ClInclude Include="source\out_game_effect.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="source\chara_player2_recovered_bullet.h" />
+    <ClInclude Include="source\new_effect_pinch_effect.h" />
+    <ClInclude Include="source\player_1_2_bridge.h" />
+    <ClInclude Include="source\staffroll.h" />
+    <ClInclude Include="source\stage_data_reader.h" />
+    <ClInclude Include="source\stage_data_reader_assistant.h" />
+    <ClInclude Include="source\stage_time.h" />
+    <ClInclude Include="source\team_logo.h" />
+    <ClInclude Include="source\tree_sign.h" />
+    <ClInclude Include="source\tutorial.h" />
+    <ClInclude Include="source\type_parameter.h" />
+    <ClInclude Include="source\ending.h" />
+    <ClInclude Include="source\forDebug.h" />
+    <ClInclude Include="source\game.h" />
+    <ClInclude Include="source\gameover.h" />
+    <ClInclude Include="source\game_clear.h" />
+    <ClInclude Include="source\game_complete.h" />
+    <ClInclude Include="source\game_play.h" />
+    <ClInclude Include="source\game_state.h" />
+    <ClInclude Include="source\image_manager.h" />
+    <ClInclude Include="source\chara_player2.h" />
+    <ClInclude Include="source\sound_manager.h" />
+    <ClInclude Include="source\input_manager.h" />
+    <ClInclude Include="source\mode_select.h" />
+    <ClInclude Include="source\opening.h" />
+    <ClInclude Include="source\option.h" />
+    <ClInclude Include="source\stage_select.h" />
+    <ClInclude Include="source\title.h" />
+    <ClInclude Include="source\ui.h" />
+    <ClInclude Include="source\ui_mgr.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="source\Amgamew.txt" />
+    <Text Include="_data\1p_data.txt" />
+    <Text Include="_data\2p_data.txt" />
+    <Text Include="_data\enemy_data\_boss1_data.txt" />
+    <Text Include="_data\enemy_data\_goblin_data.txt" />
+    <Text Include="_data\enemy_data\_snake_data.txt" />
+    <Text Include="_data\enemy_data\_wyvern_data.txt" />
+    <Text Include="_data\item_data\hp_heal_item_data.txt" />
+    <Text Include="_data\stage_data\stage1_data.txt" />
+    <Text Include="_data\stage_data\stage2_data.txt" />
+    <Text Include="_data\stage_data\stage3_data.txt" />
+    <Text Include="_data\stage_data\stage4_data.txt" />
+    <Text Include="_data\stage_data\stage5_data.txt" />
+    <Text Include="_data\stage_data\stage6_data.txt" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{30B0A22A-13E1-449E-82B4-9B970A37A445}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Project1</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <ProjectName>shadow_beast</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX 9.0 SDK %28December 2004%29\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX 9.0 SDK %28December 2004%29\Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX 9.0 SDK %28December 2004%29\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX 9.0 SDK %28December 2004%29\Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX 9.0 SDK %28December 2004%29\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX 9.0 SDK %28December 2004%29\Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX 9.0 SDK %28December 2004%29\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX 9.0 SDK %28December 2004%29\Lib\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>false</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>false</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>false</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>false</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

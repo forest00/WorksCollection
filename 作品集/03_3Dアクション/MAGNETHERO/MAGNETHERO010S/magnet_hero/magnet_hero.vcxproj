@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\amlib\AmBridge.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\amlib\AmDirectX.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\amlib\dslib.cpp" />
+    <ClCompile Include="src\amlib\ExFbxMeshAmg.cpp" />
+    <ClCompile Include="src\amlib\FbxMeshAmg.cpp" />
+    <ClCompile Include="src\calc\calc.cpp" />
+    <ClCompile Include="src\char_ptr\char_ptr.cpp" />
+    <ClCompile Include="src\easing\easing.cpp" />
+    <ClCompile Include="src\easing\easing_type.cpp" />
+    <ClCompile Include="src\entry_point.cpp" />
+    <ClCompile Include="src\fbx_table\fbx_table.cpp" />
+    <ClCompile Include="src\file_data\file_data.cpp" />
+    <ClCompile Include="src\file_reader\file_reader.cpp" />
+    <ClCompile Include="src\framework\framework.cpp" />
+    <ClCompile Include="src\input\input.cpp" />
+    <ClCompile Include="src\input\input_button.cpp" />
+    <ClCompile Include="src\input\input_controller.cpp" />
+    <ClCompile Include="src\input\input_keyboard.cpp" />
+    <ClCompile Include="src\input\input_mouse.cpp" />
+    <ClCompile Include="src\input\virtual_input.cpp" />
+    <ClCompile Include="src\magnet_hero\magnet_hero.cpp" />
+    <ClCompile Include="src\magnet_hero\magnet_hero_state.cpp" />
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\ending\ending.cpp" />
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\aiming\aiming.cpp" />
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\camera\camera_controll.cpp" />
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\camera\camera_manager.cpp" />
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\connecter\info_drawer.cpp" />
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\connecter\info_holder.cpp" />
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\fbx_object\bg.cpp" />
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\fbx_object\bg_rotate.cpp" />
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\fbx_object\ground.cpp" />
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\fbx_object\magnet.cpp" />
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\fbx_object\wrench.cpp" />
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\fbx_object\object_manager.cpp" />
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\fbx_object\player.cpp" />
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\fbx_object\sky_sphare.cpp" />
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\game_main.cpp" />
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\glitter\glitter.cpp" />
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\glitter\glitter_manager.cpp" />
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\sprite\aiming_cursor.cpp" />
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\sprite\bibibi.cpp" />
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\sprite\qte.cpp" />
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\sprite\sprite_integration.cpp" />
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\stage_event\stage_data.cpp" />
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\stage_event\stage_event.cpp" />
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\stage_event\stage_index_saver.cpp" />
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\stage_event\stage_setup.cpp" />
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\game_main\stage_event\stage_ui.cpp" />
+    <ClCompile Include="src\magnet_hero\magnet_hero_state\title\title.cpp" />
+    <ClCompile Include="src\movie\avi.cpp" />
+    <ClCompile Include="src\mylib\mylib.cpp" />
+    <ClCompile Include="src\option\option.cpp" />
+    <ClCompile Include="src\option\option_ui.cpp" />
+    <ClCompile Include="src\shader_use\diffuse_only_shader.cpp" />
+    <ClCompile Include="src\shader_use\post_wave.cpp" />
+    <ClCompile Include="src\shader_use\simple_shader.cpp" />
+    <ClCompile Include="src\shader_use\texture_shader.cpp" />
+    <ClCompile Include="src\sound\detail\sound_table.cpp" />
+    <ClCompile Include="src\sound\sound.cpp" />
+    <ClCompile Include="src\texture_manager\texture_manager.cpp" />
+    <ClCompile Include="src\window\icon_file_name.cpp" />
+    <ClCompile Include="src\window\startup_option.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\amlib\amgame.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="src\amlib\dslib.h" />
+    <ClInclude Include="src\amlib\ExFbxMeshAmg.h" />
+    <ClInclude Include="src\amlib\FbxMeshAmg.h" />
+    <ClInclude Include="src\calc\calc.h" />
+    <ClInclude Include="src\char_ptr\char_ptr.h" />
+    <ClInclude Include="src\easing\easing.h" />
+    <ClInclude Include="src\easing\easing_type.h" />
+    <ClInclude Include="src\fbx_table\fbx_table.h" />
+    <ClInclude Include="src\file_data\file_data.h" />
+    <ClInclude Include="src\file_reader\file_reader.h" />
+    <ClInclude Include="src\framework\framework.h" />
+    <ClInclude Include="src\input\input.h" />
+    <ClInclude Include="src\input\input_button.h" />
+    <ClInclude Include="src\input\input_controller.h" />
+    <ClInclude Include="src\input\input_controller_code.h" />
+    <ClInclude Include="src\input\input_define.h" />
+    <ClInclude Include="src\input\input_keyboard.h" />
+    <ClInclude Include="src\input\input_mouse.h" />
+    <ClInclude Include="src\input\input_mouse_code.h" />
+    <ClInclude Include="src\input\virtual_input.h" />
+    <ClInclude Include="src\magnet_hero\magnet_hero.h" />
+    <ClInclude Include="src\magnet_hero\magnet_hero_state.h" />
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\ending\ending.h" />
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\aiming\aiming.h" />
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\camera\camera_controll.h" />
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\camera\camera_definition.h" />
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\camera\camera_manager.h" />
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\connecter\info_drawer.h" />
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\connecter\info_holder.h" />
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\fbx_object\bg.h" />
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\fbx_object\bg_rotate.h" />
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\fbx_object\ground.h" />
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\fbx_object\magnet.h" />
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\fbx_object\wrench.h" />
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\fbx_object\object_manager.h" />
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\fbx_object\player.h" />
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\fbx_object\sky_sphare.h" />
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\game_main.h" />
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\glitter\glitter.h" />
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\glitter\glitter_manager.h" />
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\sprite\aiming_cursor.h" />
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\sprite\bibibi.h" />
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\sprite\qte.h" />
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\sprite\sprite_integration.h" />
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\stage_event\stage_data.h" />
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\stage_event\stage_event.h" />
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\stage_event\stage_index.h" />
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\stage_event\stage_index_saver.h" />
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\stage_event\stage_setup.h" />
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\game_main\stage_event\stage_ui.h" />
+    <ClInclude Include="src\magnet_hero\magnet_hero_state\title\title.h" />
+    <ClInclude Include="src\movie\avi.h" />
+    <ClInclude Include="src\mylib\mylib.h" />
+    <ClInclude Include="src\option\option.h" />
+    <ClInclude Include="src\option\option_ui.h" />
+    <ClInclude Include="src\shader_use\diffuse_only_shader.h" />
+    <ClInclude Include="src\shader_use\post_wave.h" />
+    <ClInclude Include="src\shader_use\simple_shader.h" />
+    <ClInclude Include="src\shader_use\texture_shader.h" />
+    <ClInclude Include="src\sound\detail\sound_index.h" />
+    <ClInclude Include="src\sound\detail\sound_table.h" />
+    <ClInclude Include="src\sound\sound.h" />
+    <ClInclude Include="src\texture_manager\texture_manager.h" />
+    <ClInclude Include="src\texture_manager\texuture_id.h" />
+    <ClInclude Include="src\window\icon_file_name.h" />
+    <ClInclude Include="src\window\startup_option.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="res\txt\database\camera_database.txt" />
+    <Text Include="res\txt\database\init_state.txt" />
+    <Text Include="res\txt\database\player_database.txt" />
+    <Text Include="res\txt\database\qte_config.txt" />
+    <Text Include="res\txt\database\stage1_event.txt" />
+    <Text Include="res\txt\database\stage2_event.txt" />
+    <Text Include="res\txt\database\stage3_event.txt" />
+    <Text Include="res\txt\database\window_startup_option.txt" />
+    <Text Include="res\txt\filename\icon_file_name.txt" />
+    <Text Include="res\txt\filename\magnetic_fbx_file.txt" />
+    <Text Include="res\txt\filename\player_fbx_file_database.txt" />
+    <Text Include="res\txt\filename\sky_sphere_fbx_file.txt" />
+    <Text Include="res\txt\filename\sound_file_database.txt" />
+    <Text Include="res\txt\filename\stage1_fbx_file_database.txt" />
+    <Text Include="res\txt\filename\stage2_fbx_file_database.txt" />
+    <Text Include="res\txt\filename\stage3_fbx_file_database.txt" />
+    <Text Include="res\txt\filename\stage4_fbx_file_database.txt" />
+    <Text Include="res\txt\filename\texture_file_database.txt" />
+    <Text Include="res\txt\naming_convention\naming_convention.txt" />
+    <Text Include="src\amlib\Amgamew.txt">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="res\shader\diffuse_only_shader.fx">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </FxCompile>
+    <FxCompile Include="res\shader\post_wave.fx">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </FxCompile>
+    <FxCompile Include="res\shader\simple_shader.fx">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </FxCompile>
+    <FxCompile Include="res\shader\simple_shader_max_alpha.fx">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </FxCompile>
+    <FxCompile Include="res\shader\texture_shader.fx">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </FxCompile>
+    <FxCompile Include="res\shader\texture_shader2.fx">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </FxCompile>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{1AD3CF55-3FE1-4613-84D6-CF443590ED65}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>magnethero</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX 9.0 SDK %28December 2004%29\Include;C:\Program Files\Autodesk\FBX\FBX SDK\2018.1.1\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX 9.0 SDK %28December 2004%29\Lib\x86;C:\Program Files\Autodesk\FBX\FBX SDK\2018.1.1\lib\vs2015\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>C:\Program Files %28x86%29\Microsoft DirectX 9.0 SDK %28December 2004%29\Include;C:\Program Files\Autodesk\FBX\FBX SDK\2018.1.1\include;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Microsoft DirectX 9.0 SDK %28December 2004%29\Lib\x86;C:\Program Files\Autodesk\FBX\FBX SDK\2018.1.1\lib\vs2015\x86;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>false</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <IgnoreSpecificDefaultLibraries>libcp.lib</IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>false</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <IgnoreSpecificDefaultLibraries>libcp.lib</IgnoreSpecificDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

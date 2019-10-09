@@ -1,0 +1,634 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="angle">
+      <UniqueIdentifier>{df951db4-5d1e-45cd-baa8-667a3348935c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="back">
+      <UniqueIdentifier>{d4449d5f-5815-4f29-8bdf-e4d53a30d2b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="calc">
+      <UniqueIdentifier>{e9c9932b-b06f-499f-aa6e-b3204d544950}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sound">
+      <UniqueIdentifier>{1f7ae130-760d-4754-874e-ecf7f1e7cd9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="my_3d_lib">
+      <UniqueIdentifier>{fa7e979f-16ac-4e63-b881-577c8e98e074}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="file_path_provider">
+      <UniqueIdentifier>{662ede9b-25de-401e-9832-e6e16a13a9fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="enemy">
+      <UniqueIdentifier>{2c104df8-d1fd-49d9-8402-8fd607f49f4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="camera">
+      <UniqueIdentifier>{c5f10120-238b-4055-91cd-aa90fb62c7dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="angle\public">
+      <UniqueIdentifier>{f199f14b-6dda-4983-b502-d4318fa41f17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="back\public">
+      <UniqueIdentifier>{4f5c8fe4-e95f-41c4-80a4-c825d92a1135}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="calc\public">
+      <UniqueIdentifier>{be398723-35f8-4a37-b3da-0e7b05ccb8d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="my_3d_lib\public">
+      <UniqueIdentifier>{83285959-5ce3-4337-a87d-3ab076d1019f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="file_path_provider\public">
+      <UniqueIdentifier>{c6734d33-9d02-439d-9d95-53e0d3d6b8f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="enemy\public">
+      <UniqueIdentifier>{e94d435d-41a1-4c94-a237-f7115f700f62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="camera\public">
+      <UniqueIdentifier>{a01c9176-c7f0-4ce4-bf57-07642f87d79c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sound\public">
+      <UniqueIdentifier>{e09679a2-fac5-4f0e-85f8-1b1785a8a9eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="angle\private">
+      <UniqueIdentifier>{fe2fcf37-ff72-441c-bc2d-d4dcf76a9517}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="back\private">
+      <UniqueIdentifier>{60d7b937-ee66-42ca-a67d-4c3b825ebf82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="calc\private">
+      <UniqueIdentifier>{24fa9608-9bed-4105-9dce-e1c4dcff069f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="input">
+      <UniqueIdentifier>{7453d307-08c2-4f99-b397-f2d6fcf341e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="input\public">
+      <UniqueIdentifier>{5e98482e-0416-4846-b11e-c560f79fd0f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="input\private">
+      <UniqueIdentifier>{91251ef9-46f9-408b-81e0-36b50e86e358}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="my_3d_lib\private">
+      <UniqueIdentifier>{a610e97d-ff08-4449-bb48-51d0e2518164}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="file_path_provider\private">
+      <UniqueIdentifier>{19389731-bc42-4066-bafb-90d18c452731}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="enemy\private">
+      <UniqueIdentifier>{f95ed7ce-36c4-4b80-b231-56717df06ce6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="camera\private">
+      <UniqueIdentifier>{92ab96f3-d104-4e17-ac5d-bb1e09770492}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sound\private">
+      <UniqueIdentifier>{e4e1819a-ece8-4bea-a34a-700274b5020e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="player">
+      <UniqueIdentifier>{649a5fba-f7ee-478b-abb2-88a1e9773747}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="player\public">
+      <UniqueIdentifier>{219f1289-5933-455d-ba25-12a3fbdf062a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="player\private">
+      <UniqueIdentifier>{34624bc9-9772-41ec-9820-c6b71cba0d02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="font">
+      <UniqueIdentifier>{2f2c52fb-1e51-40e5-a2d8-919df2822f18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="font\private">
+      <UniqueIdentifier>{f66b8b9a-dc84-4400-8f80-c9474faecfa2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="enemy\public\test_enemy">
+      <UniqueIdentifier>{7121b68a-9d3e-4819-81b4-b3d534e4db3d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="player\public\test_player">
+      <UniqueIdentifier>{ba4d8cc0-cee9-4b9e-b89d-487921d1a704}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="font\public">
+      <UniqueIdentifier>{66a2640c-3e8b-4f1d-a4e3-3a1f55e24d26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="collision">
+      <UniqueIdentifier>{4cb6401c-06ec-4694-b80a-5d93a6bcfc38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="collision\public">
+      <UniqueIdentifier>{b5eca2b7-f219-48c1-8929-62b473d75dd4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="collision\private">
+      <UniqueIdentifier>{c8fdc639-fca2-400f-b7b9-ce418e46312a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common_def">
+      <UniqueIdentifier>{358f7c22-3deb-40b5-ad3c-395e5e59cf25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common_def\public">
+      <UniqueIdentifier>{996ced87-de04-4ee1-b24e-661c4071f5be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="light">
+      <UniqueIdentifier>{05381eb7-347f-4335-a195-b6b584bd555d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="light\private">
+      <UniqueIdentifier>{0ebb07f7-4dd4-4e65-aa63-fb2d559bdf10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="light\public">
+      <UniqueIdentifier>{7340689f-f97a-43f6-8ae5-f98a5e3c8f6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="d3d_device">
+      <UniqueIdentifier>{9892e1b9-d290-49a3-8fa5-e583bb9a2d15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="d3d_device\private">
+      <UniqueIdentifier>{4806f14a-263b-4db4-a733-8c22a1d614c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="d3d_device\public">
+      <UniqueIdentifier>{719cdffa-fa65-42e8-8024-132970200997}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game">
+      <UniqueIdentifier>{5383de69-9390-476b-a51c-936d3d5e2ba5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game\public">
+      <UniqueIdentifier>{893666e5-be67-4e0f-b63b-09b2c741ffe8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game\private">
+      <UniqueIdentifier>{ac2e036f-6bec-43fb-b215-f51db8e8452f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="x_file">
+      <UniqueIdentifier>{b9618d5e-1692-4276-9d42-be17dfd00119}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="x_object">
+      <UniqueIdentifier>{7a334808-b407-4f01-b7ab-f34e252cd3a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="x_file\private">
+      <UniqueIdentifier>{19065bff-5c57-4f08-8d17-f9d01267511a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="x_file\public">
+      <UniqueIdentifier>{14bfca9f-af0c-4d1b-884b-bd098c61d3d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="x_object\public">
+      <UniqueIdentifier>{31ccd5e7-e470-4c16-83dc-2d823e5ac6b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="x_object\private">
+      <UniqueIdentifier>{2b9a1460-74e2-46ad-9bd6-946b0bc49002}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="x_object_base">
+      <UniqueIdentifier>{55a227b8-ff01-4155-b2ec-822a5b5b0ece}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="x_object_base\public">
+      <UniqueIdentifier>{5b6a22ea-02dd-4b47-bf13-29e59764395a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="x_object_base\private">
+      <UniqueIdentifier>{d30cf378-655f-4fe2-8fbf-293d5f41bf89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="player\private\test_player">
+      <UniqueIdentifier>{c017632d-ad51-49de-9c23-8a87b2209caa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="enemy\private\test_enemy">
+      <UniqueIdentifier>{407b1da4-2f96-446f-ba7a-5dd608fec826}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="flatpo">
+      <UniqueIdentifier>{2a677e51-5f7f-483a-97d6-4780e1141624}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="flatpo\private">
+      <UniqueIdentifier>{56a55698-a49a-4557-873a-e3adbb2b0b81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="flatpo\public">
+      <UniqueIdentifier>{5872f5bd-bb55-4d08-bad5-4cf09c78d978}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="math_with_defines">
+      <UniqueIdentifier>{faaa7846-9482-461d-b38f-874ab20f89f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="anim_models">
+      <UniqueIdentifier>{ac77203d-531e-4640-b6b3-e7236c494c1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="anim_models\private">
+      <UniqueIdentifier>{281db3e5-1525-4afc-80b0-42a5933f5277}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="anim_models\public">
+      <UniqueIdentifier>{1e848189-b08d-46d4-b7fa-1451d665ffe0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game_debug">
+      <UniqueIdentifier>{23913ee9-6ef6-40ee-9392-2dd4d38e0e98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game_debug\private">
+      <UniqueIdentifier>{93b85d0b-d993-4e10-8ae2-a68e3ceb4811}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="game_debug\public">
+      <UniqueIdentifier>{ec592e08-34ae-4eda-9aa6-714fb31a5797}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="loop">
+      <UniqueIdentifier>{acf29308-89d6-4ee8-a1d5-b98a09f8af26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="loop\private">
+      <UniqueIdentifier>{ce3a96f2-de18-4b6c-ba61-b838e7b71e83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="loop\public">
+      <UniqueIdentifier>{f57a565d-8446-4123-8238-f31e37664a2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="world_transformation">
+      <UniqueIdentifier>{b59434a8-f4a0-4a9e-9d08-dcec5a085653}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="world_transformation\public">
+      <UniqueIdentifier>{9bd7f14a-7cd8-4545-b75d-0eab19348225}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="world_transformation\private">
+      <UniqueIdentifier>{20811d11-fb8b-4ad4-88fe-c9b3a65ccfc8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="anim_models\private\things">
+      <UniqueIdentifier>{c03e2f04-2991-4c0f-913d-4140f07e27ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="makabe_mesh">
+      <UniqueIdentifier>{ee2abf0c-7eee-408c-99d2-2fa1df6909f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="makabe_mesh\private">
+      <UniqueIdentifier>{9303491e-d67b-47d1-ad9b-47cee348a30a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="makabe_mesh\public">
+      <UniqueIdentifier>{f690944f-eaf2-424c-91e1-4591bffad111}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\angle\private\angle.cpp">
+      <Filter>angle\private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\back\private\back.cpp">
+      <Filter>back\private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\calc\private\calc.cpp">
+      <Filter>calc\private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\camera\private\camera.cpp">
+      <Filter>camera\private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sound\private\dslib.cpp">
+      <Filter>sound\private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\enemy\private\enemy.cpp">
+      <Filter>enemy\private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\file_path_provider\private\file_path_proviter.cpp">
+      <Filter>file_path_provider\private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\input\private\input.cpp">
+      <Filter>input\private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\my_3d_lib\private\my_3d_lib.cpp">
+      <Filter>my_3d_lib\private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\sound\private\sound.cpp">
+      <Filter>sound\private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\input\private\input_button.cpp">
+      <Filter>input\private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\input\private\input_mouse.cpp">
+      <Filter>input\private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\input\private\input_keyboard.cpp">
+      <Filter>input\private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\input\private\input_controller.cpp">
+      <Filter>input\private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\font\private\font.cpp">
+      <Filter>font\private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\player\private\player.cpp">
+      <Filter>player\private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\font\private\font_base.cpp">
+      <Filter>font\private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\collision\private\collision.cpp">
+      <Filter>collision\private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\light\private\light.cpp">
+      <Filter>light\private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\d3d_device\private\d3d_device.cpp">
+      <Filter>d3d_device\private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\private\game.cpp">
+      <Filter>game\private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\private\game_base.cpp">
+      <Filter>game\private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\private\game_system.cpp">
+      <Filter>game\private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\x_file\private\x_file.cpp">
+      <Filter>x_file\private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\x_file\public\x_file_type.h">
+      <Filter>x_file\public</Filter>
+    </ClCompile>
+    <ClCompile Include="src\x_file\private\x_file_name.cpp">
+      <Filter>x_file\private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\x_file\private\x_file_database.cpp">
+      <Filter>x_file\private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\x_file\private\x_file_loader.cpp">
+      <Filter>x_file\private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\x_file\private\x_file_drawer.cpp">
+      <Filter>x_file\private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\x_object\private\x_object.cpp">
+      <Filter>x_object\private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\x_object_base\private\x_object_base.cpp">
+      <Filter>x_object_base\private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\player\private\test_player\test_player_database.cpp">
+      <Filter>player\private\test_player</Filter>
+    </ClCompile>
+    <ClCompile Include="src\player\private\test_player\test_player_manager.cpp">
+      <Filter>player\private\test_player</Filter>
+    </ClCompile>
+    <ClCompile Include="src\player\private\test_player\test_player_object.cpp">
+      <Filter>player\private\test_player</Filter>
+    </ClCompile>
+    <ClCompile Include="src\player\private\test_player\test_player_brain.cpp">
+      <Filter>player\private\test_player</Filter>
+    </ClCompile>
+    <ClCompile Include="src\enemy\private\test_enemy\test_enemy_manager.cpp">
+      <Filter>enemy\private\test_enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="src\enemy\private\test_enemy\test_enemy_object.cpp">
+      <Filter>enemy\private\test_enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="src\enemy\private\test_enemy\test_enemy_brain.cpp">
+      <Filter>enemy\private\test_enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="src\enemy\private\test_enemy\test_enemy_database.cpp">
+      <Filter>enemy\private\test_enemy</Filter>
+    </ClCompile>
+    <ClCompile Include="src\entry_point.cpp" />
+    <ClCompile Include="src\anim_models\private\anim_model_base.cpp">
+      <Filter>anim_models\private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\anim_models\private\anim_model_test.cpp">
+      <Filter>anim_models\private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\flatpo\private\flatpo_test.cpp">
+      <Filter>flatpo\private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\flatpo\private\flatpo_manager.cpp">
+      <Filter>flatpo\private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\flatpo\private\flatpo_texture_loader.cpp">
+      <Filter>flatpo\private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\flatpo\private\flatpo_drawer.cpp">
+      <Filter>flatpo\private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game_debug\private\game_debug.cpp">
+      <Filter>game_debug\private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\loop\private\loop.cpp">
+      <Filter>loop\private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\loop\private\loop_timer.cpp">
+      <Filter>loop\private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\world_transformation\private\world_transformation.cpp">
+      <Filter>world_transformation\private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\anim_models\private\things\robot.cpp">
+      <Filter>anim_models\private\things</Filter>
+    </ClCompile>
+    <ClCompile Include="src\anim_models\private\anim_data_loader.cpp">
+      <Filter>anim_models\private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\anim_models\private\things\ken.cpp">
+      <Filter>anim_models\private\things</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game_debug\private\message_box.cpp">
+      <Filter>game_debug\private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\anim_models\private\things\golem.cpp">
+      <Filter>anim_models\private\things</Filter>
+    </ClCompile>
+    <ClCompile Include="src\anim_models\private\things\josh.cpp">
+      <Filter>anim_models\private\things</Filter>
+    </ClCompile>
+    <ClCompile Include="src\anim_models\private\things\usagi.cpp">
+      <Filter>anim_models\private\things</Filter>
+    </ClCompile>
+    <ClCompile Include="src\anim_models\private\things\block_man.cpp">
+      <Filter>anim_models\private\things</Filter>
+    </ClCompile>
+    <ClCompile Include="src\makabe_mesh\private\makabe_mesh.cpp">
+      <Filter>makabe_mesh\private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\makabe_mesh\private\makabe_mesh_creator.cpp">
+      <Filter>makabe_mesh\private</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\angle\public\angle.h">
+      <Filter>angle\public</Filter>
+    </ClInclude>
+    <ClInclude Include="src\back\public\back.h">
+      <Filter>back\public</Filter>
+    </ClInclude>
+    <ClInclude Include="src\calc\public\calc.h">
+      <Filter>calc\public</Filter>
+    </ClInclude>
+    <ClInclude Include="src\camera\public\camera.h">
+      <Filter>camera\public</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sound\private\dslib.h">
+      <Filter>sound\private</Filter>
+    </ClInclude>
+    <ClInclude Include="src\file_path_provider\public\file_path_provider.h">
+      <Filter>file_path_provider\public</Filter>
+    </ClInclude>
+    <ClInclude Include="src\input\public\input.h">
+      <Filter>input\public</Filter>
+    </ClInclude>
+    <ClInclude Include="src\my_3d_lib\public\my_3d_lib.h">
+      <Filter>my_3d_lib\public</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sound\public\sound_index.h">
+      <Filter>sound\public</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sound\public\sound.h">
+      <Filter>sound\public</Filter>
+    </ClInclude>
+    <ClInclude Include="src\enemy\public\enemy.h">
+      <Filter>enemy\public</Filter>
+    </ClInclude>
+    <ClInclude Include="src\input\private\input_button.h">
+      <Filter>input\private</Filter>
+    </ClInclude>
+    <ClInclude Include="src\input\private\input_mouse.h">
+      <Filter>input\private</Filter>
+    </ClInclude>
+    <ClInclude Include="src\input\private\input_keyboard.h">
+      <Filter>input\private</Filter>
+    </ClInclude>
+    <ClInclude Include="src\input\private\input_controller.h">
+      <Filter>input\private</Filter>
+    </ClInclude>
+    <ClInclude Include="src\input\public\input_mouse_code.h">
+      <Filter>input\public</Filter>
+    </ClInclude>
+    <ClInclude Include="src\input\public\input_controller_code.h">
+      <Filter>input\public</Filter>
+    </ClInclude>
+    <ClInclude Include="src\player\public\player.h">
+      <Filter>player\public</Filter>
+    </ClInclude>
+    <ClInclude Include="src\player\public\test_player\test_player_object_declaration.h">
+      <Filter>player\public\test_player</Filter>
+    </ClInclude>
+    <ClInclude Include="src\player\public\test_player\test_player_initializer.h">
+      <Filter>player\public\test_player</Filter>
+    </ClInclude>
+    <ClInclude Include="src\font\public\font.h">
+      <Filter>font\public</Filter>
+    </ClInclude>
+    <ClInclude Include="src\font\private\font_base.h">
+      <Filter>font\private</Filter>
+    </ClInclude>
+    <ClInclude Include="src\collision\public\collision.h">
+      <Filter>collision\public</Filter>
+    </ClInclude>
+    <ClInclude Include="src\player\public\test_player\test_player_manager.h">
+      <Filter>player\public\test_player</Filter>
+    </ClInclude>
+    <ClInclude Include="src\enemy\public\test_enemy\test_enemy_manager.h">
+      <Filter>enemy\public\test_enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="src\enemy\public\test_enemy\test_enemy_object_declaration.h">
+      <Filter>enemy\public\test_enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="src\enemy\public\test_enemy\test_enemy_initializer.h">
+      <Filter>enemy\public\test_enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="src\common_def\public\common_def.h">
+      <Filter>common_def\public</Filter>
+    </ClInclude>
+    <ClInclude Include="src\light\public\light.h">
+      <Filter>light\public</Filter>
+    </ClInclude>
+    <ClInclude Include="src\d3d_device\public\d3d_device.h">
+      <Filter>d3d_device\public</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\public\game.h">
+      <Filter>game\public</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\private\game_base.h">
+      <Filter>game\private</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\private\game_system.h">
+      <Filter>game\private</Filter>
+    </ClInclude>
+    <ClInclude Include="src\x_file\public\x_file.h">
+      <Filter>x_file\public</Filter>
+    </ClInclude>
+    <ClInclude Include="src\x_file\public\x_file_structure.h">
+      <Filter>x_file\public</Filter>
+    </ClInclude>
+    <ClInclude Include="src\x_file\private\x_file_database.h">
+      <Filter>x_file\private</Filter>
+    </ClInclude>
+    <ClInclude Include="src\x_file\private\x_file_name.h">
+      <Filter>x_file\private</Filter>
+    </ClInclude>
+    <ClInclude Include="src\x_file\private\x_file_loader.h">
+      <Filter>x_file\private</Filter>
+    </ClInclude>
+    <ClInclude Include="src\x_file\private\x_file_drawer.h">
+      <Filter>x_file\private</Filter>
+    </ClInclude>
+    <ClInclude Include="src\x_object\public\x_object.h">
+      <Filter>x_object\public</Filter>
+    </ClInclude>
+    <ClInclude Include="src\x_object_base\public\x_object_base.h">
+      <Filter>x_object_base\public</Filter>
+    </ClInclude>
+    <ClInclude Include="src\player\private\test_player\test_player_brain.h">
+      <Filter>player\private\test_player</Filter>
+    </ClInclude>
+    <ClInclude Include="src\player\private\test_player\test_player_database.h">
+      <Filter>player\private\test_player</Filter>
+    </ClInclude>
+    <ClInclude Include="src\player\private\test_player\test_player_object.h">
+      <Filter>player\private\test_player</Filter>
+    </ClInclude>
+    <ClInclude Include="src\enemy\private\test_enemy\test_enemy_database.h">
+      <Filter>enemy\private\test_enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="src\enemy\private\test_enemy\test_enemy_object.h">
+      <Filter>enemy\private\test_enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="src\enemy\private\test_enemy\test_enemy_brain.h">
+      <Filter>enemy\private\test_enemy</Filter>
+    </ClInclude>
+    <ClInclude Include="src\x_object_base\public\x_object_base_structure.h">
+      <Filter>x_object_base\public</Filter>
+    </ClInclude>
+    <ClInclude Include="src\math_with_defines\math_with_defines.h">
+      <Filter>math_with_defines</Filter>
+    </ClInclude>
+    <ClInclude Include="src\anim_models\public\anim_model_test.h">
+      <Filter>anim_models\public</Filter>
+    </ClInclude>
+    <ClInclude Include="src\flatpo\public\flatpo_manager.h">
+      <Filter>flatpo\public</Filter>
+    </ClInclude>
+    <ClInclude Include="src\flatpo\private\flatpo_test.h">
+      <Filter>flatpo\private</Filter>
+    </ClInclude>
+    <ClInclude Include="src\flatpo\public\flatpo_texture_loader.h">
+      <Filter>flatpo\public</Filter>
+    </ClInclude>
+    <ClInclude Include="src\flatpo\private\flatpo_drawer.h">
+      <Filter>flatpo\private</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game_debug\public\game_debug.h">
+      <Filter>game_debug\public</Filter>
+    </ClInclude>
+    <ClInclude Include="src\loop\public\loop.h">
+      <Filter>loop\public</Filter>
+    </ClInclude>
+    <ClInclude Include="src\loop\public\loop_timer.h">
+      <Filter>loop\public</Filter>
+    </ClInclude>
+    <ClInclude Include="src\world_transformation\public\world_transformation.h">
+      <Filter>world_transformation\public</Filter>
+    </ClInclude>
+    <ClInclude Include="src\anim_models\private\things\robot.h">
+      <Filter>anim_models\private\things</Filter>
+    </ClInclude>
+    <ClInclude Include="src\anim_models\private\things\ken.h">
+      <Filter>anim_models\private\things</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game_debug\public\message_box.h">
+      <Filter>game_debug\public</Filter>
+    </ClInclude>
+    <ClInclude Include="src\anim_models\public\anim_model_base.h">
+      <Filter>anim_models\public</Filter>
+    </ClInclude>
+    <ClInclude Include="src\anim_models\public\anim_data_loader.h">
+      <Filter>anim_models\public</Filter>
+    </ClInclude>
+    <ClInclude Include="src\anim_models\private\things\golem.h">
+      <Filter>anim_models\private\things</Filter>
+    </ClInclude>
+    <ClInclude Include="src\anim_models\private\things\josh.h">
+      <Filter>anim_models\private\things</Filter>
+    </ClInclude>
+    <ClInclude Include="src\anim_models\private\things\usagi.h">
+      <Filter>anim_models\private\things</Filter>
+    </ClInclude>
+    <ClInclude Include="src\anim_models\private\things\block_man.h">
+      <Filter>anim_models\private\things</Filter>
+    </ClInclude>
+    <ClInclude Include="src\makabe_mesh\public\makabe_mesh.h">
+      <Filter>makabe_mesh\public</Filter>
+    </ClInclude>
+    <ClInclude Include="src\makabe_mesh\public\makabe_mesh_creator.h">
+      <Filter>makabe_mesh\public</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
